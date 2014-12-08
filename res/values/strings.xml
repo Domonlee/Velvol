@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Velvol</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="login2">暂不登录，先去看看&gt;&gt;</string>
+    <string name="title_activity_particulars">ParticularsActivity</string>
+    <string name="title_activity_cai_pin_xiang_qing">CaiPinXiangQingActivity</string>
+    <string name="title_activity_caipin">CaipinActivity</string>
+    <string name="title_activity_ssss">SsssActivity</string>
+    <string name="title_activity_merchant_name">MerchantNameActivity</string>
+    <string name="title_activity_cate_wel">CateWelActivity</string>
+    <string name="title_activity_xiangqing">XiangqingActivity</string>
+    <string name="title_activity_comment">CommentActivity</string>
+    <string name="title_activity_modification_path">ModificationPathActivity</string>
+    <string name="title_activity_classify">ClassifyActivity</string>
+    <string name="title_activity_combine_main">CombineMainActivity</string>
+    <string name="title_activity_combine">CombineActivity</string>
+
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.velvol.o2o"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:name="com.velvol.o2o.Data"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.velvol.o2o.GuideActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.velvol.o2o.LoginActivity" />
+        <activity android:name="com.velvol.o2o.HomeActivity" />
+        <activity android:name="com.velvol.o2o.MainActivity" />
+        <activity
+            android:name="com.velvol.o2o.ParticularsActivity"
+            android:label="@string/title_activity_particulars"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.velvol.o2o.CaiPinXiangQingActivity"
+            android:label="@string/title_activity_cai_pin_xiang_qing"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.velvol.o2o.CaipinActivity"
+            android:label="@string/title_activity_caipin"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.velvol.o2o.SsssActivity"
+            android:label="@string/title_activity_ssss"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.velvol.o2o.MerchantNameActivity"
+            android:label="@string/title_activity_merchant_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.velvol.o2o.CateWelActivity"
+            android:label="@string/title_activity_cate_wel"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.velvol.o2o.XiangqingActivity"
+            android:label="@string/title_activity_xiangqing"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.velvol.o2o.CommentActivity"
+            android:label="@string/title_activity_comment"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.velvol.o2o.ModificationPathActivity"
+            android:label="@string/title_activity_modification_path"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.velvol.o2o.ClassifyActivity"
+            android:label="@string/title_activity_classify"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.velvol.o2o.CombineActivity"
+            android:label="@string/title_activity_combine" 
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:minHeight="100dp" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/category_selection_gridview_bg" >
+
+    <CheckBox
+        android:id="@+id/cart_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:button="@null"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/cart_check"
+        
+        />
+    <ImageView
+        android:id="@+id/catergory_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#123123"
+        android:layout_gravity="center"
+        />
+    
+    
+    <LinearLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/catergoryitem_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="蛋炒饭"
+            
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+   
+
+    <TextView
+        android:id="@+id/catergoryitem_cat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:layout_gravity="bottom"
+        android:text="品牌： 干货"
+        android:textColor="#424242"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/catergoryitem_zhongliang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:layout_gravity="bottom"
+        android:text="重量(克)： 0"
+        android:textColor="#424242"
+        android:textSize="12sp" />
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <TextView 
+            android:text="数量:"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom"
+            />
+        <Button 
+            android:id="@+id/sub"
+            android:focusable="false"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/edit_product_num_des_normal"
+            android:layout_gravity="bottom"/>
+        <TextView
+            android:id="@+id/num"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:background="@drawable/edit_text"
+            android:text="1"
+            android:gravity="center"
+            android:layout_gravity="bottom"/>
+        <Button 
+            android:id="@+id/add"
+            android:focusable="false"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/edit_product_num_add_normal"
+            android:layout_gravity="bottom"/>
+        <TextView 
+            android:id="@+id/money"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="￥6.18"
+            android:gravity="center"
+            android:textColor="#CD2626"
+            android:layout_gravity="bottom"/>
+    </LinearLayout>
+ </LinearLayout>
+
+
+</LinearLayout>
+</RelativeLayout>
