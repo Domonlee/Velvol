@@ -17,5 +17,6 @@
     <string name="title_activity_classify">ClassifyActivity</string>
     <string name="title_activity_combine_main">CombineMainActivity</string>
     <string name="title_activity_combine">CombineActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
 
 </resources>

@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.velvol.o2o.RegisterActivity" >
+
+    <!-- the find top bar -->
+
+    <include
+        android:id="@+id/title_top_layout"
+        layout="@layout/base_title_layout" />
+
+    <LinearLayout
+        android:id="@+id/reg_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_top_layout"
+        android:orientation="horizontal" >
+
+        <RadioGroup
+            android:id="@+id/reg_bar_rg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp" >
+
+            <RadioButton
+                android:id="@+id/reg_tab01_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/register_01_check"
+                android:button="@null"
+                android:gravity="center"
+                android:text="输入手机号"
+                android:textColor="@color/reg_tab_text_color_selector" />
+
+            <RadioButton
+                android:id="@+id/reg_tab02_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/register_02_check"
+                android:button="@null"
+                android:gravity="center"
+                android:text="输入验证码"
+                android:textColor="@color/reg_tab_text_color_selector" />
+
+            <RadioButton
+                android:id="@+id/reg_tab03_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/register_03_check"
+                android:button="@null"
+                android:gravity="center"
+                android:text="设置账号"
+                android:textColor="@color/reg_tab_text_color_selector" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- info 输入框 -->
+
+    <LinearLayout
+        android:id="@+id/reg_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/reg_bar"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <EditText
+                android:id="@+id/reg_info_line1_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="line01" />
+
+        </RelativeLayout>
+        
+        <EditText 
+                android:id="@+id/reg_info_line2_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="line02" />
+    </LinearLayout>
+
+</RelativeLayout>

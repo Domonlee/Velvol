@@ -26,6 +26,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,13 +35,18 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.velvol.o2o.Data;
 import com.velvol.o2o.R;
+import com.velvol.o2o.view.HeaderLayout;
+import com.velvol.o2o.view.HeaderLayout.HeaderStyle;
+import com.velvol.o2o.view.HeaderLayout.onRightImageButtonClickListener;
 
 public abstract class BaseActivity extends Activity {
 
+	protected HeaderLayout mHeaderLayout;
 	public static final String TAG = BaseActivity.class.getSimpleName();
 	public Dialog loadingDialog = null;
 	protected MyHandler handler = null;
@@ -51,6 +57,7 @@ public abstract class BaseActivity extends Activity {
 	public HttpResponse httpResponse;
 	protected ImageLoader imageLoader = ImageLoader.getInstance();
 	public Data data;
+	public Toast mToast;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -307,5 +314,53 @@ public abstract class BaseActivity extends Activity {
 			e.printStackTrace();
 		}
 		return key;
+	}
+	
+	
+
+	//Show Toast By String 
+	public void ShowToast(final String text) {
+		if (!TextUtils.isEmpty(text)) {
+			runOnUiThread(new Runnable() {
+				@Override
+				public void run() {
+					if (mToast == null) {
+						mToast = Toast.makeText(getApplicationContext(), text,
+								Toast.LENGTH_LONG);
+					} else {
+						mToast.setText(text);
+					}
+					mToast.show();
+				}
+			});
+
+		}
+	}
+
+	//Show Toast By ID
+	public void ShowToast(final int resId) {
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				if (mToast == null) {
+					mToast = Toast.makeText(
+							BaseActivity.this.getApplicationContext(), resId,
+							Toast.LENGTH_LONG);
+				} else {
+					mToast.setText(resId);
+				}
+				mToast.show();
+			}
+		});
+	}
+
+	/**
+	 * ¥ÚLog ShowLog
+	 * 
+	 * @return void
+	 * @throws
+	 */
+	public void ShowLog(String msg) {
+		Log.i("Domon",msg);
 	}
 }
