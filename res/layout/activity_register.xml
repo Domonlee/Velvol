@@ -13,7 +13,7 @@
     <LinearLayout
         android:id="@+id/reg_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/title_top_layout"
         android:orientation="horizontal" >
 
@@ -23,7 +23,8 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
-            android:paddingRight="5dp" >
+            android:paddingRight="5dp"
+            android:paddingTop="1dp" >
 
             <RadioButton
                 android:id="@+id/reg_tab01_tv"
@@ -32,6 +33,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/register_01_check"
                 android:button="@null"
+                android:checked="true"
                 android:gravity="center"
                 android:text="输入手机号"
                 android:textColor="@color/reg_tab_text_color_selector" />
@@ -54,6 +56,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/register_03_check"
                 android:button="@null"
+                android:checked="true"
                 android:gravity="center"
                 android:text="设置账号"
                 android:textColor="@color/reg_tab_text_color_selector" />
@@ -62,31 +65,121 @@
 
     <!-- info 输入框 -->
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/reg_info_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/reg_bar"
-        android:orientation="vertical" >
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp" >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <!-- 输入验证码Layout -->
+
+        <LinearLayout
+            android:id="@+id/reg_info_mcode_layout"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            >
+            android:orientation="horizontal"
+            android:visibility="gone" >
 
             <EditText
-                android:id="@+id/reg_info_line1_tv"
-                android:layout_width="wrap_content"
+                android:id="@+id/reg_info_mcode_tv"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="line01" />
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/ed_background"
+                android:hint="请输入验证码"
+                android:paddingLeft="10dp" />
 
-        </RelativeLayout>
-        
-        <EditText 
-                android:id="@+id/reg_info_line2_tv"
+            <TextView
+                android:id="@+id/reg_info_mcode_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/base_color_green"
+                android:gravity="center"
+                android:text="重新获取验证码"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/reg_info_line1_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reg_info_mcode_layout"
+            android:background="@drawable/ed_background"
+            android:hint="请输入手机号"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+
+        <EditText
+            android:id="@+id/reg_info_line2_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reg_info_line1_tv"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ed_background"
+            android:hint="line02"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/reg_info_line3_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reg_info_line2_tv"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ed_background"
+            android:hint="line03"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/reg_info_submit_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/reg_info_line3_tv"
+            android:layout_marginTop="20dp"
+            android:background="@color/base_color_green"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="登录"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/reg_info_protocol_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reg_info_submit_btn"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/reg_info_protocol_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/reg_info_protocol_base_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="line02" />
-    </LinearLayout>
+                android:text="我已阅读并同意"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/reg_info_protocol_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="店小二用户协议"
+                android:textColor="@color/base_color_green" />
+        </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
