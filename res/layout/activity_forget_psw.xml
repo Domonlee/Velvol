@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.velvol.o2o.ui.login.ForgetPswActivity" >
+
+    <include
+        android:id="@+id/title_top_layout"
+        layout="@layout/base_title_layout" />
+
+    <RelativeLayout
+        android:id="@+id/forget_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:layout_below="@+id/title_top_layout"
+        android:paddingTop="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <!-- 手机号码Layout -->
+
+        <LinearLayout
+            android:id="@+id/forget_phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="手机号：" />
+
+            <EditText
+                android:id="@+id/forget_phone_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ed_background"
+                android:hint="请输入手机号"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+        </LinearLayout>
+
+        <!-- 输入验证码 -->
+
+        <LinearLayout
+            android:id="@+id/reg_info_mcode_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/forget_phone_layout"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/reg_info_mcode_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/ed_background"
+                android:hint="请输入验证码"
+                android:paddingLeft="10dp" />
+
+            <TextView
+                android:id="@+id/reg_info_mcode_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/base_color_green"
+                android:gravity="center"
+                android:text="获取验证码"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/forget_next_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/reg_info_mcode_layout"
+            android:layout_marginTop="20dp"
+            android:background="@color/base_color_green"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="下一步"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

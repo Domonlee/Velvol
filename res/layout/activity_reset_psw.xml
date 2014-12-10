@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.velvol.o2o.ui.login.ForgetPswActivity" >
+
+    <include
+        android:id="@+id/title_top_layout"
+        layout="@layout/base_title_layout" />
+
+    <RelativeLayout
+        android:id="@+id/forget_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_top_layout"
+        android:paddingTop="15dp"
+        android:background="#ffffff"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <!-- 新密码Layout -->
+
+        <LinearLayout
+            android:id="@+id/reset_psw_new_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="新密码：" />
+
+            <EditText
+                android:id="@+id/reset_psw_new_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ed_background"
+                android:hint=""
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+        </LinearLayout>
+
+        <!-- 确认密码Layout -->
+              <LinearLayout
+            android:id="@+id/reset_psw_confirm_layout"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/reset_psw_new_layout"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="确认密码：" />
+
+            <EditText
+                android:id="@+id/reset_psw_confirm_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ed_background"
+                android:hint=""
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+        </LinearLayout>
+        
+
+        <TextView
+            android:id="@+id/forget_next_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/reset_psw_confirm_layout"
+            android:layout_marginTop="20dp"
+            android:background="@color/base_color_green"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="确认"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

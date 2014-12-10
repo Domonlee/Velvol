@@ -18,5 +18,6 @@
     <string name="title_activity_combine_main">CombineMainActivity</string>
     <string name="title_activity_combine">CombineActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_forget_psw">ForgetPswActivity</string>
 
 </resources>

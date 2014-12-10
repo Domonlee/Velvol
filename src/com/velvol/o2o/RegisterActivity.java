@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import com.velvol.o2o.tool.BaseActivity;
+import com.velvol.o2o.ui.login.LoginActivity;
 
 public class RegisterActivity extends BaseActivity {
 	public LinearLayout topLayout, reg_info_mcode_layout,

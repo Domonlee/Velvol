@@ -1,5 +1,7 @@
 package com.velvol.o2o;
 
+import com.velvol.o2o.ui.login.LoginActivity;
+
 import android.app.Activity;
 import android.app.KeyguardManager;
 import android.content.Intent;

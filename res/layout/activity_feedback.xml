@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.velvol.o2o.ui.login.ForgetPswActivity" >
+
+    <include
+        android:id="@+id/title_top_layout"
+        layout="@layout/base_title_layout" />
+
+    <RelativeLayout
+        android:id="@+id/feedback_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_top_layout"
+        android:paddingTop="15dp"
+        android:background="#ffffff"
+         >
+
+        <!-- 意见 -->
+           
+            <EditText
+                android:id="@+id/feedback_info_tv"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/ed_background"
+                android:hint="输入您的建议"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+
+        <!--号码 -->
+
+
+            <EditText
+                android:id="@+id/feedback_phone_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/feedback_info_tv"
+                android:background="@drawable/ed_background"
+                android:hint="留下您的手机号，以便我们联系您。"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+        
+
+        <TextView
+            android:id="@+id/feedback_submit_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/feedback_phone_tv"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/base_color_green"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="确认"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
