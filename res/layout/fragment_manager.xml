@@ -148,7 +148,7 @@
             android:orientation="vertical" >
 
             <LinearLayout
-                android:id="@+id/manager_path_layout"
+                android:id="@+id/manager_myaddr_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >

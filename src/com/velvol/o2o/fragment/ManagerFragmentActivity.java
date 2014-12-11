@@ -14,16 +14,19 @@ import com.velvol.o2o.R;
 import com.velvol.o2o.tool.BaseFragment;
 import com.velvol.o2o.ui.manager.AboutActivity;
 import com.velvol.o2o.ui.manager.FeedbackActivity;
+import com.velvol.o2o.ui.manager.MyAddressActivity;
 import com.velvol.o2o.view.CircularImage;
 
 public class ManagerFragmentActivity extends BaseFragment {
-	
+
 	private View view;
 	private Context mContext;
 	private CircularImage cImageView;
-	
+
 	private LinearLayout manager_about_layout;
 	private LinearLayout manager_feedback_layout;
+	private LinearLayout manager_myaddr_layout;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,9 +38,13 @@ public class ManagerFragmentActivity extends BaseFragment {
 
 	@Override
 	protected void findViewById() {
-		cImageView = (CircularImage)view.findViewById(R.id.icon);
-		manager_about_layout = (LinearLayout)view.findViewById(R.id.manager_about_layout);
-		manager_feedback_layout = (LinearLayout)view.findViewById(R.id.manager_feedback_layout);
+		cImageView = (CircularImage) view.findViewById(R.id.icon);
+		manager_about_layout = (LinearLayout) view
+				.findViewById(R.id.manager_about_layout);
+		manager_feedback_layout = (LinearLayout) view
+				.findViewById(R.id.manager_feedback_layout);
+		manager_myaddr_layout = (LinearLayout) view
+				.findViewById(R.id.manager_myaddr_layout);
 	}
 
 	@Override
@@ -46,7 +53,9 @@ public class ManagerFragmentActivity extends BaseFragment {
 		mContext = view.getContext();
 		manager_about_layout.setOnClickListener(clickListener);
 		manager_feedback_layout.setOnClickListener(clickListener);
+		manager_myaddr_layout.setOnClickListener(clickListener);
 	}
+
 	View.OnClickListener clickListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
@@ -55,18 +64,19 @@ public class ManagerFragmentActivity extends BaseFragment {
 			case R.id.manager_about_layout:
 				intent.setClass(mContext, AboutActivity.class);
 				startActivity(intent);
-				getActivity().finish();
 				break;
 			case R.id.manager_feedback_layout:
 				intent.setClass(mContext, FeedbackActivity.class);
 				startActivity(intent);
-				getActivity().finish();
+				break;
+			case R.id.manager_myaddr_layout:
+				intent.setClass(mContext, MyAddressActivity.class);
+				startActivity(intent);
 				break;
 			}
-			
 		}
 	};
-	
+
 	@Override
 	protected void result(String result) {
 

@@ -2,6 +2,7 @@
 <resources>
     <color name="ivory">#a7d3ff</color>
     <color name="blue">#17b3ec</color>
+    <color name="red">#FF0000</color>
     <color name="green">#09AA9A</color>
     <color name="gray">#a8a8a8</color>
     <color name="pink">#14ae68</color>

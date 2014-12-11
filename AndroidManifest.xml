@@ -87,6 +87,12 @@
         </activity>
         <activity android:name="com.velvol.o2o.ui.manager.AboutActivity" >
         </activity>
+        <activity android:name="com.velvol.o2o.ui.manager.FeedbackActivity" >
+        </activity>
+        <activity android:name="com.velvol.o2o.ui.manager.MyAddressActivity" >
+        </activity>
+        <activity android:name="com.velvol.o2o.ui.manager.ChangeAddressActivity" >
+        </activity>
         <activity android:name="com.velvol.o2o.ui.login.ResetPswActivity" >
         </activity>
         <activity
