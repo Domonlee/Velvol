@@ -15,6 +15,8 @@ import com.velvol.o2o.tool.BaseFragment;
 import com.velvol.o2o.ui.manager.AboutActivity;
 import com.velvol.o2o.ui.manager.FeedbackActivity;
 import com.velvol.o2o.ui.manager.MyAddressActivity;
+import com.velvol.o2o.ui.manager.MyInfoActivity;
+import com.velvol.o2o.ui.manager.MyMsgActivity;
 import com.velvol.o2o.view.CircularImage;
 
 public class ManagerFragmentActivity extends BaseFragment {
@@ -26,6 +28,8 @@ public class ManagerFragmentActivity extends BaseFragment {
 	private LinearLayout manager_about_layout;
 	private LinearLayout manager_feedback_layout;
 	private LinearLayout manager_myaddr_layout;
+	private LinearLayout manager_mydata_layout;
+	private LinearLayout manager_msgboard_layout;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -45,6 +49,10 @@ public class ManagerFragmentActivity extends BaseFragment {
 				.findViewById(R.id.manager_feedback_layout);
 		manager_myaddr_layout = (LinearLayout) view
 				.findViewById(R.id.manager_myaddr_layout);
+		manager_mydata_layout = (LinearLayout) view
+				.findViewById(R.id.manager_mydata_layout);
+		manager_msgboard_layout = (LinearLayout) view
+				.findViewById(R.id.manager_msgboard_layout);
 	}
 
 	@Override
@@ -54,6 +62,8 @@ public class ManagerFragmentActivity extends BaseFragment {
 		manager_about_layout.setOnClickListener(clickListener);
 		manager_feedback_layout.setOnClickListener(clickListener);
 		manager_myaddr_layout.setOnClickListener(clickListener);
+		manager_mydata_layout.setOnClickListener(clickListener);
+		manager_msgboard_layout.setOnClickListener(clickListener);
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {
@@ -63,17 +73,21 @@ public class ManagerFragmentActivity extends BaseFragment {
 			switch (v.getId()) {
 			case R.id.manager_about_layout:
 				intent.setClass(mContext, AboutActivity.class);
-				startActivity(intent);
 				break;
 			case R.id.manager_feedback_layout:
 				intent.setClass(mContext, FeedbackActivity.class);
-				startActivity(intent);
 				break;
 			case R.id.manager_myaddr_layout:
 				intent.setClass(mContext, MyAddressActivity.class);
-				startActivity(intent);
+				break;
+			case R.id.manager_mydata_layout:
+				intent.setClass(mContext, MyInfoActivity.class);
+				break;
+			case R.id.manager_msgboard_layout:
+				intent.setClass(mContext, MyMsgActivity.class);
 				break;
 			}
+				startActivity(intent);
 		}
 	};
 

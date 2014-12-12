@@ -1,0 +1,219 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.velvol.o2o.ui.login.ForgetPswActivity" >
+
+    <include
+        android:id="@+id/title_top_layout"
+        layout="@layout/base_title_layout" />
+
+    <RelativeLayout
+        android:id="@+id/task_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_top_layout"
+        android:background="#ffffff" >
+
+        <!-- title -->
+
+        <LinearLayout
+            android:id="@+id/task_titlepic_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/task_titlepic_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:background="@drawable/task_title_icon"
+                android:textColorHint="@color/gray" />
+        </LinearLayout>
+        
+        <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_below="@id/task_titlepic_layout"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#eeeeee" />
+
+        <!-- 新手奖励 -->
+
+        <LinearLayout
+            android:id="@+id/task_young_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/task_titlepic_layout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/task_young_icon"
+                android:enabled="false"
+                android:gravity="left|center_vertical" />
+
+            <TextView
+                android:id="@+id/task_young_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="新手奖励"
+                android:textColorHint="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1.2dp"
+            android:layout_below="@id/task_young_layout"
+            android:layout_marginTop="2dp"
+            android:background="#eeeeee" />
+
+        <!-- 消费 -->
+
+        <LinearLayout
+            android:id="@+id/task_cost_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/task_young_layout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/task_cost_icon"
+                android:enabled="false"
+                android:gravity="left|center_vertical" />
+
+            <TextView
+                android:id="@+id/task_cost_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="消费"
+                android:textColorHint="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1.2dp"
+            android:layout_below="@id/task_cost_layout"
+            android:layout_marginTop="2dp"
+            android:background="#eeeeee" />
+
+        <!-- 活跃度 -->
+
+        <LinearLayout
+            android:id="@+id/task_active_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/task_cost_layout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/task_active_icon"
+                android:enabled="false"
+                android:gravity="left|center_vertical" />
+
+            <TextView
+                android:id="@+id/task_active_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="活跃度"
+                android:textColorHint="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1.2dp"
+            android:layout_below="@id/task_active_layout"
+            android:layout_marginTop="2dp"
+            android:background="#eeeeee" />
+        <!-- 影响力 -->
+
+        <LinearLayout
+            android:id="@+id/task_affect_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/task_active_layout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/task_affect_icon"
+                android:enabled="false"
+                android:gravity="left|center_vertical" />
+
+            <TextView
+                android:id="@+id/task_affect_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="影响力"
+                android:textColorHint="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1.2dp"
+            android:layout_below="@id/task_affect_layout"
+            android:layout_marginTop="2dp"
+            android:background="#eeeeee" />
+        <!-- 额外奖励 -->
+
+        <LinearLayout
+            android:id="@+id/task_extra_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/task_affect_layout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/task_extra_icon"
+                android:enabled="false"
+                android:gravity="left|center_vertical" />
+
+            <TextView
+                android:id="@+id/task_extra_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="额外奖励"
+                android:textColorHint="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

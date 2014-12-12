@@ -50,9 +50,6 @@ public class ChangeAddressActivity extends BaseActivity {
 	protected void initView() {
 		title_topbar_tv.setText("修改地址");
 		title_topbar_right_tv.setText("完成");
-		title_topbar_right_tv.setTextSize(16);
-		title_topbar_right_tv.setTextColor(Color.parseColor("#ffffff"));
-		title_topbar_right_tv.setGravity(Gravity.CENTER);
 		title_topbar_back_iv.setOnClickListener(clickListener);
 		title_topbar_right_tv.setOnClickListener(clickListener);
 	}
@@ -67,7 +64,7 @@ public class ChangeAddressActivity extends BaseActivity {
 				break;
 			// the right btn for edit
 			case R.id.title_topbar_right_tv:
-
+				finish();
 				break;
 			}
 		}

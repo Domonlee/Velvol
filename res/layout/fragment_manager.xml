@@ -42,7 +42,7 @@
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="8dp"
-                        android:background="#ed1941"
+                        android:background="#f8b62a"
                         android:text="登录/注册"
                         android:textColor="#fff"
                         android:textSize="15sp" />
