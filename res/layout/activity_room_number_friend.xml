@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#EEEEEE"
+    android:orientation="vertical" >
+<!-- 房间6666 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#14ae68" >
+
+        <ImageView
+            android:id="@+id/room_returnf_imageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/particular_return" />
+
+        <TextView
+            android:id="@+id/room_numberf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_marginRight="35dp"
+            android:gravity="center_horizontal"
+            android:text="房间6666"
+            android:layout_marginTop="5dp"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+         </LinearLayout>
+    <!-- 房主，拼单人数 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="3dp"
+            android:text="房主："
+            android:textColor="#8A8A8A"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/room_masterf_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="45dp"
+            android:text="zhangsan"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="5dp"
+            android:text="拼单人数："
+            android:textColor="#8A8A8A"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/room_mergef_many"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"
+            android:text="2"
+            android:textSize="12sp" />
+    </LinearLayout>
+<!-- 共计  头像  名称 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="3dp"
+            android:text="状态："
+            android:textColor="#8A8A8A"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/room_masterf_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#8A8A8A"
+            android:text="等待房主付款"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+<!-- 共计 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="3dp"
+                android:text="共计："
+                android:textColor="#8A8A8A"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥"
+                android:textColor="#E7352B"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/room_mergef_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#E7352B"
+                android:textSize="12sp"
+                android:text="125" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+        </LinearLayout>
+<!-- 头像 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:paddingRight="5dp"
+            android:orientation="horizontal" >
+
+            <com.velvol.o2o.view.CircularImage
+                android:id="@+id/room_masterf_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_launcher"
+                 />
+
+            <com.velvol.o2o.view.CircularImage
+                android:id="@+id/room_friendf_image1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_launcher"
+                android:layout_weight="1"
+                 />
+
+            <com.velvol.o2o.view.CircularImage
+                android:id="@+id/room_friendf_image2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_launcher"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+<!-- 名称 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="房主"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/room_friendf_name1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="yiyao"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/room_friendf_name2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="lilist"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 请求加入房间 -->
+<!-- 大家点的菜 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/everyone_food" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="大家点的菜" />
+    </LinearLayout>
+<!-- 展现大家点的菜的listview（包含房主的点菜Listview和朋友点菜的Listview） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/room_commonfoodf_listview"
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:paddingBottom="5dp" >
+        </ListView>
+    </LinearLayout>
+<!-- 继续点菜  确认点菜 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/room_continueorderf_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:src="@drawable/continue_order" />
+
+    </LinearLayout>
+
+</LinearLayout>

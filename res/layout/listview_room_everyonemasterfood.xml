@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 主人点的菜 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_weight="1" 
+        android:paddingBottom="2dp">
+
+        <TextView
+            android:id="@+id/room_master_food_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingRight="50dp"
+            android:text="黑胡椒铁板牛柳" />
+
+        <TextView
+            android:id="@+id/room_master_food_reduce_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/room_master_food_textview"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:textColor="#8FC320"
+            android:text="—" />
+
+        <TextView
+            android:id="@+id/room_master_food_many_textview"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/room_master_food_reduce_textview"
+            android:layout_marginRight="20dp"
+            android:background="#8FC320"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:text="1" />
+
+        <ImageView
+            android:id="@+id/room_master_food_delete_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_alignTop="@+id/rl1"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/rl1" 
+            android:clickable="true"
+            android:background="@drawable/dayuhao"/>
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/room_master_food_many_textview"
+            android:layout_toRightOf="@+id/room_master_food_many_textview" >
+
+            <TextView
+                android:id="@+id/room_master_food_price_tag_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:text="￥" />
+
+            <TextView
+                android:id="@+id/room_master_food_price_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="25" />
+        </RelativeLayout>
+
+</RelativeLayout>
+
+</LinearLayout>

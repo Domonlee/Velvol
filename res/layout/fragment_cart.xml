@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/cart_detail_lv"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
@@ -13,23 +13,42 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="#14ae68" >
+        android:background="#eeeeee" >
 
-        <TextView
-            android:id="@+id/money_all"
+        <RadioButton
+            android:id="@+id/cart_selectall_cb"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="总计: ￥6.18"
-            android:textColor="#FFFFFF"
+            android:text="全选"
             android:textSize="18sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/cart_totalprice_tv"
+            android:gravity="center"
+            android:text="总计："
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/cart_totalprice_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/cart_submit_tv"
+            android:gravity="center"
+            android:text="￥6.18"
+            android:textColor="@color/red"
+            android:textSize="16sp" />
+
         <Button
-            android:id="@+id/buy"
+            android:id="@+id/cart_submit_tv"
             android:layout_width="80dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_margin="5dp"
+            android:background="#f8b62a"
             android:text="结算"
             android:textColor="#FFFFFF" />
     </RelativeLayout>

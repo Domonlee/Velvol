@@ -19,7 +19,7 @@ import android.widget.ListView;
 
 public class CartFragmentActivity extends BaseFragment {
 	
-	private ListView listView;
+	private ListView cart_detail_lv;
 	private View view;
 	private Context mContext;
 	private CartAdapter mAdapter;
@@ -34,17 +34,15 @@ public class CartFragmentActivity extends BaseFragment {
 
 	@Override
 	protected void findViewById() {
-		// TODO Auto-generated method stub
-		listView = (ListView)view.findViewById(R.id.listview);
+		cart_detail_lv = (ListView)view.findViewById(R.id.cart_detail_lv);
 	}
 
 	@Override
 	protected void initView() {
-		// TODO Auto-generated method stub
 		mContext = view.getContext();
 		mAdapter = new CartAdapter(mContext);
-		listView.setAdapter(mAdapter);
-		listView.setOnItemClickListener(listener);
+		cart_detail_lv.setAdapter(mAdapter);
+		cart_detail_lv.setOnItemClickListener(listener);
 	}
 	
 	AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
@@ -54,8 +52,6 @@ public class CartFragmentActivity extends BaseFragment {
 	};
 	@Override
 	protected void result(String result) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

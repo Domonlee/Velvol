@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 朋友点的菜 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/room_friend_food_textview"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp"
+            android:text="黑胡椒铁板牛柳" />
+
+        <TextView
+            android:id="@+id/room_friend_food_many_textview"
+           	android:layout_toRightOf="@id/room_friend_food_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/tag1"
+            android:layout_toRightOf="@id/room_friend_food_many_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp"
+            android:text="份" />
+
+        <TextView
+            android:id="@+id/tag2"
+            android:layout_toRightOf="@id/tag1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥" />
+
+        <TextView
+            android:id="@+id/room_friend_food_price_textview"
+            android:layout_toRightOf="@id/tag2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25" />
+
+    </RelativeLayout>
+    
+
+</LinearLayout>

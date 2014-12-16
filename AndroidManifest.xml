@@ -105,7 +105,26 @@
         </activity>
         <activity android:name="com.velvol.o2o.ui.manager.MyOrderActivity" >
         </activity>
+        <activity android:name="com.velvol.o2o.ui.manager.OrderInfoActivity" >
+        </activity>
         <activity android:name="com.velvol.o2o.ui.login.ResetPswActivity" >
+        </activity>
+
+        <activity android:name="com.velvol.o2o.ui.find.DataFootActivity" >
+        </activity>
+        <activity android:name="com.velvol.o2o.ui.find.FoundMargeRoomActivity" >
+        </activity>
+        <activity android:name="com.velvol.o2o.ui.find.FriendRoomNumberActivity" >
+        </activity>
+        <activity android:name="com.velvol.o2o.ui.find.MargeActivity" >
+        </activity>
+        <activity android:name="com.velvol.o2o.ui.find.PrivilegeTicketActivity" >
+        </activity>
+        <activity android:name="com.velvol.o2o.ui.find.PrivilegeTicketAssignActivity" >
+        </activity>
+        <activity android:name="com.velvol.o2o.ui.find.ReviewActivity" >
+        </activity>
+        <activity android:name="com.velvol.o2o.ui.find.RoomNumberActivity" >
         </activity>
         <activity
             android:name="com.velvol.o2o.ui.login.ForgetPswActivity"

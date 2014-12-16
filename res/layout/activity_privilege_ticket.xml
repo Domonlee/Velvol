@@ -1,0 +1,66 @@
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MerchantNameActivity" >
+<!-- 优惠券 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#14ae68" >
+
+            <ImageView
+                android:id="@+id/merchant_return"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/particular_return" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="优惠券"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+			
+           
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <GridView
+                android:id="@+id/privilege_ticket_gridView1"
+                android:layout_width="fill_parent"
+                android:layout_height="450dp"
+                android:clickable="true"
+                android:horizontalSpacing="10dp"
+                android:numColumns="2"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:verticalSpacing="15dp" >
+
+            </GridView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -176,6 +176,34 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+        <!-- 查看物流、确认收货 -->
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:gravity="right"
+            android:paddingRight="30dp"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:layout_height="wrap_content" >
+                
+            <!-- 查看物流 -->
+            <TextView 
+                android:id="@+id/myorder_item_flow_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="查看物流"
+                android:paddingRight="15dp"
+                android:gravity="center"
+                android:textSize="18sp"
+                />
+            
+            <!-- 确认收货 -->
+            <ImageView 
+                android:id="@+id/myorder_item_comfirm_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/myorder_comfirm_icon"
+                />            
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

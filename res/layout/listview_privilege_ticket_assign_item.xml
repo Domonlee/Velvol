@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/ticket_foot_picture_imageView"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:src="@drawable/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.65"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/ticket_foot_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="芒果巧克力三彩蛋糕" />
+
+            <TextView
+                android:id="@+id/ticket_foot_content_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="新品水果蛋糕出肖季，25元享受原价30元水果蛋糕一份"
+                android:textColor="#959595"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="有效期至："
+                    android:textColor="#959595"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ticket_foot_validity_time_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="45dp"
+                    android:text="2014-10-10"
+                    android:textColor="#959595"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥"
+                    android:textColor="#EA3429"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/ticket_foot_price_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25"
+                    android:textColor="#EA3429"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 创建拼单房间 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#14ae68" >
+
+        <ImageView
+            android:id="@+id/combine_return"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/particular_return" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="35dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="创建拼单房间"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <!-- 设置房间号 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="创建拼单房间，邀请你的小伙伴一起来拼单，免邮费咯！" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="设置房间号" />
+
+        <EditText
+            android:id="@+id/found_marge_number_editText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/modification_et"
+            android:clickable="true"
+            android:textColorHint="#aaaaaa" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/found_buttom"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/base_color_green"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:clickable="true"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+        android:layout_gravity="center"
+        android:text="确定进入" />
+
+    <Button
+        android:id="@+id/found_buttom1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/base_color_green"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:clickable="true"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+        android:text="加入房间" />
+
+</LinearLayout>

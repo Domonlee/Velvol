@@ -13,12 +13,14 @@ import android.widget.LinearLayout;
 import com.velvol.o2o.CombineActivity;
 import com.velvol.o2o.R;
 import com.velvol.o2o.tool.BaseFragment;
+import com.velvol.o2o.ui.find.FoundMargeRoomActivity;
 
 public class FindFragmentActivity extends BaseFragment {
 	
 	private View view;
 	private Context mContext;
 	private LinearLayout pindan;
+	private LinearLayout layout3;
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -29,7 +31,7 @@ public class FindFragmentActivity extends BaseFragment {
 			
 			@Override
 			public void onClick(View v) {
-				Intent i=new Intent(getActivity(), CombineActivity.class);
+				Intent i=new Intent(getActivity(), FoundMargeRoomActivity.class);
 				startActivity(i);
 			}
 		});
@@ -41,16 +43,10 @@ public class FindFragmentActivity extends BaseFragment {
 	}
 	@Override
 	protected void initView() {
-		// TODO Auto-generated method stub
-		
 	}
 	@Override
 	protected void result(String result) {
-		// TODO Auto-generated method stub
 		
 	}
-	
-
-	
 
 }

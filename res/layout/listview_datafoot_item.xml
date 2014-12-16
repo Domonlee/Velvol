@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/data_food_day_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:background="#ffffff"
+            android:padding="10dp"
+            android:text="今天下午"
+            android:textColor="#000000"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#14AE68"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/data_food_explain_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="      摄入1000卡，你又超标哦，健康饮食从点滴做起。" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#eeeeee" >
+
+                <RelativeLayout
+                    android:layout_width="320dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#ffffff"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/data_foot_left_imageview"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:paddingLeft="10dp"
+                        android:src="@drawable/iconfont_qiehuanqizuo" />
+
+                    <ImageView
+                        android:id="@+id/data_foot_selected_picture1_imageview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/data_foot_left_imageview"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:src="@drawable/data_foot_selected" />
+
+                    <ImageView
+                        android:id="@+id/data_foot_picture1_imageview"
+                        android:layout_width="65dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/data_foot_selected_picture1_imageview"
+                        android:layout_weight="1"
+                        android:src="@drawable/test4" />
+
+                    <ImageView
+                        android:id="@+id/data_foot_selected_picture2_imageview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/data_foot_picture1_imageview"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:src="@drawable/data_foot_selected" />
+
+                    <ImageView
+                        android:id="@+id/data_foot_picture2_imageview"
+                        android:layout_width="65dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/data_foot_selected_picture2_imageview"
+                        android:layout_weight="1"
+                        android:src="@drawable/test2" />
+
+                    <ImageView
+                        android:id="@+id/data_foot_selected_picture3_imageview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/data_foot_picture2_imageview"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:padding="5dp"
+                        android:src="@drawable/data_foot_selected" />
+
+                    <ImageView
+                        android:id="@+id/data_foot_picture3_imageview"
+                        android:layout_width="65dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/data_foot_selected_picture3_imageview"
+                        android:layout_weight="1"
+                        android:src="@drawable/test1" />
+
+                    <ImageView
+                        android:id="@+id/data_foot_right_imageview"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/find_layout_off" />
+
+                    <TextView
+                        android:id="@+id/data_foot_name1_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/data_foot_picture1_imageview"
+                        android:layout_below="@+id/data_foot_picture1_imageview"
+                        android:layout_toLeftOf="@+id/data_foot_selected_picture2_imageview"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:text="红烧牛肉"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/data_foot_name2_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/data_foot_picture2_imageview"
+                        android:layout_below="@+id/data_foot_picture2_imageview"
+                        android:layout_toLeftOf="@+id/data_foot_selected_picture3_imageview"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:text="凉拌鸡丝"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/data_foot_name3_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/data_foot_picture3_imageview"
+                        android:layout_alignRight="@+id/data_foot_picture3_imageview"
+                        android:layout_below="@+id/data_foot_picture3_imageview"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:text="黑胡椒牛柳"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</LinearLayout>

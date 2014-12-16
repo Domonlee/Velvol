@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical"
+    tools:context=".CombineActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="5dp"
+        android:background="#14ae68" >
+
+        <ImageView
+            android:id="@+id/data_food_return_imageview"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/particular_return" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="数据餐饮"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/data_food_add_imageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#fff"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/data_food_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

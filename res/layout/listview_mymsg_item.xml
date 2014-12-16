@@ -138,7 +138,10 @@
                 android:layout_height="30dp"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="赞（0）"
+                android:paddingLeft="40dp"
+                android:paddingRight="50dp"
+                android:text="(0)"
+                android:drawableLeft="@drawable/mymsg_good_check"
                 android:textColor="@color/gray"
                 android:textSize="18sp" />
 

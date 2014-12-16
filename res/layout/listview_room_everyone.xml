@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 谁谁谁点的什么菜listview -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <!-- 房主 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="#ffffff"
+            android:paddingLeft="10dp"
+            android:paddingTop="2dp" >
+
+            <TextView
+                android:id="@+id/room_master_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="zhangsan" />
+
+            <TextView
+                android:id="@+id/room_master_total_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="￥33"
+                android:textColor="#E7352B" />
+
+            <TextView
+                android:id="@+id/room_master_tag_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="74dp"
+                android:text="(房主)" />
+
+            <TextView
+                android:id="@+id/room_master_total_tag_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/room_master_total_textview"
+                android:text="合计：" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#8FC320"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/room_master_foot_listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:paddingLeft="5dp"
+                android:paddingTop="3dp" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 小伙伴 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="#ffffff"
+            android:paddingLeft="10dp"
+            android:paddingTop="2dp" >
+
+            <TextView
+                android:id="@+id/room_friend_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="liyan" />
+
+            <TextView
+                android:id="@+id/room_friend_total_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="￥58"
+                android:textColor="#E7352B" />
+
+            <TextView
+                android:id="@+id/room_friend_total_tag_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/room_friend_total_textview"
+                android:layout_alignBottom="@+id/room_friend_total_textview"
+                android:layout_toLeftOf="@+id/room_friend_total_textview"
+                android:text="合计：" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#8FC320"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/room_friend_foot_listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:paddingLeft="5dp" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

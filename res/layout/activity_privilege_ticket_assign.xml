@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 点击的优惠券 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#14ae68" >
+
+        <ImageView
+            android:id="@+id/combine_return"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/particular_return" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="35dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="咖喱大叔优惠券"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/privilege_ticket_assign_listview"
+        android:layout_width="match_parent"
+        android:clipChildren="true"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>
