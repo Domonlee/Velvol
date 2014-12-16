@@ -16,11 +16,11 @@ import com.velvol.o2o.tool.BaseFragment;
 import com.velvol.o2o.ui.find.FoundMargeRoomActivity;
 
 public class FindFragmentActivity extends BaseFragment {
-	
+
 	private View view;
 	private Context mContext;
 	private LinearLayout pindan;
-	private LinearLayout layout3;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,25 +28,29 @@ public class FindFragmentActivity extends BaseFragment {
 		findViewById();
 		initView();
 		pindan.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				Intent i=new Intent(getActivity(), FoundMargeRoomActivity.class);
+				Intent i = new Intent(getActivity(),
+						FoundMargeRoomActivity.class);
 				startActivity(i);
 			}
 		});
 		return view;
 	}
+
 	@Override
 	protected void findViewById() {
 		pindan = (LinearLayout) view.findViewById(R.id.layout3);
 	}
+
 	@Override
 	protected void initView() {
 	}
+
 	@Override
 	protected void result(String result) {
-		
+
 	}
 
 }

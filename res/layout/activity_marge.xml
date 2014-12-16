@@ -5,7 +5,9 @@
     android:background="#eeeeee"
     android:orientation="vertical"
     tools:context=".CombineActivity" >
-<!-- 多人拼单 -->
+
+    <!-- 多人拼单 -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -24,15 +26,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
             android:layout_marginRight="35dp"
+            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="多人拼单"
             android:textColor="#fff"
             android:textSize="20sp" />
-
     </LinearLayout>
-<!-- 创建拼单房间 -->
+    <!-- 创建拼单房间 -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="175dp"
@@ -52,13 +54,13 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-              android:layout_gravity="center"
-              android:layout_marginRight="3dp"
-              android:textColor="#FFFFFF"
-            android:text="创建拼单房间" />
-
+            android:layout_gravity="center"
+            android:layout_marginRight="3dp"
+            android:text="创建拼单房间"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
-<!-- 请输入房间密码 ,进入拼单房间-->
+    <!-- 请输入房间密码 ,进入拼单房间 -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -86,19 +88,20 @@
             android:background="@drawable/modification_et"
             android:hint="请输入房间密码"
             android:textColorHint="#aaaaaa" />
+
         <TextView
             android:id="@+id/marge_submit_btn"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_below="@id/feedback_phone_tv"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
             android:background="@color/base_color_green"
+            android:clickable="true"
             android:gravity="center"
             android:paddingLeft="5dp"
             android:text="进入拼单房间"
-            android:clickable="true"
             android:textColor="#ffffff"
             android:textSize="18sp" />
     </LinearLayout>

@@ -17,6 +17,7 @@
             android:background="#fff"
             android:orientation="vertical" >
 
+            <!-- 神点评 -->
             <LinearLayout
                 android:id="@+id/layout1"
                 android:layout_width="match_parent"
@@ -118,7 +119,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="1239999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+                        android:text="1239999999999999"
                         android:textSize="10sp" />
 
                     <LinearLayout
@@ -172,6 +173,7 @@
             android:layout_marginRight="5dp"
             android:background="#eeeeee" />
 
+        <!-- 餐饮数据 -->
         <LinearLayout
             android:id="@+id/layout2"
             android:layout_width="match_parent"
@@ -189,8 +191,9 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:text="数据餐饮"
                 android:textColor="#484848"
@@ -215,13 +218,13 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/find_layout_click"
+            android:background="#ffffff"
             android:orientation="horizontal" >
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:background="@drawable/find_layout3" />
 
@@ -233,6 +236,15 @@
                 android:text="拼单"
                 android:textColor="#484848"
                 android:textSize="18sp" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/dayuhao"
+                />
 
             <!--
             <TextView

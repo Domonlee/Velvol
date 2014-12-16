@@ -72,7 +72,6 @@ public class RoomNumberActivity extends BaseActivity{
 	}
 	@Override
 	protected void findViewById() {
-		// TODO Auto-generated method stub
 		roomReturnImageview=(ImageView)findViewById(R.id.room_return_imageView);
 		roomNumberTextview=(TextView)findViewById(R.id.room_number);
 		roomMasterNameTextview=(TextView)findViewById(R.id.room_master_name);
@@ -105,7 +104,6 @@ public class RoomNumberActivity extends BaseActivity{
 		
 		@Override
 		public void onClick(View v) {
-			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.room_continueorder_imageview:
 				startActivity(new Intent(RoomNumberActivity.this, PrivilegeTicketActivity.class));
@@ -117,8 +115,6 @@ public class RoomNumberActivity extends BaseActivity{
 	};
 	@Override
 	protected void result(String result) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
