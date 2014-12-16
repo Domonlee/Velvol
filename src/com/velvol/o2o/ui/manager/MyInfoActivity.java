@@ -109,6 +109,7 @@ public class MyInfoActivity extends BaseActivity {
 				intent.setClass(getApplicationContext(), TaskActivity.class);
 				startActivity(intent);
 				break;
+
 			}
 		}
 	};

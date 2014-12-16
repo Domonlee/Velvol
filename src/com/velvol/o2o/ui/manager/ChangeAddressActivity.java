@@ -1,8 +1,6 @@
 package com.velvol.o2o.ui.manager;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;

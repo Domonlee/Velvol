@@ -17,6 +17,7 @@ import com.velvol.o2o.ui.manager.FeedbackActivity;
 import com.velvol.o2o.ui.manager.MyAddressActivity;
 import com.velvol.o2o.ui.manager.MyInfoActivity;
 import com.velvol.o2o.ui.manager.MyMsgActivity;
+import com.velvol.o2o.ui.manager.MyOrderActivity;
 import com.velvol.o2o.view.CircularImage;
 
 public class ManagerFragmentActivity extends BaseFragment {
@@ -30,6 +31,7 @@ public class ManagerFragmentActivity extends BaseFragment {
 	private LinearLayout manager_myaddr_layout;
 	private LinearLayout manager_mydata_layout;
 	private LinearLayout manager_msgboard_layout;
+	private LinearLayout manager_myorder_layout;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -53,17 +55,20 @@ public class ManagerFragmentActivity extends BaseFragment {
 				.findViewById(R.id.manager_mydata_layout);
 		manager_msgboard_layout = (LinearLayout) view
 				.findViewById(R.id.manager_msgboard_layout);
+		manager_myorder_layout = (LinearLayout) view
+				.findViewById(R.id.manager_myorder_layout);
 	}
 
 	@Override
 	protected void initView() {
-		cImageView.setImageResource(R.drawable.ic_launcher);
+		cImageView.setImageResource(R.drawable.userface);
 		mContext = view.getContext();
 		manager_about_layout.setOnClickListener(clickListener);
 		manager_feedback_layout.setOnClickListener(clickListener);
 		manager_myaddr_layout.setOnClickListener(clickListener);
 		manager_mydata_layout.setOnClickListener(clickListener);
 		manager_msgboard_layout.setOnClickListener(clickListener);
+		manager_myorder_layout.setOnClickListener(clickListener);
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {
@@ -85,6 +90,9 @@ public class ManagerFragmentActivity extends BaseFragment {
 				break;
 			case R.id.manager_msgboard_layout:
 				intent.setClass(mContext, MyMsgActivity.class);
+				break;
+			case R.id.manager_myorder_layout:
+				intent.setClass(mContext, MyOrderActivity.class);
 				break;
 			}
 				startActivity(intent);

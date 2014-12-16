@@ -103,6 +103,8 @@
         </activity>
         <activity android:name="com.velvol.o2o.ui.manager.ChangeAddressActivity" >
         </activity>
+        <activity android:name="com.velvol.o2o.ui.manager.MyOrderActivity" >
+        </activity>
         <activity android:name="com.velvol.o2o.ui.login.ResetPswActivity" >
         </activity>
         <activity

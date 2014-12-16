@@ -9,6 +9,13 @@
         android:id="@+id/title_top_layout"
         layout="@layout/base_title_layout" />
 
+    
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/title_top_layout"
+        android:layout_marginTop="10dp"
+        android:background="#EEEEEE" />
    
     <!-- 留言详情ListView -->
     <ListView 
@@ -16,6 +23,8 @@
         android:layout_below="@id/title_top_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+         android:divider="#EEEEEE"
+        android:dividerHeight="10dp"
         ></ListView>
 
 </RelativeLayout>
