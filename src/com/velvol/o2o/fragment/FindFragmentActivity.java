@@ -47,7 +47,7 @@ public class FindFragmentActivity extends BaseFragment {
 
 	@Override
 	protected void findViewById() {
-		pindan = (LinearLayout) view.findViewById(R.id.layout3);
+		pindan = (LinearLayout) view.findViewById(R.id.find_join_layout);
 		title_topbar_tv = (TextView) view.findViewById(R.id.title_topbar_tv);
 		title_topbar_right_tv = (TextView) view.findViewById(R.id.title_topbar_right_tv);
 		title_topbar_back_iv = (ImageView) view.findViewById(R.id.title_topbar_back_iv);
@@ -56,7 +56,9 @@ public class FindFragmentActivity extends BaseFragment {
 	@Override
 	protected void initView() {
 		title_topbar_back_iv.setVisibility(View.GONE);
+		title_topbar_right_tv.setVisibility(View.GONE);
 		title_topbar_tv.setText("·¢ÏÖ");
+
 	}
 
 	@Override

@@ -9,10 +9,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
-        
-            <include
-        android:id="@+id/title_top_layout"
-        layout="@layout/base_title_layout" />
+
+        <include
+            android:id="@+id/title_top_layout"
+            layout="@layout/base_title_layout" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,11 +22,12 @@
             android:orientation="vertical" >
 
             <!-- 神点评 -->
+
             <LinearLayout
-                android:id="@+id/layout1"
+                android:id="@+id/find_comment_layout"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/find_layout_click"
+                android:background="@color/white"
                 android:orientation="horizontal" >
 
                 <TextView
@@ -47,14 +48,22 @@
 
                 <TextView
                     android:id="@+id/textViewtitle2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginRight="25dp"
                     android:gravity="right"
+                    android:paddingLeft="10dp"
                     android:text="点评赠积分，好礼换不停"
                     android:textColor="#b6b6b6"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/dayuhao"
+                    android:gravity="right" />
             </LinearLayout>
 
             <TextView
@@ -70,11 +79,11 @@
 
                 <ImageView
                     android:id="@+id/iv_top_big"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="5dp"
-                    android:src="@drawable/find_layout1" />
+                    android:src="@drawable/userface" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -89,10 +98,10 @@
 
                         <ImageView
                             android:id="@+id/iv_top_user"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:layout_marginTop="5dp"
-                            android:src="@drawable/find_layout_click" />
+                            android:src="@drawable/userface" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -106,15 +115,18 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="5dp"
                                 android:layout_marginTop="3dp"
-                                android:text="123"
-                                android:textSize="15sp" />
+                                android:paddingLeft="5dp"
+                                android:text="Test用户"
+                                android:textSize="18sp" />
 
                             <TextView
                                 android:id="@+id/tv_find_time"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="123"
-                                android:textSize="8sp" />
+                                android:paddingLeft="5dp"
+                                android:text="发表于5分钟之前"
+                                android:textColor="@color/gray"
+                                android:textSize="12sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -123,23 +135,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="1239999999999999"
-                        android:textSize="10sp" />
+                        android:text="这里是评论,这里是评论"
+                        android:textSize="14sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginTop="10dp"
                         android:layout_weight="1"
-                        android:gravity="bottom" >
+                        android:gravity="bottom"
+                        android:paddingBottom="5dp" >
 
-                        <ImageView
+                        <TextView
                             android:id="@+id/iv_find_up"
-                            android:layout_width="30dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="bottom"
-                            android:src="@drawable/top_up_check" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical"
+                            android:text="点评(33)"
+                            android:textSize="14sp" />
 
+                        <!--
                         <TextView
                             android:id="@+id/tv_find_up"
                             android:layout_width="wrap_content"
@@ -147,16 +163,17 @@
                             android:layout_gravity="bottom"
                             android:layout_marginLeft="5dp"
                             android:text="123"
-                            android:textSize="10sp" />
+                            android:textSize="10sp" /> -->
 
                         <ImageView
                             android:id="@+id/iv_find_down"
-                            android:layout_width="20dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="20dp"
-                            android:layout_gravity="bottom"
-                            android:layout_marginLeft="80dp"
-                            android:src="@drawable/find_down_check" />
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="3"
+                            android:src="@drawable/mymsg_good_red_icon" />
 
+                        <!--
                         <TextView
                             android:id="@+id/find_share_num"
                             android:layout_width="wrap_content"
@@ -164,7 +181,7 @@
                             android:layout_gravity="bottom"
                             android:layout_marginLeft="5dp"
                             android:text="123"
-                            android:textSize="10sp" />
+                            android:textSize="10sp" /> -->
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -178,12 +195,13 @@
             android:background="#eeeeee" />
 
         <!-- 餐饮数据 -->
+
         <LinearLayout
-            android:id="@+id/layout2"
+            android:id="@+id/find_data_layout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/find_layout_click"
+            android:background="@color/white"
             android:orientation="horizontal" >
 
             <TextView
@@ -197,37 +215,45 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
                 android:text="数据餐饮"
                 android:textColor="#484848"
                 android:textSize="18sp" />
 
-            <!--
             <TextView
-                android:id="@+id/textViewtitle2"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewtitle3"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="25dp"
                 android:gravity="right"
+                android:paddingLeft="10dp"
                 android:text="科学饮食，健康生活"
                 android:textColor="#b6b6b6"
-                android:textSize="14sp" />            -->
+                android:textSize="16sp" />
 
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/dayuhao"
+                android:gravity="right" />
         </LinearLayout>
 
+        <!-- 拼单 -->
+
         <LinearLayout
-            android:id="@+id/layout3"
+            android:id="@+id/find_join_layout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            android:background="#ffffff"
+            android:background="@color/white"
             android:orientation="horizontal" >
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:background="@drawable/find_layout3" />
@@ -240,15 +266,25 @@
                 android:text="拼单"
                 android:textColor="#484848"
                 android:textSize="18sp" />
-            
+
             <TextView
+                android:id="@+id/textViewtitle4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="right"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
+                android:gravity="right"
+                android:paddingLeft="10dp"
+                android:text="找小伙伴一起吃饭吧"
+                android:textColor="#b6b6b6"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="60dp"
                 android:background="@drawable/dayuhao"
-                />
+                android:gravity="right" />
 
             <!--
             <TextView
@@ -260,11 +296,13 @@
                 android:gravity="right"
                 android:text="找小伙伴一起吃饭吧"
                 android:textColor="#b6b6b6"
-                android:textSize="14sp" />            -->
+                android:textSize="14sp" /> -->
         </LinearLayout>
 
+        <!-- 优惠券 -->
+
         <LinearLayout
-            android:id="@+id/layout4"
+            android:id="@+id/find_ticket_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
@@ -276,7 +314,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/find_layout_click"
+                android:background="@color/white"
                 android:orientation="horizontal" >
 
                 <TextView
@@ -305,7 +343,26 @@
                     android:gravity="right"
                     android:text="1元吃大餐"
                     android:textColor="#b6b6b6"
-                    android:textSize="14sp" />                -->
+                    android:textSize="14sp" /> -->
+
+                <TextView
+                    android:id="@+id/textViewtitle5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:paddingLeft="10dp"
+                    android:text="1元吃大餐"
+                    android:textColor="#b6b6b6"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="110dp"
+                    android:background="@drawable/dayuhao"
+                    android:gravity="right" />
             </LinearLayout>
 
             <TextView
@@ -327,7 +384,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
-                    android:src="@drawable/find_layout1" />
+                    android:src="@drawable/test1" />
 
                 <ImageView
                     android:id="@+id/iv_bottom2"
@@ -335,7 +392,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
-                    android:src="@drawable/find_layout2" />
+                    android:src="@drawable/test2" />
 
                 <ImageView
                     android:id="@+id/iv_bottom3"
@@ -343,7 +400,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
-                    android:src="@drawable/find_layout3" />
+                    android:src="@drawable/test3" />
 
                 <ImageView
                     android:id="@+id/iv_bottom4"
@@ -351,7 +408,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
-                    android:src="@drawable/find_layout4" />
+                    android:src="@drawable/test4" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

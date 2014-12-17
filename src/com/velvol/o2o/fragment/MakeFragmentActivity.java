@@ -1,14 +1,17 @@
 package com.velvol.o2o.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
@@ -16,6 +19,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshGridView;
 import com.velvol.o2o.R;
 import com.velvol.o2o.adapter.NewAdapter;
 import com.velvol.o2o.tool.BaseFragment;
+import com.velvol.o2o.ui.manager.ChangeAddressActivity;
 
 public class MakeFragmentActivity extends BaseFragment {
 
@@ -23,6 +27,7 @@ public class MakeFragmentActivity extends BaseFragment {
 	private NewAdapter mAdapter;
 	private PullToRefreshGridView mPullRefreshGridView;
 	private GridView mGridView;
+	private TextView address;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -36,6 +41,7 @@ public class MakeFragmentActivity extends BaseFragment {
 	@Override
 	protected void findViewById() {
 		mPullRefreshGridView = (PullToRefreshGridView) view.findViewById(R.id.pull_refresh_grid);
+		address = (TextView)view.findViewById(R.id.address);
 		mGridView = mPullRefreshGridView.getRefreshableView();
 	}
 
@@ -62,6 +68,15 @@ public class MakeFragmentActivity extends BaseFragment {
 				mPullRefreshGridView.onRefreshComplete();
 			}
 		});
+		
+		
+		address.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startActivityForResult((new Intent(getActivity(), ChangeAddressActivity.class)),0);
+			}
+		});
 	}
 
 	AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
@@ -73,6 +88,13 @@ public class MakeFragmentActivity extends BaseFragment {
 	};
 
 	
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		address.setText(data.getStringExtra("useraddr"));
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
 	@Override
 	protected void result(String result) {
 

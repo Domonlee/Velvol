@@ -32,7 +32,7 @@ public class ManagerFragmentActivity extends BaseFragment {
 	private Context mContext;
 	private CircularImage cImageView;
 	private Button manager_login;
-	public TextView title_topbar_tv;
+	public TextView title_topbar_tv,title_topbar_right_tv;
 	public ImageView title_topbar_back_iv;
 
 	private LinearLayout manager_about_layout, manager_feedback_layout,
@@ -69,6 +69,7 @@ public class ManagerFragmentActivity extends BaseFragment {
 		manager_score_layout = (LinearLayout) view
 				.findViewById(R.id.manager_score_layout);
 		title_topbar_tv = (TextView) view.findViewById(R.id.title_topbar_tv);
+		title_topbar_right_tv = (TextView) view.findViewById(R.id.title_topbar_right_tv);
 		title_topbar_back_iv = (ImageView) view.findViewById(R.id.title_topbar_back_iv);
 	}
 
@@ -76,6 +77,7 @@ public class ManagerFragmentActivity extends BaseFragment {
 	protected void initView() {
 		cImageView.setImageResource(R.drawable.userface);
 		title_topbar_back_iv.setVisibility(View.GONE);
+		title_topbar_right_tv.setVisibility(View.GONE);
 		title_topbar_tv.setText("ÎÒµÄ");
 		mContext = view.getContext();
 		manager_login.setOnClickListener(clickListener);

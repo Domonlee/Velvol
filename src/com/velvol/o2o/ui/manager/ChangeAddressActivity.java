@@ -1,5 +1,6 @@
 package com.velvol.o2o.ui.manager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -75,7 +76,10 @@ public class ChangeAddressActivity extends BaseActivity {
 				finish();
 				break;
 			case R.id.change_addr_history1_rb:
-				USERADDRESS = change_addr_history1_rb.getText().toString();
+//				USERADDRESS = change_addr_history1_rb.getText().toString();
+				Intent intent = new Intent();
+				intent.putExtra("useraddr", change_addr_history1_rb.getText().toString());
+				setResult(0, intent);
 				finish();
 				break;
 
