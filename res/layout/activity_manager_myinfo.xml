@@ -50,8 +50,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="25dp"
-                android:paddingBottom="5dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:paddingBottom="5dp" >
 
                 <TextView
                     android:layout_width="0dp"
@@ -97,10 +97,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/myinfo_base_nick_layout"
                 android:layout_marginLeft="20dp"
-                android:paddingBottom="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:paddingBottom="5dp" >
 
                 <TextView
                     android:layout_width="0dp"
@@ -148,9 +148,9 @@
                 android:layout_below="@id/myinfo_base_name_layout"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
-                android:paddingBottom="5dp"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:paddingBottom="5dp" >
 
                 <TextView
                     android:layout_width="0dp"
@@ -203,8 +203,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:paddingBottom="5dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:paddingBottom="5dp" >
 
                 <TextView
                     android:layout_width="0dp"
@@ -246,12 +246,12 @@
                 android:id="@+id/myinfo_base_email_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
                 android:layout_below="@id/myinfo_base_phone_layout"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:paddingBottom="5dp" >
 
                 <TextView
                     android:layout_width="0dp"
@@ -297,9 +297,9 @@
                 android:layout_below="@id/myinfo_base_email_layout"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
-                android:paddingBottom="5dp"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:paddingBottom="5dp" >
 
                 <TextView
                     android:layout_width="0dp"
@@ -410,9 +410,9 @@
                     android:layout_below="@id/myinfo_base_countextra_layout"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="10dp"
-                    android:paddingBottom="5dp"
                     android:layout_marginTop="15dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp" >
 
                     <TextView
                         android:layout_width="0dp"

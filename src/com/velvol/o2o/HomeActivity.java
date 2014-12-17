@@ -36,7 +36,6 @@ public class HomeActivity extends FragmentActivity {
 	private ManagerFragmentActivity managerFragment;
 	private ArrayList<Fragment> fragmentList;
 	
-	private TextView addressTextView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +54,6 @@ public class HomeActivity extends FragmentActivity {
 		radioButtons[4] = (RadioButton) findViewById(R.id.manage);
 		mGroup = (RadioGroup) findViewById(R.id.home_radio_button_group);
 		mPager = (ViewPager) findViewById(R.id.viewpager);
-		addressTextView = (TextView)findViewById(R.id.address);
 	}
 
 	private void initView() {
@@ -86,15 +84,6 @@ public class HomeActivity extends FragmentActivity {
 		mPager.setCurrentItem(0);// 设置当前显示标签页为第一页
 		mPager.setOnPageChangeListener(new MyOnPageChangeListener());
 		mGroup.setOnCheckedChangeListener(listener);
-		
-		//更改地址
-		addressTextView.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				startActivity(new Intent(HomeActivity.this, ChangeAddressActivity.class));
-			}
-		});
 	}
 
 	RadioGroup.OnCheckedChangeListener listener = new RadioGroup.OnCheckedChangeListener() {

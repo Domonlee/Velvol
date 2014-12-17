@@ -5,39 +5,6 @@
     android:orientation="vertical"
     tools:context=".HomeActivity" >
 
-    <RelativeLayout
-        android:id="@+id/layout"
-        android:layout_width="fill_parent"
-        android:layout_height="60dp"
-        android:background="#14ae68" >
-
-        <TextView
-            android:id="@+id/logo"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/logo" />
-
-        <TextView
-            android:id="@+id/address"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="5dp"
-            android:drawableRight="@drawable/address"
-            android:ellipsize="end"
-            android:gravity="left|center_vertical"
-            android:maxLines="2"
-            android:text="西安市莲湖市土门十字南300米伊藤国际商务大厦"
-            android:textColor="#ffffff"
-            android:textSize="14sp" />
-    </RelativeLayout>
-
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="fill_parent"

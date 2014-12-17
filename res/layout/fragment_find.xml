@@ -9,6 +9,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
+        
+            <include
+        android:id="@+id/title_top_layout"
+        layout="@layout/base_title_layout" />
 
         <LinearLayout
             android:layout_width="match_parent"

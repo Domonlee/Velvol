@@ -1,11 +1,5 @@
 package com.velvol.o2o.fragment;
 
-import com.velvol.o2o.R;
-import com.velvol.o2o.adapter.NewAdapter;
-import com.velvol.o2o.tool.BaseFragment;
-import com.velvol.o2o.tool.PullBase;
-import com.velvol.o2o.view.MyGridView;
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
@@ -14,62 +8,73 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
+import android.widget.GridView;
+
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
+import com.handmark.pulltorefresh.library.PullToRefreshGridView;
+import com.velvol.o2o.R;
+import com.velvol.o2o.adapter.NewAdapter;
+import com.velvol.o2o.tool.BaseFragment;
 
 public class MakeFragmentActivity extends BaseFragment {
 
-	private MyGridView gridView;
 	private View view;
 	private NewAdapter mAdapter;
-	private PullBase pullbase;
-	private LinearLayout layout;
-	private ScrollView sc;
-
+	private PullToRefreshGridView mPullRefreshGridView;
+	private GridView mGridView;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.fragment_make, container, false);
 		findViewById();
 		initView();
-		pullbase = new PullBase(getActivity(), layout, sc) {
-			public void onRefreshLoader() {
-				// TODO
-			}
-		};
-		pullbase.initview();
 		return view;
 	}
 
 	@Override
 	protected void findViewById() {
-		gridView = (MyGridView) view.findViewById(R.id.gridview);
-		layout = (LinearLayout) view.findViewById(R.id.main_layout);
-		sc = (ScrollView) view.findViewById(R.id.main_scroll);
+		mPullRefreshGridView = (PullToRefreshGridView) view.findViewById(R.id.pull_refresh_grid);
+		mGridView = mPullRefreshGridView.getRefreshableView();
 	}
 
 	@Override
 	protected void initView() {
 		DisplayMetrics metric = new DisplayMetrics();
-		getActivity().getWindowManager().getDefaultDisplay().getMetrics(metric);
-		int width = metric.widthPixels;
-		Log.v("MakeFragmentActivity", width + "");
-		mAdapter = new NewAdapter(getActivity(), width / 2);
-		gridView.setAdapter(mAdapter);
-		gridView.setOnItemClickListener(listener);
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metric);
+        int width = metric.widthPixels;
+        Log.v("MakeFragmentActivity", width+"");
+		mAdapter = new NewAdapter(getActivity(),width/2);
+		mGridView.setAdapter(mAdapter);
+		mGridView.setOnItemClickListener(listener);
+		mPullRefreshGridView.setOnRefreshListener(new OnRefreshListener2<GridView>() {
+			
+			public void onPullDownToRefresh(PullToRefreshBase<GridView> refreshView) {
+				//Ë¢ÐÂ
+				mAdapter.notifyDataSetChanged();
+				mPullRefreshGridView.onRefreshComplete();
+			}
+			
+			public void onPullUpToRefresh(PullToRefreshBase<GridView> refreshView) {
+				//¼ÓÔØ
+				mAdapter.notifyDataSetChanged();
+				mPullRefreshGridView.onRefreshComplete();
+			}
+		});
 	}
 
 	AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
-
+			
 		}
 	};
 
+	
 	@Override
 	protected void result(String result) {
 
 	}
-
 }

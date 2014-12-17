@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,7 +32,8 @@ public class ManagerFragmentActivity extends BaseFragment {
 	private Context mContext;
 	private CircularImage cImageView;
 	private Button manager_login;
-	private TextView addressTextView;
+	public TextView title_topbar_tv;
+	public ImageView title_topbar_back_iv;
 
 	private LinearLayout manager_about_layout, manager_feedback_layout,
 			manager_myaddr_layout, manager_mydata_layout,
@@ -66,12 +68,15 @@ public class ManagerFragmentActivity extends BaseFragment {
 				.findViewById(R.id.manager_myorder_layout);
 		manager_score_layout = (LinearLayout) view
 				.findViewById(R.id.manager_score_layout);
-		addressTextView = (TextView) getActivity().findViewById(R.id.address);
+		title_topbar_tv = (TextView) view.findViewById(R.id.title_topbar_tv);
+		title_topbar_back_iv = (ImageView) view.findViewById(R.id.title_topbar_back_iv);
 	}
 
 	@Override
 	protected void initView() {
 		cImageView.setImageResource(R.drawable.userface);
+		title_topbar_back_iv.setVisibility(View.GONE);
+		title_topbar_tv.setText("我的");
 		mContext = view.getContext();
 		manager_login.setOnClickListener(clickListener);
 		manager_about_layout.setOnClickListener(clickListener);
@@ -81,10 +86,7 @@ public class ManagerFragmentActivity extends BaseFragment {
 		manager_msgboard_layout.setOnClickListener(clickListener);
 		manager_myorder_layout.setOnClickListener(clickListener);
 		manager_score_layout.setOnClickListener(clickListener);
-		// 显示地址 改变
-		if (!ChangeAddressActivity.USERADDRESS.equals("")) {
-			addressTextView.setText(ChangeAddressActivity.USERADDRESS);
-		}
+		
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {

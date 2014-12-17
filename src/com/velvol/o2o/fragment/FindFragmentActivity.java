@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.velvol.o2o.CombineActivity;
 import com.velvol.o2o.R;
@@ -20,6 +22,10 @@ public class FindFragmentActivity extends BaseFragment {
 	private View view;
 	private Context mContext;
 	private LinearLayout pindan;
+	
+	public TextView title_topbar_tv;
+	public ImageView title_topbar_back_iv;
+	public TextView title_topbar_right_tv;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -42,10 +48,15 @@ public class FindFragmentActivity extends BaseFragment {
 	@Override
 	protected void findViewById() {
 		pindan = (LinearLayout) view.findViewById(R.id.layout3);
+		title_topbar_tv = (TextView) view.findViewById(R.id.title_topbar_tv);
+		title_topbar_right_tv = (TextView) view.findViewById(R.id.title_topbar_right_tv);
+		title_topbar_back_iv = (ImageView) view.findViewById(R.id.title_topbar_back_iv);
 	}
 
 	@Override
 	protected void initView() {
+		title_topbar_back_iv.setVisibility(View.GONE);
+		title_topbar_tv.setText("·¢ÏÖ");
 	}
 
 	@Override
