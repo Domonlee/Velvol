@@ -2,12 +2,7 @@ package com.velvol.o2o;
 
 import java.util.ArrayList;
 
-import com.velvol.o2o.fragment.CartFragmentActivity;
-import com.velvol.o2o.fragment.FindFragmentActivity;
-import com.velvol.o2o.fragment.MakeFragmentActivity;
-import com.velvol.o2o.fragment.ManagerFragmentActivity;
-import com.velvol.o2o.fragment.SearchFragmentActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -15,8 +10,18 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
+
+import com.velvol.o2o.fragment.CartFragmentActivity;
+import com.velvol.o2o.fragment.FindFragmentActivity;
+import com.velvol.o2o.fragment.MakeFragmentActivity;
+import com.velvol.o2o.fragment.ManagerFragmentActivity;
+import com.velvol.o2o.fragment.SearchFragmentActivity;
+import com.velvol.o2o.ui.manager.ChangeAddressActivity;
 
 public class HomeActivity extends FragmentActivity {
 
@@ -30,6 +35,8 @@ public class HomeActivity extends FragmentActivity {
 	private CartFragmentActivity cartFragment;
 	private ManagerFragmentActivity managerFragment;
 	private ArrayList<Fragment> fragmentList;
+	
+	private TextView addressTextView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +55,7 @@ public class HomeActivity extends FragmentActivity {
 		radioButtons[4] = (RadioButton) findViewById(R.id.manage);
 		mGroup = (RadioGroup) findViewById(R.id.home_radio_button_group);
 		mPager = (ViewPager) findViewById(R.id.viewpager);
+		addressTextView = (TextView)findViewById(R.id.address);
 	}
 
 	private void initView() {
@@ -78,6 +86,15 @@ public class HomeActivity extends FragmentActivity {
 		mPager.setCurrentItem(0);// 设置当前显示标签页为第一页
 		mPager.setOnPageChangeListener(new MyOnPageChangeListener());
 		mGroup.setOnCheckedChangeListener(listener);
+		
+		//更改地址
+		addressTextView.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(HomeActivity.this, ChangeAddressActivity.class));
+			}
+		});
 	}
 
 	RadioGroup.OnCheckedChangeListener listener = new RadioGroup.OnCheckedChangeListener() {

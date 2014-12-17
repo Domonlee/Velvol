@@ -3,12 +3,15 @@ package com.velvol.o2o.ui.manager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.velvol.o2o.HomeActivity;
 import com.velvol.o2o.R;
 import com.velvol.o2o.tool.BaseActivity;
 
@@ -16,11 +19,14 @@ public class ChangeAddressActivity extends BaseActivity {
 
 	public TextView title_topbar_tv;
 	public TextView title_topbar_right_tv;
+	public RadioButton change_addr_history1_rb;
 	public ImageView title_topbar_back_iv;
 	public LinearLayout title_topbar_layout;
 	public Spinner myaddr_info_pro_ed, myaddr_info_city_ed,
 			myaddr_info_area_ed, myaddr_info_road_ed, myaddr_info_street_ed;
 	public EditText myaddr_info_more_ed;
+
+	public static String USERADDRESS = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,7 @@ public class ChangeAddressActivity extends BaseActivity {
 		myaddr_info_road_ed = (Spinner) findViewById(R.id.myaddr_info_road_ed);
 		myaddr_info_street_ed = (Spinner) findViewById(R.id.myaddr_info_street_ed);
 		myaddr_info_more_ed = (EditText) findViewById(R.id.myaddr_info_more_ed);
+		change_addr_history1_rb = (RadioButton) findViewById(R.id.change_addr_history1_rb);
 	}
 
 	@Override
@@ -50,6 +57,8 @@ public class ChangeAddressActivity extends BaseActivity {
 		title_topbar_right_tv.setText("完成");
 		title_topbar_back_iv.setOnClickListener(clickListener);
 		title_topbar_right_tv.setOnClickListener(clickListener);
+		change_addr_history1_rb.setOnClickListener(clickListener);
+
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {
@@ -62,32 +71,17 @@ public class ChangeAddressActivity extends BaseActivity {
 				break;
 			// the right btn for edit
 			case R.id.title_topbar_right_tv:
+				// USERADDRESS = change_addr_history1_tv.getText().toString();
 				finish();
 				break;
+			case R.id.change_addr_history1_rb:
+				USERADDRESS = change_addr_history1_rb.getText().toString();
+				finish();
+				break;
+
 			}
 		}
 	};
-
-	// 设置EditText可用状态
-	public void changeEdEnable(boolean b) {
-		if (b == true) {
-			myaddr_info_pro_ed.setEnabled(true);
-			myaddr_info_city_ed.setEnabled(true);
-			myaddr_info_area_ed.setEnabled(true);
-			myaddr_info_road_ed.setEnabled(true);
-			myaddr_info_street_ed.setEnabled(true);
-			myaddr_info_more_ed.setEnabled(true);
-			title_topbar_right_tv.setText("完成");
-		} else {
-			myaddr_info_pro_ed.setEnabled(false);
-			myaddr_info_city_ed.setEnabled(false);
-			myaddr_info_area_ed.setEnabled(false);
-			myaddr_info_road_ed.setEnabled(false);
-			myaddr_info_street_ed.setEnabled(false);
-			myaddr_info_more_ed.setEnabled(false);
-			title_topbar_right_tv.setText("编辑");
-		}
-	}
 
 	@Override
 	protected void result(String result) {

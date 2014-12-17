@@ -37,7 +37,7 @@
                     android:orientation="vertical" >
 
                     <Button
-                        android:id="@+id/login"
+                        android:id="@+id/manager_login"
                         android:layout_width="80dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical"

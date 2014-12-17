@@ -79,7 +79,7 @@
                     android:layout_marginRight="90dp"
                     android:layout_weight="8"
                     android:background="@drawable/addr_spinner_bg"
-                    android:hint="陕西省"
+                    android:entries="@array/splist"
                     android:textColorHint="@color/gray" />
             </LinearLayout>
 
@@ -112,6 +112,7 @@
                     android:layout_marginRight="90dp"
                     android:layout_weight="8"
                     android:background="@drawable/addr_spinner_bg"
+                    android:entries="@array/splist"
                     android:hint="西安市"
                     android:textColorHint="@color/gray" />
             </LinearLayout>
@@ -143,6 +144,7 @@
                     android:layout_marginRight="90dp"
                     android:layout_weight="8"
                     android:background="@drawable/addr_spinner_bg"
+                    android:entries="@array/splist"
                     android:hint="莲湖区"
                     android:textColorHint="@color/gray" />
             </LinearLayout>
@@ -174,6 +176,7 @@
                     android:layout_marginRight="90dp"
                     android:layout_weight="8"
                     android:background="@drawable/addr_spinner_bg"
+                    android:entries="@array/splist"
                     android:hint="沣惠南路"
                     android:textColorHint="@color/gray" />
             </LinearLayout>
@@ -206,6 +209,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/addr_spinner_bg"
+                    android:entries="@array/splist"
                     android:hint="艺腾商务大厦"
                     android:textColorHint="@color/gray" />
             </LinearLayout>
@@ -245,16 +249,16 @@
                 android:layout_below="@id/myaddr_info_more_layout"
                 android:layout_marginTop="2dp"
                 android:background="#a8a8a8" />
-            
-            
+
             <!-- 历史地址 -->
+
             <LinearLayout
                 android:id="@+id/change_addr_history_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_below="@id/myaddr_info_more_layout"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal" >
 
                 <ImageView
@@ -271,9 +275,33 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
-            
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/change_addr_history_layout"
+                android:layout_marginTop="2dp"
+                android:background="#a8a8a8" />
+
             <!-- 历史地址列表  ListView 未添加 -->
-            
+
+            <LinearLayout
+                android:id="@+id/change_addr_history1_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/change_addr_history_layout"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp" >
+
+                <RadioButton
+                    android:id="@+id/change_addr_history1_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="陕西省西安市电子二路西口亚特大厦315室"
+                    android:textColor="@color/gray"
+                    android:textSize="18sp" />
+            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 

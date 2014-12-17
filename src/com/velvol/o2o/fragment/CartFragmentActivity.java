@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class CartFragmentActivity extends BaseFragment {
 	
@@ -23,6 +24,7 @@ public class CartFragmentActivity extends BaseFragment {
 	private View view;
 	private Context mContext;
 	private CartAdapter mAdapter;
+	private TextView title_logo,title_text,title_address;
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class CartFragmentActivity extends BaseFragment {
 	@Override
 	protected void findViewById() {
 		cart_detail_lv = (ListView)view.findViewById(R.id.cart_detail_lv);
+		title_logo = (TextView)view.findViewById(R.id.logo);
 	}
 
 	@Override

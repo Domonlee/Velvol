@@ -8,16 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.velvol.o2o.R;
 import com.velvol.o2o.tool.BaseFragment;
+import com.velvol.o2o.ui.login.LoginActivity;
 import com.velvol.o2o.ui.manager.AboutActivity;
+import com.velvol.o2o.ui.manager.ChangeAddressActivity;
 import com.velvol.o2o.ui.manager.FeedbackActivity;
 import com.velvol.o2o.ui.manager.MyAddressActivity;
 import com.velvol.o2o.ui.manager.MyInfoActivity;
 import com.velvol.o2o.ui.manager.MyMsgActivity;
 import com.velvol.o2o.ui.manager.MyOrderActivity;
+import com.velvol.o2o.ui.manager.TaskActivity;
 import com.velvol.o2o.view.CircularImage;
 
 public class ManagerFragmentActivity extends BaseFragment {
@@ -25,13 +30,14 @@ public class ManagerFragmentActivity extends BaseFragment {
 	private View view;
 	private Context mContext;
 	private CircularImage cImageView;
+	private Button manager_login;
+	private TextView addressTextView;
 
-	private LinearLayout manager_about_layout;
-	private LinearLayout manager_feedback_layout;
-	private LinearLayout manager_myaddr_layout;
-	private LinearLayout manager_mydata_layout;
-	private LinearLayout manager_msgboard_layout;
-	private LinearLayout manager_myorder_layout;
+	private LinearLayout manager_about_layout, manager_feedback_layout,
+			manager_myaddr_layout, manager_mydata_layout,
+			manager_msgboard_layout, manager_myorder_layout,
+			manager_score_layout;
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -45,6 +51,7 @@ public class ManagerFragmentActivity extends BaseFragment {
 	@Override
 	protected void findViewById() {
 		cImageView = (CircularImage) view.findViewById(R.id.icon);
+		manager_login = (Button) view.findViewById(R.id.manager_login);
 		manager_about_layout = (LinearLayout) view
 				.findViewById(R.id.manager_about_layout);
 		manager_feedback_layout = (LinearLayout) view
@@ -57,18 +64,27 @@ public class ManagerFragmentActivity extends BaseFragment {
 				.findViewById(R.id.manager_msgboard_layout);
 		manager_myorder_layout = (LinearLayout) view
 				.findViewById(R.id.manager_myorder_layout);
+		manager_score_layout = (LinearLayout) view
+				.findViewById(R.id.manager_score_layout);
+		addressTextView = (TextView) getActivity().findViewById(R.id.address);
 	}
 
 	@Override
 	protected void initView() {
 		cImageView.setImageResource(R.drawable.userface);
 		mContext = view.getContext();
+		manager_login.setOnClickListener(clickListener);
 		manager_about_layout.setOnClickListener(clickListener);
 		manager_feedback_layout.setOnClickListener(clickListener);
 		manager_myaddr_layout.setOnClickListener(clickListener);
 		manager_mydata_layout.setOnClickListener(clickListener);
 		manager_msgboard_layout.setOnClickListener(clickListener);
 		manager_myorder_layout.setOnClickListener(clickListener);
+		manager_score_layout.setOnClickListener(clickListener);
+		// 显示地址 改变
+		if (!ChangeAddressActivity.USERADDRESS.equals("")) {
+			addressTextView.setText(ChangeAddressActivity.USERADDRESS);
+		}
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {
@@ -76,6 +92,10 @@ public class ManagerFragmentActivity extends BaseFragment {
 		public void onClick(View v) {
 			Intent intent = new Intent();
 			switch (v.getId()) {
+			case R.id.manager_login:
+				intent.setClass(mContext, LoginActivity.class);
+				getActivity().finish();
+				break;
 			case R.id.manager_about_layout:
 				intent.setClass(mContext, AboutActivity.class);
 				break;
@@ -94,8 +114,11 @@ public class ManagerFragmentActivity extends BaseFragment {
 			case R.id.manager_myorder_layout:
 				intent.setClass(mContext, MyOrderActivity.class);
 				break;
+			case R.id.manager_score_layout:
+				intent.setClass(mContext, TaskActivity.class);
+				break;
 			}
-				startActivity(intent);
+			startActivity(intent);
 		}
 	};
 

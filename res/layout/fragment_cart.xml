@@ -4,6 +4,10 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+        <include
+        android:id="@+id/title_top_layout"
+        layout="@layout/base_title_layout" />
+    
     <ListView
         android:id="@+id/cart_detail_lv"
         android:layout_width="fill_parent"
