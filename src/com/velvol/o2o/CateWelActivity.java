@@ -23,10 +23,4 @@ public class CateWelActivity extends Activity {
 					}
 				});
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.cate_wel, menu);
-		return true;
-	}
 }
