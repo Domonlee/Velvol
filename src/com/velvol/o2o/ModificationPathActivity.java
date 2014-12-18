@@ -69,10 +69,4 @@ public class ModificationPathActivity extends Activity {
 		});
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.modification_path, menu);
-		return true;
-	}
-
 }

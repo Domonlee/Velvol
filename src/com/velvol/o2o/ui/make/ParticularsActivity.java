@@ -1,24 +1,16 @@
-package com.velvol.o2o;
+package com.velvol.o2o.ui.make;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-
-import android.annotation.SuppressLint;
+import com.velvol.o2o.R;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Intent;
 import android.graphics.drawable.PaintDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupMenu;
-import android.widget.PopupMenu.OnMenuItemClickListener;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -34,7 +26,7 @@ public class ParticularsActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_particulars);
+		setContentView(R.layout.activity_make_particulars);
 		caipinxiangqing = (LinearLayout) findViewById(R.id.tv_particulars3);
 		merchantName = (TextView) findViewById(R.id.particulars_tv_merchantName);
 		choose = (ImageView) findViewById(R.id.tv_particulars2);
@@ -59,9 +51,6 @@ public class ParticularsActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(ParticularsActivity.this,
-						SsssActivity.class);
-				startActivity(i);
 			}
 		});
 		// 商家名
@@ -69,9 +58,6 @@ public class ParticularsActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(ParticularsActivity.this,
-						MerchantNameActivity.class);
-				startActivity(i);
 			}
 		});
 		// 晒单，好评度
@@ -79,10 +65,6 @@ public class ParticularsActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-
-				Intent i = new Intent(ParticularsActivity.this,
-						CommentActivity.class);
-				startActivity(i);
 			}
 		});
 		// ... 按钮
@@ -132,12 +114,6 @@ public class ParticularsActivity extends Activity {
 						menu.toggle();
 					}
 				});
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.particulars, menu);
-		return true;
 	}
 
 	

@@ -57,62 +57,62 @@ public class ChangeInfoActivity extends BaseActivity {
 
 	@Override
 	protected void initView() {
-		title_topbar_right_tv.setText("完成");
-		switch (editCode) {
-		case "nick":
-			title_topbar_tv.setText("修改昵称");
-			changeinfo_line1_tv.setText("昵称:");
-			changeinfo_line2_layout.setVisibility(View.GONE);
-			changeinfo_line3_layout.setVisibility(View.GONE);
-			changeinfo_history_layout.setVisibility(View.GONE);
-			changeinfo_notice_tv.setVisibility(View.VISIBLE);
-			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
-			break;
-		case "name":
-			title_topbar_tv.setText("修改真实姓名");
-			changeinfo_line1_tv.setText("真实姓名:");
-			changeinfo_line2_layout.setVisibility(View.GONE);
-			changeinfo_line3_layout.setVisibility(View.GONE);
-			changeinfo_history_layout.setVisibility(View.GONE);
-			changeinfo_notice_tv.setVisibility(View.GONE);
-			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
-			break;
-
-		case "email":
-			title_topbar_tv.setText("修改邮箱");
-			changeinfo_line1_tv.setText("邮箱:");
-			changeinfo_line2_layout.setVisibility(View.GONE);
-			changeinfo_line3_layout.setVisibility(View.GONE);
-			changeinfo_history_layout.setVisibility(View.GONE);
-			changeinfo_notice_tv.setVisibility(View.GONE);
-			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
-			break;
-
-		case "changepsw":
-			title_topbar_tv.setText("修改密码");
-			changeinfo_line1_tv.setText("原始密码:");
-			changeinfo_line2_tv.setText("新密码:");
-			changeinfo_line3_tv.setText("确认密码:");
-			changeinfo_line2_layout.setVisibility(View.VISIBLE);
-			changeinfo_history_layout.setVisibility(View.GONE);
-			changeinfo_line3_layout.setVisibility(View.VISIBLE);
-			changeinfo_notice_tv.setVisibility(View.GONE);
-			changeinfo_forgetpsw_tv.setVisibility(View.VISIBLE);
-			break;
-
-		case "phone":
-			title_topbar_tv.setText("修改联系电话");
-			changeinfo_line1_tv.setText("手机号:");
-			changeinfo_line2_layout.setVisibility(View.GONE);
-			changeinfo_line3_layout.setVisibility(View.GONE);
-			changeinfo_history_layout.setVisibility(View.VISIBLE);
-			changeinfo_notice_tv.setVisibility(View.GONE);
-			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
-			break;
-		}
-		title_topbar_back_iv.setOnClickListener(clickListener);
-		title_topbar_right_tv.setOnClickListener(clickListener);
-		changeinfo_forgetpsw_tv.setOnClickListener(clickListener);
+//		title_topbar_right_tv.setText("完成");
+//		switch (editCode) {
+//		case "nick":
+//			title_topbar_tv.setText("修改昵称");
+//			changeinfo_line1_tv.setText("昵称:");
+//			changeinfo_line2_layout.setVisibility(View.GONE);
+//			changeinfo_line3_layout.setVisibility(View.GONE);
+//			changeinfo_history_layout.setVisibility(View.GONE);
+//			changeinfo_notice_tv.setVisibility(View.VISIBLE);
+//			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
+//			break;
+//		case "name":
+//			title_topbar_tv.setText("修改真实姓名");
+//			changeinfo_line1_tv.setText("真实姓名:");
+//			changeinfo_line2_layout.setVisibility(View.GONE);
+//			changeinfo_line3_layout.setVisibility(View.GONE);
+//			changeinfo_history_layout.setVisibility(View.GONE);
+//			changeinfo_notice_tv.setVisibility(View.GONE);
+//			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
+//			break;
+//
+//		case "email":
+//			title_topbar_tv.setText("修改邮箱");
+//			changeinfo_line1_tv.setText("邮箱:");
+//			changeinfo_line2_layout.setVisibility(View.GONE);
+//			changeinfo_line3_layout.setVisibility(View.GONE);
+//			changeinfo_history_layout.setVisibility(View.GONE);
+//			changeinfo_notice_tv.setVisibility(View.GONE);
+//			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
+//			break;
+//
+//		case "changepsw":
+//			title_topbar_tv.setText("修改密码");
+//			changeinfo_line1_tv.setText("原始密码:");
+//			changeinfo_line2_tv.setText("新密码:");
+//			changeinfo_line3_tv.setText("确认密码:");
+//			changeinfo_line2_layout.setVisibility(View.VISIBLE);
+//			changeinfo_history_layout.setVisibility(View.GONE);
+//			changeinfo_line3_layout.setVisibility(View.VISIBLE);
+//			changeinfo_notice_tv.setVisibility(View.GONE);
+//			changeinfo_forgetpsw_tv.setVisibility(View.VISIBLE);
+//			break;
+//
+//		case "phone":
+//			title_topbar_tv.setText("修改联系电话");
+//			changeinfo_line1_tv.setText("手机号:");
+//			changeinfo_line2_layout.setVisibility(View.GONE);
+//			changeinfo_line3_layout.setVisibility(View.GONE);
+//			changeinfo_history_layout.setVisibility(View.VISIBLE);
+//			changeinfo_notice_tv.setVisibility(View.GONE);
+//			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
+//			break;
+//		}
+//		title_topbar_back_iv.setOnClickListener(clickListener);
+//		title_topbar_right_tv.setOnClickListener(clickListener);
+//		changeinfo_forgetpsw_tv.setOnClickListener(clickListener);
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {

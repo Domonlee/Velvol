@@ -63,6 +63,7 @@
             android:inputType="textPassword"
             android:paddingLeft="5dp"
             android:singleLine="true"
+            android:imeOptions="actionDone"
             android:textColorHint="#a9a9a9" />
 
         <View

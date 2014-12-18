@@ -3,20 +3,21 @@ package com.velvol.o2o.ui.login;
 import com.velvol.o2o.HomeActivity;
 import com.velvol.o2o.R;
 import com.velvol.o2o.RegisterActivity;
-import com.velvol.o2o.R.id;
-import com.velvol.o2o.R.layout;
 import com.velvol.o2o.tool.BaseActivity;
-import com.velvol.o2o.ui.manager.AboutActivity;
+import com.velvol.o2o.tool.ConfigUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginActivity extends BaseActivity {
-		
-	private TextView login,login2;
-	private TextView reg,forget_tv;
+
+	private TextView login, login2;
+	private TextView reg, forget_tv;
+	private EditText edit_username, edit_password;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		this.requestWindowFeature(1);
@@ -28,12 +29,14 @@ public class LoginActivity extends BaseActivity {
 
 	@Override
 	protected void findViewById() {
-		login = (TextView)findViewById(R.id.login);
-		login2 = (TextView)findViewById(R.id.login2);
-		reg = (TextView)findViewById(R.id.reg);
-		forget_tv = (TextView)findViewById(R.id.forget_tv);
+		login = (TextView) findViewById(R.id.login);
+		login2 = (TextView) findViewById(R.id.login2);
+		reg = (TextView) findViewById(R.id.reg);
+		forget_tv = (TextView) findViewById(R.id.forget_tv);
+		edit_password = (EditText) findViewById(R.id.password);
+		edit_username = (EditText) findViewById(R.id.username);
 	}
-	
+
 	@Override
 	protected void initView() {
 		login.setOnClickListener(listener);
@@ -41,33 +44,68 @@ public class LoginActivity extends BaseActivity {
 		reg.setOnClickListener(listener);
 		forget_tv.setOnClickListener(listener);
 	}
+
 	View.OnClickListener listener = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
 			case R.id.login:
-				startActivity(new Intent(LoginActivity.this,HomeActivity.class));
-				finish();
+				String name = edit_username.getText().toString();
+				String pw = edit_password.getText().toString();
+				if (emailFormat(name, 2))
+					if (!name.equals("") && !pw.equals("")) {
+						if (isNetworkConnected(LoginActivity.this)) {
+							 showProgressDialog(LoginActivity.this);
+							 // XXX 接口地址    测试链接
+							 httpget("http://m.baidu.com/", 1);  
+						} else
+							ShowToast("请检查网络连接");
+					} else
+						ShowToast("用户名或密码不能为空");
+				else
+					ShowToast("请检查手机号码");
 				break;
 			case R.id.reg:
-				startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+				startActivity(new Intent(LoginActivity.this,
+						RegisterActivity.class));
 				finish();
 				break;
 			case R.id.login2:
 				ShowToast("待开发");
-//				startActivity(new Intent(LoginActivity.this,AboutActivity.class));
-//				finish();
+				// startActivity(new
+				// Intent(LoginActivity.this,AboutActivity.class));
+				// finish();
 				break;
 			case R.id.forget_tv:
-				startActivity(new Intent(LoginActivity.this,ForgetPswActivity.class));
+				startActivity(new Intent(LoginActivity.this,
+						ForgetPswActivity.class));
 				finish();
 				break;
 			}
 		}
 	};
-	@Override
-	protected void result(String result) {
 
+	/**
+	 * http_get() 回调函数
+	 */
+	protected void result(String result) {
+		loadingDialog.dismiss();
+		ConfigUtil.putBoolean("login_flag", data.login_flag = true);
+		startActivity(new Intent(LoginActivity.this,
+				HomeActivity.class));
+		finish();
+		// XXX 正式流程代码
+//		try {
+//			JSONObject c = new JSONObject(result);
+//			if (c.getInt("mark") == 1) {
+//				ConfigUtil.putBoolean("login_flag", data.login_flag = true);
+//			}
+//			else
+//				Toast.makeText(getApplicationContext(), c.getString("meg"), 0).show();
+//		} catch (JSONException e) {
+//			e.printStackTrace();
+//			Toast.makeText(getApplicationContext(),"服务接口异常", 0).show();
+//		}
 	}
 
 }

@@ -74,6 +74,7 @@ public abstract class BaseFragment extends Fragment {
 		loadingDialog = new Dialog(context, R.style.loading_dialog);// 创建自定义样式dialog
 
 		loadingDialog.setCancelable(true);// 不可以用“返回键”取消
+		loadingDialog.setCanceledOnTouchOutside(false);
 		loadingDialog.setContentView(layout, new LinearLayout.LayoutParams(
 				LinearLayout.LayoutParams.FILL_PARENT,
 				LinearLayout.LayoutParams.FILL_PARENT));// 设置布局
@@ -154,6 +155,7 @@ public abstract class BaseFragment extends Fragment {
 				result = "";
 		} catch (IOException e) {
 			e.printStackTrace();
+			result = "";
 		}
 	}
 

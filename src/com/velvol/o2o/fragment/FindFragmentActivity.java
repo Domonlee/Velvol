@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.velvol.o2o.CombineActivity;
 import com.velvol.o2o.R;
 import com.velvol.o2o.tool.BaseFragment;
 import com.velvol.o2o.ui.find.FoundMargeRoomActivity;

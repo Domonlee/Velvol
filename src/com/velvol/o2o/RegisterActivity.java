@@ -31,7 +31,7 @@ public class RegisterActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(getWindow().FEATURE_NO_TITLE);
+		requestWindowFeature(1);
 		setContentView(R.layout.activity_register);
 		findViewById();
 		initView();

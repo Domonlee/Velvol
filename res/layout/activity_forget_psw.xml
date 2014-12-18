@@ -39,6 +39,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/ed_background"
                 android:hint="请输入手机号"
+                android:inputType="phone"
+                android:singleLine="true"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
         </LinearLayout>
@@ -60,6 +62,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/ed_background"
+                android:inputType="number"
+                android:singleLine="true"
                 android:hint="请输入验证码"
                 android:paddingLeft="10dp" />
 

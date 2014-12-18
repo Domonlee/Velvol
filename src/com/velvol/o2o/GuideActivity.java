@@ -3,7 +3,6 @@ package com.velvol.o2o;
 import com.velvol.o2o.ui.login.LoginActivity;
 
 import android.app.Activity;
-import android.app.KeyguardManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
@@ -49,7 +48,10 @@ public class GuideActivity extends Activity {
 
 			@Override
 			public void onAnimationEnd(Animation animation) {
-				startActivity(new Intent().setClass(getApplicationContext(),
+				if(data.login_flag)
+					startActivity(new Intent().setClass(getApplicationContext(),
+							LoginActivity.class));
+				else startActivity(new Intent().setClass(getApplicationContext(),
 						LoginActivity.class));
 
 				overridePendingTransition(R.anim.push_left_in,

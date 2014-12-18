@@ -8,6 +8,10 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:name=".Data"
@@ -28,58 +32,13 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".ParticularsActivity"
+            android:name="com.velvol.o2o.ui.make.ParticularsActivity"
             android:label="@string/title_activity_particulars"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".CaiPinXiangQingActivity"
-            android:label="@string/title_activity_cai_pin_xiang_qing"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".CaipinActivity"
-            android:label="@string/title_activity_caipin"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".SsssActivity"
-            android:label="@string/title_activity_ssss"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".MerchantNameActivity"
-            android:label="@string/title_activity_merchant_name"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".CateWelActivity"
-            android:label="@string/title_activity_cate_wel"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".XiangqingActivity"
-            android:label="@string/title_activity_xiangqing"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".CommentActivity"
-            android:label="@string/title_activity_comment"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
         </activity>
         <activity
             android:name=".ModificationPathActivity"
             android:label="@string/title_activity_modification_path"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".ClassifyActivity"
-            android:label="@string/title_activity_classify"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".CombineActivity"
-            android:label="@string/title_activity_combine"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
         </activity>
         <activity

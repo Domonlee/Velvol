@@ -39,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/ed_background"
                 android:hint=""
+                android:singleLine="true"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
         </LinearLayout>
@@ -65,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/ed_background"
                 android:hint=""
+                android:singleLine="true"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
         </LinearLayout>

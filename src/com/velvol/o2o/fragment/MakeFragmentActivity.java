@@ -91,7 +91,8 @@ public class MakeFragmentActivity extends BaseFragment {
 	
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		address.setText(data.getStringExtra("useraddr"));
+		if(data!=null)
+			address.setText(data.getStringExtra("useraddr"));
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 

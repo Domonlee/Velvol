@@ -1,17 +1,65 @@
 package com.velvol.o2o;
 
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
+import com.velvol.o2o.tool.ConfigUtil;
+
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Bitmap.Config;
 
 public class Data extends Application {
 	
 	private static Data mInstance = null;
-	
+	public boolean login_flag = false;
+	public DisplayImageOptions displayImageOptions;
 	public static Data getInstance() {
 		return mInstance;
 	}
 	
 	public Context getContext() {
 		return getBaseContext();
+	}
+	
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		mInstance = this;
+		initData();
+		initImageLoader();
+	}
+	public void initData(){
+		login_flag = ConfigUtil.getBoolean("login_flag", false);
+	}
+	
+	public void initImageLoader() {
+		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+				getBaseContext())
+				.threadPriority(Thread.NORM_PRIORITY - 2)
+				.denyCacheImageMultipleSizesInMemory()
+				.discCacheFileNameGenerator(new Md5FileNameGenerator())
+				.tasksProcessingOrder(QueueProcessingType.LIFO)
+				.writeDebugLogs() // Remove for release app
+				.build();
+
+		// Initialize ImageLoader with configuration.
+		ImageLoader.getInstance().init(config);
+		displayImageOptions = new DisplayImageOptions.Builder()
+				.showStubImage(R.drawable.ic_launcher)
+				// 设置图片下载期间显示的图片
+				.showImageForEmptyUri(R.drawable.ic_launcher)
+				// 设置图片Uri为空或是错误的时候显示的图片
+				.showImageOnFail(R.drawable.ic_launcher)
+				// 设置图片加载或解码过程中发生错误显示的图片
+				.imageScaleType(ImageScaleType.IN_SAMPLE_INT)
+				.cacheInMemory(true) // 设置下载的图片是否缓存在内存中
+				.cacheOnDisc(true) // 设置下载的图片是否缓存在SD卡中
+				.displayer(new FadeInBitmapDisplayer(500)) // 设置成圆角图片
+				.bitmapConfig(Config.RGB_565).build(); // 创建配置过得DisplayImageOption对象
 	}
 }

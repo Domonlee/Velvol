@@ -15,7 +15,7 @@ public class DataFootActivity extends BaseActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_datafoot);
+		setContentView(R.layout.activity_find_datafoot);
 		findViewById();
 		initView();
 		DataFootAdapter adapter=new DataFootAdapter(this);
