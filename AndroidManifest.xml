@@ -28,72 +28,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.login.LoginActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".MainActivity" />
-        <activity
-            android:name="com.velvol.o2o.ui.make.ParticularsActivity"
-            android:label="@string/title_activity_particulars"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".ModificationPathActivity"
-            android:label="@string/title_activity_modification_path"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
-        </activity>
-        <activity
-            android:name=".RegisterActivity"
-            android:label="@string/title_activity_register" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.AboutActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.FeedbackActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.MyAddressActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.MyInfoActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.TaskActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.MyMsgActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.ChangeInfoActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.SendMsgActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.ChangeAddressActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.MyOrderActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.manager.OrderInfoActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.login.ResetPswActivity" >
-        </activity>
+        <activity android:name=".ui.login.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.make.ParticularsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ModificationPathActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".EvaluateActivity" android:screenOrientation="portrait"/>
+        
+        <activity android:name="com.velvol.o2o.ui.manager.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.manager.FeedbackActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.manager.MyAddressActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.manager.MyInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.manager.TaskActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.manager.MyMsgActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.manager.ChangeInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.manager.SendMsgActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.manager.ChangeAddressActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.manager.MyOrderActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.manager.OrderInfoActivity" android:screenOrientation="portrait"/>
+        
+        <activity android:name="com.velvol.o2o.ui.login.ResetPswActivity" android:screenOrientation="portrait"/>
 
-        <activity android:name="com.velvol.o2o.ui.find.DataFootActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.find.FoundMargeRoomActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.find.FriendRoomNumberActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.find.MargeActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.find.PrivilegeTicketActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.find.PrivilegeTicketAssignActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.find.ReviewActivity" >
-        </activity>
-        <activity android:name="com.velvol.o2o.ui.find.RoomNumberActivity" >
-        </activity>
-        <activity
-            android:name="com.velvol.o2o.ui.login.ForgetPswActivity"
-            android:label="@string/title_activity_forget_psw"
-            android:parentActivityName=".tool.BaseActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.velvol.o2o.tool.BaseActivity" />
-        </activity>
+        <activity android:name="com.velvol.o2o.ui.find.DataFootActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.find.FoundMargeRoomActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.find.FriendRoomNumberActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.find.MargeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.find.PrivilegeTicketActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.find.PrivilegeTicketAssignActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.find.ReviewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.find.RoomNumberActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.velvol.o2o.ui.login.ForgetPswActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

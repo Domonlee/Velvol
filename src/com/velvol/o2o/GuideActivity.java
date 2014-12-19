@@ -48,11 +48,11 @@ public class GuideActivity extends Activity {
 
 			@Override
 			public void onAnimationEnd(Animation animation) {
-				if(data.login_flag)
+				if(!data.login_flag)
 					startActivity(new Intent().setClass(getApplicationContext(),
 							LoginActivity.class));
 				else startActivity(new Intent().setClass(getApplicationContext(),
-						LoginActivity.class));
+						HomeActivity.class));
 
 				overridePendingTransition(R.anim.push_left_in,
 						R.anim.push_left_out);

@@ -19,6 +19,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshGridView;
 import com.velvol.o2o.R;
 import com.velvol.o2o.adapter.NewAdapter;
 import com.velvol.o2o.tool.BaseFragment;
+import com.velvol.o2o.ui.make.ParticularsActivity;
 import com.velvol.o2o.ui.manager.ChangeAddressActivity;
 
 public class MakeFragmentActivity extends BaseFragment {
@@ -83,7 +84,7 @@ public class MakeFragmentActivity extends BaseFragment {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
-			
+			startActivity(new Intent(getActivity(),ParticularsActivity.class));
 		}
 	};
 
