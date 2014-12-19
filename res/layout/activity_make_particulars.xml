@@ -3,10 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     tools:context=".ParticularsActivity" >
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/qiu
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -245,12 +242,8 @@
                 android:layout_height="wrap_content"
                 android:background="#fff"
                 android:padding="10dp"
-<<<<<<< HEAD
-                android:text="鱼香肉丝是一道经典的中国汉族传统名菜，鱼香是川菜主要传统味型之一。成菜具有鱼香味，但其味并不来自鱼，而是泡红辣椒、葱、姜、蒜、糖、盐、酱油等调味品调制而成。此法源出..." />
-=======
                 android:text="鱼香肉丝是一道经典的中国汉族传统名菜，鱼香是川菜主要传统味型之一。成菜具有鱼香味，但其味并不来自鱼，而是泡红辣椒、葱、姜、蒜、糖、盐、酱油等调味品调制而成。此法源出..."
                 android:textColor="#7c7c7c" />
->>>>>>> origin/qiu
 
             <View
                 android:layout_width="fill_parent"
@@ -272,13 +265,9 @@
                     android:layout_marginRight="6dp"
                     android:layout_marginTop="6dp"
                     android:gravity="center_vertical"
-<<<<<<< HEAD
-                    android:text="评价晒单 " />
-=======
                     android:text="评价晒单 "
                     android:textColor="#535353"
                     android:textSize="16sp" />
->>>>>>> origin/qiu
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -306,18 +295,6 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="25dp"
                     android:gravity="center"
-<<<<<<< HEAD
-                    android:text="好评度" />
-            </LinearLayout>
-
-            <com.velvol.o2o.tool.MyListView
-                android:id="@+id/listview"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="#fff" >
-            </com.velvol.o2o.tool.MyListView>
-
-=======
                     android:text="好评度"
                     android:textColor="#535353" />
             </LinearLayout>
@@ -335,32 +312,12 @@
                 android:divider="@null" >
             </com.velvol.o2o.tool.MyListView>
 
->>>>>>> origin/qiu
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="40dp" />
         </LinearLayout>
     </ScrollView>
-<<<<<<< HEAD
-	<LinearLayout 
-	    android:layout_width="fill_parent"
-	    android:layout_height="40dp"
-	    android:orientation="horizontal"
-	    android:gravity="center"
-	    android:layout_alignParentBottom="true"
-	    android:background="#fff"
-	    >
-        <TextView 
-            android:layout_width="90dp"
-            android:layout_height="30dp"
-            android:background="@drawable/particulars_collect"/>
-	    <TextView 
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="15dp"
-            android:background="@drawable/particulars_buy"/>
-	</LinearLayout>
-=======
+
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -382,5 +339,4 @@
             android:background="@drawable/particulars_buy" />
     </LinearLayout>
 
->>>>>>> origin/qiu
 </RelativeLayout>
