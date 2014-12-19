@@ -6,16 +6,19 @@
     android:orientation="vertical" >
 <RelativeLayout
         android:id="@+id/rl"
+        android:gravity="center"
+        android:paddingTop="6dp"
+        android:paddingBottom="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_weight="1" >
 
         <TextView
             android:id="@+id/room_friend_food_textview"
-            android:layout_alignParentLeft="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="50dp"
+            android:paddingRight="95dp"
+            android:layout_alignParentLeft="true"
             android:text="黑胡椒铁板牛柳" />
 
         <TextView

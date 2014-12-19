@@ -26,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -47,26 +48,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="      摄入1000卡，你又超标哦，健康饮食从点滴做起。" />
+                    android:text="      摄入1000卡，你又超标哦，健康饮食从点滴做起健康饮食从点滴做起" />
             </LinearLayout>
-        </LinearLayout>
-
-        <HorizontalScrollView
-            android:id="@+id/horizontalScrollView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
 
             <LinearLayout
-                android:layout_width="320dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="#eeeeee" >
+                android:background="#eeeeee"
+                android:gravity="center"
+                android:orientation="horizontal" >
 
                 <RelativeLayout
-                    android:layout_width="320dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="#ffffff"
-                    android:layout_height="wrap_content" >
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:background="#ffffff" >
 
                     <ImageView
                         android:id="@+id/data_foot_left_imageview"
@@ -92,8 +88,8 @@
 
                     <ImageView
                         android:id="@+id/data_foot_picture1_imageview"
-                        android:layout_width="65dp"
-                        android:layout_height="50dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/data_foot_selected_picture1_imageview"
@@ -114,8 +110,8 @@
 
                     <ImageView
                         android:id="@+id/data_foot_picture2_imageview"
-                        android:layout_width="65dp"
-                        android:layout_height="50dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/data_foot_selected_picture2_imageview"
@@ -136,24 +132,13 @@
 
                     <ImageView
                         android:id="@+id/data_foot_picture3_imageview"
-                        android:layout_width="65dp"
-                        android:layout_height="50dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/data_foot_selected_picture3_imageview"
                         android:layout_weight="1"
                         android:src="@drawable/test1" />
-
-                    <ImageView
-                        android:id="@+id/data_foot_right_imageview"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:clickable="true"
-                        android:paddingRight="10dp"
-                        android:src="@drawable/find_layout_off" />
 
                     <TextView
                         android:id="@+id/data_foot_name1_textview"
@@ -190,9 +175,22 @@
                         android:paddingTop="10dp"
                         android:text="黑胡椒牛柳"
                         android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/data_foot_right_imageview"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/data_foot_picture3_imageview"
+                        android:clickable="true"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/find_layout_off" />
+
                 </RelativeLayout>
             </LinearLayout>
-        </HorizontalScrollView>
+
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

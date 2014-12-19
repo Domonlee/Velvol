@@ -7,7 +7,8 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -69,7 +70,6 @@
         </activity>
         <activity android:name="com.velvol.o2o.ui.login.ResetPswActivity" >
         </activity>
-
         <activity android:name="com.velvol.o2o.ui.find.DataFootActivity" >
         </activity>
         <activity android:name="com.velvol.o2o.ui.find.FoundMargeRoomActivity" >
@@ -85,6 +85,8 @@
         <activity android:name="com.velvol.o2o.ui.find.ReviewActivity" >
         </activity>
         <activity android:name="com.velvol.o2o.ui.find.RoomNumberActivity" >
+        </activity>
+        <activity android:name="com.velvol.o2o.ui.find.PrivilegeTicketAssignToActivity" >
         </activity>
         <activity
             android:name="com.velvol.o2o.ui.login.ForgetPswActivity"

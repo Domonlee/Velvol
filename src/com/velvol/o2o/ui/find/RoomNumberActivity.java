@@ -20,7 +20,6 @@ public class RoomNumberActivity extends BaseActivity{
 	//返回按钮
 	private ImageView roomReturnImageview;
 	//房间号
-	private String roomNumber;
 	private TextView roomNumberTextview;
 	//房主的名字
 	private String roomMasterName; 
@@ -52,13 +51,18 @@ public class RoomNumberActivity extends BaseActivity{
 	private ImageView roomContinueOrderImageview;
 	//确认点餐
 	private ImageView roomConfirmOrderImageview;
-	
-	
-	
+	//正中的标题
+	private TextView title_topbar_tv;
+	//右边的标题
+	private TextView title_topbar_right_tv;
+
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(1);
 		setContentView(R.layout.activity_room_number);
 		// Show the Up button in the action bar.
 		findViewById();
@@ -69,11 +73,20 @@ public class RoomNumberActivity extends BaseActivity{
 		//共同点餐的ListView
 		RoomNumberEveryoneFootAdapter everyoneadapter=new RoomNumberEveryoneFootAdapter(this);
 		roomCommonFoolListview.setAdapter(everyoneadapter);
+		//获取上一个Activity传递过来的参数
+		toGetIntent();
+	}
+	private void toGetIntent() {
+		// TODO Auto-generated method stub
+		Intent toFoundMargeRoomActivity=getIntent();
+		String roomNumber=toFoundMargeRoomActivity.getStringExtra("roomNumber");
+		roomNumberTextview.setText("房间"+roomNumber);
 	}
 	@Override
 	protected void findViewById() {
-		roomReturnImageview=(ImageView)findViewById(R.id.room_return_imageView);
-		roomNumberTextview=(TextView)findViewById(R.id.room_number);
+		title_topbar_right_tv=(TextView)findViewById(R.id.review_people_name_textview);
+		roomReturnImageview=(ImageView)findViewById(R.id.title_topbar_back_iv);
+		roomNumberTextview=(TextView)findViewById(R.id.title_topbar_tv);
 		roomMasterNameTextview=(TextView)findViewById(R.id.room_master_name);
 		roomMergeManyTextview=(TextView)findViewById(R.id.room_merge_many);
 		roomMergeMoneyTextview=(TextView)findViewById(R.id.room_merge_money);
@@ -91,7 +104,6 @@ public class RoomNumberActivity extends BaseActivity{
 	@Override
 	protected void initView() {
 		// TODO Auto-generated method stub
-		roomNumber=roomNumberTextview.getText().toString();
 		roomMasterName=roomMasterNameTextview.getText().toString();
 		roomMergeMany=roomMergeManyTextview.getText().toString();
 		roomMergeMoney=roomMergeMoneyTextview.getText().toString();
@@ -99,17 +111,25 @@ public class RoomNumberActivity extends BaseActivity{
 		roomFriendName2=roomFriendNameTextview2.getText().toString();
 		roomContinueOrderImageview.setOnClickListener(listener);
 		roomConfirmOrderImageview.setOnClickListener(listener);
+		roomReturnImageview.setOnClickListener(listener);
 	}
 	View.OnClickListener listener=new OnClickListener() {
-		
+
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
 			case R.id.room_continueorder_imageview:
-				startActivity(new Intent(RoomNumberActivity.this, PrivilegeTicketActivity.class));
+				//继续点餐监听
+				//startActivity(new Intent(RoomNumberActivity.this, PrivilegeTicketActivity.class));
 				break;
 			case R.id.room_confirmorder_imageview:
-				startActivity(new Intent(RoomNumberActivity.this, DataFootActivity.class));
+				//确定点餐监听
+				//startActivity(new Intent(RoomNumberActivity.this, DataFootActivity.class));
+				break;
+			case R.id.title_topbar_back_iv:
+				//返回按钮
+				finish();
+				break;
 			}
 		}
 	};

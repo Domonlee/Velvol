@@ -1,5 +1,9 @@
 package com.velvol.o2o;
 
+import android.app.Application;
+import android.content.Context;
+import android.graphics.Bitmap.Config;
+
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -8,10 +12,6 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.velvol.o2o.tool.ConfigUtil;
-
-import android.app.Application;
-import android.content.Context;
-import android.graphics.Bitmap.Config;
 
 public class Data extends Application {
 	

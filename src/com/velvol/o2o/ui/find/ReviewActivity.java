@@ -7,6 +7,8 @@ import com.velvol.o2o.view.CircularImage;
 import android.R.integer;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -77,12 +79,23 @@ public class ReviewActivity extends BaseActivity{
 	private TextView reviewGoodCount2Textview;
 	//支持单击点评布局2
 	private LinearLayout reviewClick2;
+	//点赞1的总数（将来写进数据库）
+	private int count;
 	//支持单击点赞布局2
 	private LinearLayout reviewGoodClick2;
+	//点赞2的总数（将来写进数据库）
+	private int count2;
+	//回退按钮
+	private ImageView reviewReturnImageView;
+	//正中的标题
+	private TextView title_topbar_tv;
+	//右边的标题
+	private TextView title_topbar_right_tv;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(1);
 		setContentView(R.layout.activity_review);
 		findViewById();
 		initView();
@@ -90,6 +103,10 @@ public class ReviewActivity extends BaseActivity{
 	@Override
 	protected void findViewById() {
 		// TODO Auto-generated method stub
+		title_topbar_tv=(TextView)findViewById(R.id.title_topbar_tv);
+		title_topbar_right_tv=(TextView)findViewById(R.id.review_people_name_textview);
+		reviewReturnImageView=(ImageView)findViewById(R.id.title_topbar_back_iv);
+		
 		reviewHeadCircularImage=(CircularImage)findViewById(R.id.review_people_name_Head_CircularImage);
 		reviewNameTextView=(TextView)findViewById(R.id.review_people_name_textview);
 		reviewFootNameTextView=(TextView)findViewById(R.id.review_food_name_textview);
@@ -133,28 +150,55 @@ public class ReviewActivity extends BaseActivity{
 	@Override
 	protected void initView() {
 		// TODO Auto-generated method stub
-		reviewClick2.setOnTouchListener(listener);
-		reviewGoodClick2.setOnTouchListener(listener);
+		title_topbar_tv.setText("神点评");
+		reviewClick2.setOnTouchListener(touchlistener);
+		reviewGoodClick2.setOnTouchListener(touchlistener);
+		//回退按钮
+		reviewReturnImageView.setOnClickListener(clicklistener);
 	}
-	View.OnTouchListener listener=new OnTouchListener() {
+	//点击监听
+	View.OnClickListener clicklistener=new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			switch (v.getId()) {
+			//返回
+			case R.id.title_topbar_back_iv:
+				finish();
+				break;
+
+			default:
+				break;
+			}
+		}
+	};
+	//触碰监听
+	View.OnTouchListener touchlistener=new OnTouchListener() {
+		
 
 		@Override
 		public boolean onTouch(View v, MotionEvent event) {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.review_click2_linerlayout:
-				startActivity(new Intent(ReviewActivity.this, FoundMargeRoomActivity.class));
+				//点击点评跳转
+				//startActivity(new Intent(ReviewActivity.this, FoundMargeRoomActivity.class));
+				break;
+			case R.id.review_good_click_linerlayout:
+				 count=Integer.parseInt(reviewGoodCount);
+				count++;
+				reviewGoodCountTextview.setText(count+"");
 				break;
 			case R.id.review_good_click2_linerlayout:
-				int i=Integer.parseInt(reviewGoodCount2);
-				i++;
-				reviewGoodCount2Textview.setText(i+"");
-				startActivity(new Intent(ReviewActivity.this, PrivilegeTicketAssignActivity.class));
+				int count2=Integer.parseInt(reviewGoodCount2);
+				count2++;
+				reviewGoodCount2Textview.setText(count2+"");
+				
 				break;
 			}
-			return false;
+			return true;
 		}};
-	
 		@Override
 		protected void result(String result) {
 			// TODO Auto-generated method stub

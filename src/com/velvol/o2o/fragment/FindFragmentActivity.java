@@ -14,14 +14,25 @@ import android.widget.TextView;
 
 import com.velvol.o2o.R;
 import com.velvol.o2o.tool.BaseFragment;
+import com.velvol.o2o.ui.find.DataFootActivity;
 import com.velvol.o2o.ui.find.FoundMargeRoomActivity;
+import com.velvol.o2o.ui.find.PrivilegeTicketActivity;
+import com.velvol.o2o.ui.find.ReviewActivity;
 
 public class FindFragmentActivity extends BaseFragment {
 
 	private View view;
 	private Context mContext;
+
+	// 拼单
 	private LinearLayout pindan;
-	
+	// 神评论
+	private LinearLayout comment;
+	// 数据餐饮
+	private LinearLayout dataFoot;
+	// 优惠券
+	private LinearLayout privilegeTicket;
+
 	public TextView title_topbar_tv;
 	public ImageView title_topbar_back_iv;
 	public TextView title_topbar_right_tv;
@@ -46,10 +57,17 @@ public class FindFragmentActivity extends BaseFragment {
 
 	@Override
 	protected void findViewById() {
-		pindan = (LinearLayout) view.findViewById(R.id.find_join_layout);
 		title_topbar_tv = (TextView) view.findViewById(R.id.title_topbar_tv);
-		title_topbar_right_tv = (TextView) view.findViewById(R.id.title_topbar_right_tv);
-		title_topbar_back_iv = (ImageView) view.findViewById(R.id.title_topbar_back_iv);
+		title_topbar_right_tv = (TextView) view
+				.findViewById(R.id.title_topbar_right_tv);
+		title_topbar_back_iv = (ImageView) view
+				.findViewById(R.id.title_topbar_back_iv);
+		pindan = (LinearLayout) view.findViewById(R.id.find_join_layout);
+		comment = (LinearLayout) view.findViewById(R.id.find_comment_layout);
+		dataFoot = (LinearLayout) view.findViewById(R.id.find_data_layout);
+		privilegeTicket = (LinearLayout) view
+				.findViewById(R.id.find_ticket_layout);
+
 	}
 
 	@Override
@@ -58,7 +76,37 @@ public class FindFragmentActivity extends BaseFragment {
 		title_topbar_right_tv.setVisibility(View.GONE);
 		title_topbar_tv.setText("发现");
 
+		pindan.setOnClickListener(listener);
+		comment.setOnClickListener(listener);
+		dataFoot.setOnClickListener(listener);
+		privilegeTicket.setOnClickListener(listener);
+
 	}
+
+	View.OnClickListener listener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			switch (v.getId()) {
+			case R.id.find_comment_layout:
+				startActivity(new Intent(getActivity(), ReviewActivity.class));
+				break;
+			case R.id.find_data_layout:
+				startActivity(new Intent(getActivity(), DataFootActivity.class));
+				break;
+			case R.id.find_join_layout:
+				Intent i = new Intent(getActivity(),
+						FoundMargeRoomActivity.class);
+				startActivity(i);
+				break;
+			case R.id.find_ticket_layout:
+				startActivity(new Intent(getActivity(),
+						PrivilegeTicketActivity.class));
+				break;
+
+			}
+		}
+	};
 
 	@Override
 	protected void result(String result) {

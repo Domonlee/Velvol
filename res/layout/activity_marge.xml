@@ -8,31 +8,9 @@
 
     <!-- 多人拼单 -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#14ae68" >
-
-        <ImageView
-            android:id="@+id/combine_return"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/particular_return" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginRight="35dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:text="多人拼单"
-            android:textColor="#fff"
-            android:textSize="20sp" />
-    </LinearLayout>
+    <include
+        android:id="@+id/title_top_layout"
+        layout="@layout/base_title_layout" />
     <!-- 创建拼单房间 -->
 
     <LinearLayout
@@ -90,7 +68,7 @@
             android:textColorHint="#aaaaaa" />
 
         <TextView
-            android:id="@+id/marge_submit_btn"
+            android:id="@+id/marge_submit_textview"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_below="@id/feedback_phone_tv"
