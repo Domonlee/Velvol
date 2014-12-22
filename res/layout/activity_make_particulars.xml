@@ -4,7 +4,43 @@
     android:layout_height="match_parent"
     tools:context=".ParticularsActivity" >
 
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#14ae68" >
+
+        <ImageView
+            android:id="@+id/particulars_return"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/particular_return" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="黑胡椒牛柳（豪客西餐厅）"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/classify"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/particulars_return" />
+    </LinearLayout>
+
     <ScrollView
+        android:layout_below="@id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f2f2f2"
@@ -14,40 +50,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#14ae68" >
-
-                <ImageView
-                    android:id="@+id/particulars_return"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/particular_return" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="黑胡椒牛柳（豪客西餐厅）"
-                    android:textColor="#fff"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:id="@+id/classify"
-                    android:layout_width="30dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/particulars_return" />
-            </LinearLayout>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -101,9 +103,7 @@
                         android:textSize="14sp" />
                 </LinearLayout>
 
-                <include
-                    layout="@layout/particular_popupwindow"
-                    />
+                <include layout="@layout/particular_popupwindow" />
             </FrameLayout>
 
             <LinearLayout
@@ -317,7 +317,6 @@
                 android:layout_height="40dp" />
         </LinearLayout>
     </ScrollView>
-
 
     <LinearLayout
         android:layout_width="fill_parent"

@@ -18,7 +18,7 @@ public class ParticularsActivity extends BaseActivity {
 
 	// ฯ๊ว้าณ
 	private TextView merchantName;
-	private LinearLayout comment, popLayout;
+	private LinearLayout popLayout;
 	private ImageView back, classify;
 	private MyListView listView;
 	private EvaluateAdapter adapter;
@@ -36,7 +36,6 @@ public class ParticularsActivity extends BaseActivity {
 	@Override
 	protected void findViewById() {
 		merchantName = (TextView) findViewById(R.id.particulars_tv_merchantName);
-		comment = (LinearLayout) findViewById(R.id.comment);
 		back = (ImageView) findViewById(R.id.particulars_return);
 
 		classify = (ImageView) findViewById(R.id.classify);
@@ -47,7 +46,6 @@ public class ParticularsActivity extends BaseActivity {
 	@Override
 	protected void initView() {
 		merchantName.setOnClickListener(listener);
-		comment.setOnClickListener(listener);
 		back.setOnClickListener(listener);
 		classify.setOnClickListener(listener);
 		adapter = new EvaluateAdapter(ParticularsActivity.this);
@@ -76,7 +74,9 @@ public class ParticularsActivity extends BaseActivity {
 			case R.id.particulars_return:
 				finish();
 				break;
-
+			case R.id.particulars_tv_merchantName:
+				
+				break;
 			default:
 				break;
 			}

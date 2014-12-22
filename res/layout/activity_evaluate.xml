@@ -1,129 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".EvaluateActivity" 
-    android:background="#ffffff">
+    tools:context=".EvaluateActivity" >
 
     <include layout="@layout/base_title_layout" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="32dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center_vertical" >
-
-        <com.velvol.o2o.view.CircularImage
-            android:id="@+id/user_img"
-            android:layout_width="24dp"
-            android:layout_height="24dp" />
-
-        <TextView
-            android:id="@+id/username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="zhangyan"
-            android:textColor="#303030" />
-
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="right"
-            android:text="2014-11-28 13:20:21"
-            android:textColor="#919191" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:background="#eeeeee" />
-
-    <RatingBar
-        android:id="@+id/lv"
-        style="@android:attr/ratingBarStyleIndicator"
-        android:layout_width="wrap_content"
-        android:layout_height="23px"
-        android:layout_marginLeft="10dp"
-        android:isIndicator="true"
-        android:numStars="5"
-        android:layout_margin="10dp"
-        android:progressDrawable="@drawable/start_check"
-        android:stepSize="1" />
-    <TextView android:id="@+id/context"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:minHeight="20dp"
-	    android:text="我是评价我是评价我是评价我是评价我是评价我是评价我是评价我是评价."
-	    android:textColor="#434343"
-	    android:layout_marginRight="10dp"
-	    android:layout_marginLeft="10dp"
-	    />
-    <HorizontalScrollView 
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        >
-        <LinearLayout 
-            android:id="@+id/img_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            
+        android:background="#ffffff"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="42dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical" >
+
+                <com.velvol.o2o.view.CircularImage
+                    android:id="@+id/user_img"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="zhangyan"
+                    android:textColor="#303030" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="2014-11-28 13:20:21"
+                    android:textColor="#919191" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#eeeeee" />
+
+            <RatingBar
+                android:id="@+id/lv"
+                style="@android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="23px"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progress="4"
+                android:progressDrawable="@anim/ratingstart"
+                android:stepSize="1" />
+
+            <TextView
+                android:id="@+id/context"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:minHeight="20dp"
+                android:text="我是评价我是评价我是评价我是评价我是评价我是评价我是评价我是评价."
+                android:textColor="#434343" />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <LinearLayout
+                    android:id="@+id/img_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp" >
+
+                <TextView
+                    android:id="@+id/praise"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="赞(10)" />
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:background="#eeeeee" />
+
+                <TextView
+                    android:id="@+id/reply"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="回复(10)" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/manager_reply"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:id="@+id/praise"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="管理员回复:"
+                    android:textColor="#939393" />
+
+                <TextView
+                    android:id="@+id/reply"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:text="谢谢你的评价，您的评论对我们有很大帮助"
+                    android:textColor="#f9b62a" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="10dp"
+                android:background="#eeeeee" />
+
+            <com.velvol.o2o.tool.MyListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null" />
         </LinearLayout>
-    </HorizontalScrollView>
-	<View android:layout_width="fill_parent" android:layout_height="1dip" android:background="#eeeeee"/>
-	<LinearLayout 
-	    android:layout_width="fill_parent"
-	    android:layout_height="50dp"
-	    >
-	    <TextView android:id="@+id/praise"
-	        android:layout_width="0dp"
-	        android:layout_weight="1"
-	        android:layout_height="match_parent"
-	        android:text="赞(10)"
-	        android:gravity="center"/>
-	    <View android:layout_width="1dip" android:layout_height="match_parent" android:background="#eeeeee"/>
-	    <TextView android:id="@+id/reply"
-	        android:layout_width="0dp"
-	        android:layout_weight="1"
-	        android:layout_height="match_parent"
-	        android:text="回复(10)"
-	        android:gravity="center"/>
-	</LinearLayout>
-	<View android:layout_width="fill_parent" android:layout_height="1dip" android:background="#eeeeee"/>
-	<LinearLayout 
-	    android:id="@+id/manager_reply"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_marginTop="20dp"
-	    android:layout_marginBottom="20dp"
-	    android:layout_marginLeft="10dp"
-	    android:layout_marginRight="10dp"
-	    >
-	    <TextView android:id="@+id/praise"
-	        android:layout_width="0dp"
-	        android:layout_weight="1"
-	        android:layout_height="match_parent"
-	        android:text="管理员回复:"
-	        android:textColor="#939393"
-	        />
-	    <TextView android:id="@+id/reply"
-	        android:layout_width="0dp"
-	        android:layout_weight="3"
-	        android:layout_height="match_parent"
-	        android:text="谢谢你的评价，您的评论对我们有很大帮助"
-	        android:textColor="#f9b62a"
-	        />
-	</LinearLayout>
-	<View android:layout_width="fill_parent" android:layout_height="10dp" android:background="#eeeeee"/>
-	<ListView android:id="@+id/listview"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:divider="@null"/>
-	    
+    </ScrollView>
+
 </LinearLayout>

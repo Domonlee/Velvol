@@ -1,6 +1,5 @@
 package com.velvol.o2o.adapter;
 
-import android.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

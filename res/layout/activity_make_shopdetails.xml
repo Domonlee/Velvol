@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EvaluateActivity" >
+
+    <include layout="@layout/base_title_layout" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp" >
+
+                <com.velvol.o2o.view.CircularImage
+                    android:id="@+id/user_img"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/user_img"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/user_img"
+                    android:text="zhangyan"
+                    android:textColor="#303030" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/username"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/user_img"
+                    android:gravity="center_vertical" >
+
+                    <RatingBar
+                        android:id="@+id/lv"
+                        style="@android:attr/ratingBarStyleIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="23px"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:progress="4"
+                        android:progressDrawable="@anim/ratingstart"
+                        android:stepSize="1" />
+
+                    <TextView
+                        android:id="@+id/evaluate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="90%好评"
+                        android:textColor="#ff4342" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="5dip"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="0dp"
+                    android:drawableLeft="@drawable/merchant_path"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:minHeight="20dp"
+                    android:text="莲湖区大唐西市二楼2080号"
+                    android:textColor="#434343" />
+                <TextView
+                    android:id="@+id/show_map"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:minHeight="20dp"
+                    android:text="查看地图"
+                    android:textColor="#f7b729" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="5dip"
+                android:background="#eeeeee" />
+
+			<TextView 
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="10dp"
+			    android:layout_margin="5dp"
+			    android:drawableLeft="@drawable/merchant_jieshao"
+			    android:drawablePadding="5dp"
+			    android:text="餐厅介绍"
+			    android:gravity="center_vertical"/>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#eeeeee" />
+			<TextView 
+			    android:id="@+id/shop_context"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="10dp"
+			    android:layout_margin="5dp"
+			    android:text="     我是餐厅介绍的内容我是餐厅介绍的内容我是餐厅介绍的内容我是餐厅介绍的内容"
+			    android:textColor="#9b9b9b"
+			    android:textScaleX="1.1"
+			    
+			    android:gravity="center_vertical"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                
+                >
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="10dp"
+                android:background="#eeeeee" />
+
+            <com.velvol.o2o.tool.MyListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

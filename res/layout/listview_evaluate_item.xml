@@ -10,7 +10,7 @@
         <RatingBar
             android:id="@+id/lv"
             android:layout_width="wrap_content"
-            android:progressDrawable="@drawable/start_check"
+            android:progressDrawable="@anim/ratingstart"
             android:layout_height="23px"
             android:layout_marginLeft="10dp"
             android:isIndicator="true"
