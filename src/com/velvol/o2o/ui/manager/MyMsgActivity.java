@@ -78,7 +78,7 @@ public class MyMsgActivity extends BaseActivity {
 				break;
 			case R.id.title_topbar_right_tv:
 				startActivity(new Intent(MyMsgActivity.this,
-						SendMsgActivity.class));
+						SendCommentActivity.class));
 				break;
 			}
 		}

@@ -24,14 +24,14 @@
 
         <TextView
             android:id="@+id/room_master_food_reduce_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_toRightOf="@id/room_master_food_textview"
             android:gravity="center"
             android:layout_marginRight="20dp"
             android:clickable="true"
-            android:textColor="#8FC320"
-            android:text="—" />
+            android:background="@drawable/find_min_icon"
+             />
 
         <TextView
             android:id="@+id/room_master_food_many_textview"
@@ -52,7 +52,7 @@
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/rl1" 
             android:clickable="true"
-            android:background="@drawable/dayuhao"/>
+            android:background="@drawable/find_delete_icon"/>
 
         <RelativeLayout
             android:id="@+id/rl1"

@@ -64,7 +64,6 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
@@ -74,7 +73,7 @@
             android:textSize="13sp" />
 
         <TextView
-            android:id="@+id/room_masterf_name"
+            android:id="@+id/room_master_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#8A8A8A"

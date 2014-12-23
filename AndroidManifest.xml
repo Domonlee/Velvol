@@ -74,6 +74,9 @@
         <activity
             android:name="com.velvol.o2o.ui.manager.SendMsgActivity"
             android:screenOrientation="portrait" />
+          <activity
+            android:name="com.velvol.o2o.ui.manager.SendCommentActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.velvol.o2o.ui.manager.ChangeAddressActivity"
             android:screenOrientation="portrait" />
