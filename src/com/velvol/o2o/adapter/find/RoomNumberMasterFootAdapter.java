@@ -1,4 +1,4 @@
-package com.velvol.o2o.adapter;
+package com.velvol.o2o.adapter.find;
 
 
 import java.util.List;
@@ -76,4 +76,14 @@ public class RoomNumberMasterFootAdapter extends BaseAdapter{
 		//删除按钮
 		ImageView masterFoodDelete;
 	}
+	//返回食物价格的方法(需要一个菜品集合)
+		public int getMasterFoodpricetotal(){
+				//循环遍历每个Item(每道菜)
+				for(int i=0;i<10;i++){
+					//1取出每道菜的价格
+					//2累计相加
+				}
+				//返回相加值
+				return 50;
+			}
 }

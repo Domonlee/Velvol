@@ -1,4 +1,4 @@
-package com.velvol.o2o.adapter;
+package com.velvol.o2o.adapter.find;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -42,7 +42,7 @@ public class DataFootAdapter extends BaseAdapter{
 			holder.day=(TextView)convertView.findViewById(R.id.data_food_day_textview);
 			holder.explain=(TextView)convertView.findViewById(R.id.data_food_explain_textview);
 			holder.left=(ImageView)convertView.findViewById(R.id.data_foot_left_imageview);
-			holder.right=(ImageView)convertView.findViewById(R.id.data_foot_right_imageview);
+			holder.right=(ImageView)convertView.findViewById(R.id.data_foot_right_imageview1);
 			holder.selectedPicture1=(ImageView)convertView.findViewById(R.id.data_foot_selected_picture1_imageview);
 			holder.footPicture1=(ImageView)convertView.findViewById(R.id.data_foot_picture1_imageview);
 			holder.footName1=(TextView)convertView.findViewById(R.id.data_foot_name1_textview);

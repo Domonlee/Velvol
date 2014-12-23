@@ -57,14 +57,14 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/marge_editText"
+            android:id="@+id/marge_password_editText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="36dp"
             android:layout_marginRight="36dp"
             android:layout_marginTop="13dp"
             android:background="@drawable/modification_et"
-            android:hint="请输入房间密码"
+            android:hint="请输入房间密码，密码是1234"
             android:textColorHint="#aaaaaa" />
 
         <TextView

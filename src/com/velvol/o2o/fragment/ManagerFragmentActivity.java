@@ -24,6 +24,7 @@ import com.velvol.o2o.ui.manager.MyInfoActivity;
 import com.velvol.o2o.ui.manager.MyMsgActivity;
 import com.velvol.o2o.ui.manager.MyOrderActivity;
 import com.velvol.o2o.ui.manager.TaskActivity;
+import com.velvol.o2o.ui.manager.UserFaceActivity;
 import com.velvol.o2o.view.CircularImage;
 
 public class ManagerFragmentActivity extends BaseFragment {
@@ -52,7 +53,7 @@ public class ManagerFragmentActivity extends BaseFragment {
 
 	@Override
 	protected void findViewById() {
-		cImageView = (CircularImage) view.findViewById(R.id.icon);
+		cImageView = (CircularImage) view.findViewById(R.id.manager_userface_ci);
 		manager_login = (Button) view.findViewById(R.id.manager_login);
 		manager_about_layout = (LinearLayout) view
 				.findViewById(R.id.manager_about_layout);
@@ -80,6 +81,7 @@ public class ManagerFragmentActivity extends BaseFragment {
 		title_topbar_right_tv.setVisibility(View.GONE);
 		title_topbar_tv.setText("ÎÒµÄ");
 		mContext = view.getContext();
+		cImageView.setOnClickListener(clickListener);
 		manager_login.setOnClickListener(clickListener);
 		manager_about_layout.setOnClickListener(clickListener);
 		manager_feedback_layout.setOnClickListener(clickListener);
@@ -96,6 +98,9 @@ public class ManagerFragmentActivity extends BaseFragment {
 		public void onClick(View v) {
 			Intent intent = new Intent();
 			switch (v.getId()) {
+			case R.id.manager_userface_ci:
+				intent.setClass(mContext, UserFaceActivity.class);
+				break;
 			case R.id.manager_login:
 				intent.setClass(mContext, LoginActivity.class);
 				getActivity().finish();

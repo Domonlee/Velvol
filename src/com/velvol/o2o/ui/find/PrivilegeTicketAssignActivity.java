@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
@@ -13,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.velvol.o2o.R;
-import com.velvol.o2o.adapter.PrivilegeTicketAssignAdapter;
+import com.velvol.o2o.adapter.find.PrivilegeTicketAssignAdapter;
 import com.velvol.o2o.tool.BaseActivity;
 //指定商店的优惠券
 public class PrivilegeTicketAssignActivity extends BaseActivity{

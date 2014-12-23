@@ -113,6 +113,9 @@
         <activity
             android:name="com.velvol.o2o.ui.login.ForgetPswActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.velvol.o2o.ui.manager.UserFaceActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

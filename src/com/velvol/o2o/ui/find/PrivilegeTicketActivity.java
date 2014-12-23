@@ -34,6 +34,10 @@ public class PrivilegeTicketActivity extends BaseActivity{
 			R.drawable.test2,
 			R.drawable.test3,
 			R.drawable.test4,
+			R.drawable.test1,
+			R.drawable.test2,
+			R.drawable.test3,
+			R.drawable.test4,
 	};
 	//Í¼Æ¬Êý¾Ý
 	private ArrayList<Map<String, Object>> listItems;

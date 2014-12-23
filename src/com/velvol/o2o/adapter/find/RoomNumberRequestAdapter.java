@@ -1,4 +1,4 @@
-package com.velvol.o2o.adapter;
+package com.velvol.o2o.adapter.find;
 
 
 import java.util.List;

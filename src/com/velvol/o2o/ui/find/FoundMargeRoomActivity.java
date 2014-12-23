@@ -68,6 +68,7 @@ public class FoundMargeRoomActivity extends BaseActivity {
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
+			//创建房间获得房间号
 			case R.id.found_buttom:
 				textRoomNumber = found_marge_number_editText.getText().toString();
 				if(textRoomNumber!="" && isMobileNO(textRoomNumber)){
@@ -79,9 +80,16 @@ public class FoundMargeRoomActivity extends BaseActivity {
 					Toast.makeText(FoundMargeRoomActivity.this, "请输入真确的4位房间号，如（1234）", 1).show();
 				}
 				break;
+				//加入房间获得房间号
 			case R.id.found_buttom1:
-				startActivity(new Intent(FoundMargeRoomActivity.this,
-						MargeActivity.class));
+				textRoomNumber = found_marge_number_editText.getText().toString();
+				if(textRoomNumber!=""&&isMobileNO(textRoomNumber)){
+					Intent intent=new Intent(FoundMargeRoomActivity.this, MargeActivity.class);
+					intent.putExtra("roomNumber", textRoomNumber);
+					startActivity(intent);
+				}else{
+					Toast.makeText(FoundMargeRoomActivity.this, "请输入真确的4位房间号，如（1234）", 1).show();
+				}
 				break;
 			case R.id.title_topbar_back_iv:
 				finish();
@@ -89,7 +97,7 @@ public class FoundMargeRoomActivity extends BaseActivity {
 			}
 		}
 	};
-	//正则表达式验证数字
+	//正则表达式验证数字(0-9)的四位数字
 	public static boolean isMobileNO(String mobiles){       
 		Pattern p = Pattern.compile("[0123456789]{4}");       
 		Matcher m = p.matcher(mobiles);   

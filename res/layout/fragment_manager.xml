@@ -28,7 +28,7 @@
                 android:orientation="horizontal" >
 
                 <com.velvol.o2o.view.CircularImage
-                    android:id="@+id/icon"
+                    android:id="@+id/manager_userface_ci"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center_vertical"

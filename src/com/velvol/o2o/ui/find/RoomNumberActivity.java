@@ -10,8 +10,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.velvol.o2o.R;
-import com.velvol.o2o.adapter.RoomNumberEveryoneFootAdapter;
-import com.velvol.o2o.adapter.RoomNumberRequestAdapter;
+import com.velvol.o2o.adapter.find.RoomNumberEveryoneFootAdapter;
+import com.velvol.o2o.adapter.find.RoomNumberRequestAdapter;
 import com.velvol.o2o.tool.BaseActivity;
 import com.velvol.o2o.view.CircularImage;
 //房主拼单房间
@@ -104,6 +104,9 @@ public class RoomNumberActivity extends BaseActivity{
 	@Override
 	protected void initView() {
 		// TODO Auto-generated method stub
+		roomMasterImageCI.setImageResource(R.drawable.userface);
+		roomFriendImageCI1.setImageResource(R.drawable.userface);
+		roomFriendImageCI2.setImageResource(R.drawable.userface);
 		roomMasterName=roomMasterNameTextview.getText().toString();
 		roomMergeMany=roomMergeManyTextview.getText().toString();
 		roomMergeMoney=roomMergeMoneyTextview.getText().toString();

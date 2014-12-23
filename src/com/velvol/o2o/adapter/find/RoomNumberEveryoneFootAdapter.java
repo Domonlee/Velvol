@@ -1,4 +1,4 @@
-package com.velvol.o2o.adapter;
+package com.velvol.o2o.adapter.find;
 
 
 import java.util.List;
@@ -17,14 +17,14 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-//朋友房间大家一起点的食物ListView
+//房主页面大家一起点的食物ListView
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class RoomNumberFriendRoomEveryoneFootAdapter extends BaseAdapter{
+public class RoomNumberEveryoneFootAdapter extends BaseAdapter{
 
 	private Context context;
 	private LayoutInflater inflater;
 	
-	public RoomNumberFriendRoomEveryoneFootAdapter(Context context){
+	public RoomNumberEveryoneFootAdapter(Context context){
 		this.context=context;
 		inflater=LayoutInflater.from(context);
 	}
@@ -59,10 +59,10 @@ public class RoomNumberFriendRoomEveryoneFootAdapter extends BaseAdapter{
 		   holder.friendTotal=(TextView) convertView.findViewById(R.id.room_friend_total_textview);
 		   holder.masterFootListView=(ListView) convertView.findViewById(R.id.room_master_foot_listView);
 		   RoomNumberMasterFootAdapter adapter = new RoomNumberMasterFootAdapter(context);
-		   RoomNumberFriendFootAdapter adapter1 = new RoomNumberFriendFootAdapter(context);
+		   holder.masterFootListView.setAdapter(adapter);
 		   holder.frendFootListView=(ListView) convertView.findViewById(R.id.room_friend_foot_listView);
-		   holder.masterFootListView.setAdapter(adapter1);
-		   holder.frendFootListView.setAdapter(adapter);
+		   RoomNumberFriendFootAdapter adapter1 = new RoomNumberFriendFootAdapter(context);
+		   holder.frendFootListView.setAdapter(adapter1);
 		   
 		   convertView.setTag(holder);
 		}else {

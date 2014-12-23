@@ -8,7 +8,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.velvol.o2o.R;
-import com.velvol.o2o.adapter.DataFootAdapter;
+import com.velvol.o2o.adapter.find.DataFootAdapter;
 import com.velvol.o2o.tool.BaseActivity;
 //Êý¾Ý²ÍÒû
 public class DataFootActivity extends BaseActivity{
