@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="#14ae68"
         android:orientation="horizontal" >
 
@@ -23,7 +23,7 @@
             android:imeOptions="actionSearch"
             android:paddingLeft="10dp"
             android:singleLine="true"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/search"
@@ -36,25 +36,30 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="horizontal" >
 
-        <ListView
-            android:id="@+id/listview"
+        <LinearLayout
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
-             >
-        </ListView>
+            android:layout_height="match_parent"
+            android:background="#e8e8e8" >
+
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:divider="@null" >
+            </ListView>
+        </LinearLayout>
 
         <GridView
             android:id="@+id/search_gridView1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
+            android:background="#FFFFFF"
             android:numColumns="3" >
         </GridView>
-        
     </LinearLayout>
 
 </LinearLayout>
