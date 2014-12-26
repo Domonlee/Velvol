@@ -3,24 +3,35 @@ package com.velvol.o2o.fragment;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.velvol.o2o.R;
-import com.velvol.o2o.adapter.SearchAdapter;
-import com.velvol.o2o.adapter.search.SearchFoodAdapter;
-import com.velvol.o2o.tool.BaseFragment;
-import com.velvol.o2o.ui.search.SearchClassActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
+
+import com.velvol.o2o.R;
+import com.velvol.o2o.adapter.SearchAdapter;
+import com.velvol.o2o.adapter.search.PromptAdapter;
+import com.velvol.o2o.adapter.search.RecentAdapter;
+import com.velvol.o2o.adapter.search.SearchFoodAdapter;
+import com.velvol.o2o.adapter.search.SearchHotAdapter;
+import com.velvol.o2o.tool.BaseFragment;
+import com.velvol.o2o.ui.search.SearchClassActivity;
 
 public class SearchFragmentActivity extends BaseFragment {
 
@@ -33,6 +44,10 @@ public class SearchFragmentActivity extends BaseFragment {
 	private HashMap<Integer, Boolean> isselect;
 	private ArrayList<String> leftlist;
 	private ArrayList<String> rightlist;
+	private TextView clear;
+	private PopupWindow window;
+	private LinearLayout ll1;
+	private EditText search;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -41,11 +56,12 @@ public class SearchFragmentActivity extends BaseFragment {
 		findViewById();
 		initView();
 		return view;
-
 	}
 
 	@Override
 	protected void findViewById() {
+		search = (EditText) view.findViewById(R.id.search);
+		ll1 = (LinearLayout) view.findViewById(R.id.ll_ll1);
 		listView = (ListView) view.findViewById(R.id.listview);
 		gridView = (GridView) view.findViewById(R.id.search_gridView1);
 	}
@@ -96,6 +112,24 @@ public class SearchFragmentActivity extends BaseFragment {
 				startActivity(intent);
 			}
 		});
+
+		search.setOnFocusChangeListener(new OnFocusChangeListener() {
+
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				if (hasFocus) {
+					showwindow();
+				}
+			}
+		});
+
+		search.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				showwindow();
+			}
+		});
 	}
 
 	AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
@@ -115,10 +149,63 @@ public class SearchFragmentActivity extends BaseFragment {
 			adapter.setList(leftlists);
 			adapter.notifyDataSetChanged();
 		}
+
 	};
 
 	@Override
 	protected void result(String result) {
+
+	}
+
+	/**
+	 * 展示
+	 */
+	private void showwindow() {
+
+		window = new PopupWindow(LayoutParams.MATCH_PARENT,
+				LayoutParams.MATCH_PARENT);
+		View view = LayoutInflater.from(getActivity()).inflate(
+				R.layout.search_fragment_down, null);
+		window.setContentView(view);
+		window.setOutsideTouchable(true);
+		window.setBackgroundDrawable(new ColorDrawable());
+		window.setFocusable(true);
+		window.showAsDropDown(ll1);
+		// 热门搜索
+		ListView gridView = (ListView) view
+				.findViewById(R.id.gv_search_fragment_down_listview);
+		// 最近搜索
+		ListView listView = (ListView) view
+				.findViewById(R.id.lv_search_fragment_down_listview);
+
+		// 假数据
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("牛肉面");
+		list.add("酸菜面");
+		list.add("岐山臊子面");
+		list.add("金马刀削面");
+		SearchHotAdapter hotAdapter = new SearchHotAdapter(getActivity());
+		hotAdapter.setList(list);
+		gridView.setAdapter(hotAdapter);
+
+		ArrayList<String> flist = new ArrayList<String>();
+		flist.add("面条");
+		flist.add("酸辣土豆丝");
+		flist.add("酸辣土豆丝");
+		flist.add("酸辣土豆丝");
+		flist.add("酸辣土豆丝");
+		RecentAdapter recentAdapter = new RecentAdapter(getActivity());
+		recentAdapter.setList(flist);
+
+		listView.setAdapter(recentAdapter);
+		clear = (TextView) view.findViewById(R.id.tv_search_class_down_clear);
+		clear.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+			}
+		});
 
 	}
 

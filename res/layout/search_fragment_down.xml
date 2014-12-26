@@ -2,20 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e8e8e8"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="5"
-        android:background="#FFFFFF" >
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <ImageView
+                android:id="@+id/iv_recent_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hotsearch" />
+
+            <TextView
+                android:id="@+id/tv_recent_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="热门搜索" />
+        </LinearLayout>
 
         <ListView
-            android:id="@+id/lv_search_class_down_prompt"
+            android:id="@+id/gv_search_fragment_down_listview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:background="#FFFFFF" >
         </ListView>
     </LinearLayout>
 
@@ -28,29 +50,27 @@
         android:padding="10dp" >
 
         <ImageView
-            android:id="@+id/iv_recent_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/search_history_first" />
 
         <TextView
-            android:id="@+id/tv_recent_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:gravity="center_vertical"
-            android:text="历史搜索" />
+            android:text="最近搜索" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_weight="1"
         android:background="#FFFFFF"
         android:orientation="horizontal" >
 
         <ListView
-            android:id="@+id/lv_search_class_down_search"
+            android:id="@+id/lv_search_fragment_down_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
         </ListView>
