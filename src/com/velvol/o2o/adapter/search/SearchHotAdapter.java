@@ -11,16 +11,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class PromptAdapter extends BaseAdapter {
+public class SearchHotAdapter extends BaseAdapter {
 	private Context context;
 	private ArrayList<String> list;
 
-	public void setList(ArrayList<String> list) {
-		this.list = list;
+	public SearchHotAdapter(Context con) {
+		this.context = con;
 	}
 
-	public PromptAdapter(Context con) {
-		this.context = con;
+	public void setList(ArrayList<String> list) {
+		this.list = list;
 	}
 
 	@Override
@@ -41,17 +41,17 @@ public class PromptAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		convertView = LayoutInflater.from(context).inflate(
-				R.layout.search_class_down_item, null);
-		TextView name = (TextView) convertView
-				.findViewById(R.id.tv_down_item_name);
-		TextView count = (TextView) convertView
-				.findViewById(R.id.tv_down_item_count);
-
-		if (position == 0) {
-			name.setText("ËÑË÷¡°" + list.get(position) + "¡±²ËÆ·");
-		}
-		name.setText(list.get(position));
-		count.setText("35");
+				R.layout.search_hot_item, null);
+		TextView name1 = (TextView) convertView
+				.findViewById(R.id.tv_search_hot_name1);
+		TextView name2 = (TextView) convertView
+				.findViewById(R.id.tv_search_hot_name2);
+		TextView count1 = (TextView) convertView
+				.findViewById(R.id.tv_search_hot_count1);
+		TextView count2 = (TextView) convertView
+				.findViewById(R.id.tv_search_hot_count2);
+		name1.setText(list.get(position * 2));
+		name2.setText(list.get(position * 2 + 1));
 
 		return convertView;
 	}

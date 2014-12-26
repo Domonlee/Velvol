@@ -39,6 +39,7 @@ public class SearchClassActivity extends BaseActivity implements
 	private String name;
 	private PopupWindow window;
 	private LinearLayout ll;
+	private TextView clear;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,7 @@ public class SearchClassActivity extends BaseActivity implements
 		price.setOnClickListener(this);
 		news.setOnClickListener(this);
 		cancle.setOnClickListener(this);
-
+		
 	}
 
 	@Override
@@ -128,8 +129,6 @@ public class SearchClassActivity extends BaseActivity implements
 		// 最近搜索listview
 		ListView recent = (ListView) view
 				.findViewById(R.id.lv_search_class_down_search);
-		TextView clear = (TextView) view
-				.findViewById(R.id.tv_search_class_down_clear);
 
 		// 假数据
 		ArrayList<String> list = new ArrayList<String>();
@@ -152,10 +151,16 @@ public class SearchClassActivity extends BaseActivity implements
 		RecentAdapter recentAdapter = new RecentAdapter(
 				SearchClassActivity.this);
 		recentAdapter.setList(flist);
-		View view2 = LayoutInflater.from(SearchClassActivity.this).inflate(
-				R.layout.search_class_down_recent_footview, null);
-		recent.addFooterView(view2);
+
 		recent.setAdapter(recentAdapter);
+		clear = (TextView) view.findViewById(R.id.tv_search_class_down_clear);
+		clear.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+			}
+		});
 
 	}
 
