@@ -42,24 +42,13 @@
             android:name="com.velvol.o2o.ui.make.ParticularsActivity"
             android:screenOrientation="portrait" />
         <activity
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d56c82afe2c99353a5f35878e0dac4c884091a94
-            android:name="com.velvol.o2o.ModificationPathActivity"
-=======
             android:name="com.velvol.o2o.ui.make.ShopDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ModificationPathActivity"
->>>>>>> e44722412540ad2f259fc94309a4a80802551648
             android:screenOrientation="portrait" />
         <activity
             android:name="com.velvol.o2o.RegisterActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.velvol.o2o.ui.make.ShopDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.velvol.o2o.EvaluateActivity"

@@ -74,16 +74,8 @@ public class ParticularsActivity extends BaseActivity {
 				finish();
 				break;
 			case R.id.particulars_tv_merchantName:
-<<<<<<< HEAD
-<<<<<<< HEAD
 				startActivity(new Intent(ParticularsActivity.this,
 						ShopDetailsActivity.class));
-=======
-				startActivity(new Intent(ParticularsActivity.this,ShopDetailsActivity.class));
->>>>>>> e44722412540ad2f259fc94309a4a80802551648
-=======
-				
->>>>>>> d56c82afe2c99353a5f35878e0dac4c884091a94
 				break;
 			default:
 				break;
