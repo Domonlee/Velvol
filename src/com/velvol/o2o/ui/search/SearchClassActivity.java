@@ -2,21 +2,18 @@ package com.velvol.o2o.ui.search;
 
 import java.util.ArrayList;
 
-import com.velvol.o2o.R;
-import com.velvol.o2o.adapter.search.ClassSearchAdapter;
-import com.velvol.o2o.adapter.search.PromptAdapter;
-import com.velvol.o2o.adapter.search.RecentAdapter;
-import com.velvol.o2o.tool.BaseActivity;
-
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup.LayoutParams;
+import android.view.inputmethod.EditorInfo;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -24,6 +21,14 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
+
+import com.velvol.o2o.R;
+import com.velvol.o2o.SearchItemInfoActivity;
+import com.velvol.o2o.adapter.search.ClassSearchAdapter;
+import com.velvol.o2o.adapter.search.PromptAdapter;
+import com.velvol.o2o.adapter.search.RecentAdapter;
+import com.velvol.o2o.tool.BaseActivity;
 
 public class SearchClassActivity extends BaseActivity implements
 		OnClickListener {
@@ -70,7 +75,7 @@ public class SearchClassActivity extends BaseActivity implements
 		price.setOnClickListener(this);
 		news.setOnClickListener(this);
 		cancle.setOnClickListener(this);
-		
+
 	}
 
 	@Override
@@ -99,6 +104,22 @@ public class SearchClassActivity extends BaseActivity implements
 			@Override
 			public void onClick(View v) {
 				showwindow();
+
+			}
+		});
+
+		search.setOnEditorActionListener(new OnEditorActionListener() {
+			@Override
+			public boolean onEditorAction(TextView v, int actionId,
+					KeyEvent event) {
+				if (actionId == EditorInfo.IME_ACTION_SEND
+						|| (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+					Intent intent = new Intent(SearchClassActivity.this,
+							SearchItemInfoActivity.class);
+					startActivity(intent);
+				}
+
+				return false;
 			}
 		});
 
@@ -113,7 +134,7 @@ public class SearchClassActivity extends BaseActivity implements
 	 * 展示
 	 */
 	private void showwindow() {
-
+		search.setEnabled(true);
 		window = new PopupWindow(LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
 		View view = LayoutInflater.from(SearchClassActivity.this).inflate(
@@ -121,7 +142,10 @@ public class SearchClassActivity extends BaseActivity implements
 		window.setContentView(view);
 		window.setOutsideTouchable(true);
 		window.setBackgroundDrawable(new ColorDrawable());
-		window.setFocusable(true);
+		window.setFocusable(false);
+		// 全屏PopupWindow 挡住软键盘
+		window.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
+		window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 		window.showAsDropDown(ll);
 		// 提示listview
 		ListView prompt = (ListView) view
