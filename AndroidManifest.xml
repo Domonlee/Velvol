@@ -44,6 +44,9 @@
         <activity
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d56c82afe2c99353a5f35878e0dac4c884091a94
             android:name="com.velvol.o2o.ModificationPathActivity"
 =======
             android:name="com.velvol.o2o.ui.make.ShopDetailsActivity"
@@ -56,17 +59,9 @@
             android:name="com.velvol.o2o.RegisterActivity"
             android:screenOrientation="portrait" />
         <activity
-=======
             android:name="com.velvol.o2o.ui.make.ShopDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.velvol.o2o.ModificationPathActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.velvol.o2o.RegisterActivity"
-            android:screenOrientation="portrait" />
-        <activity
->>>>>>> origin/DomonBranch
             android:name="com.velvol.o2o.EvaluateActivity"
             android:screenOrientation="portrait" />
         <activity

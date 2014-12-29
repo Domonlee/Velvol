@@ -1,12 +1,5 @@
 package com.velvol.o2o.fragment;
 
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
-import com.velvol.o2o.R;
-import com.velvol.o2o.adapter.CartAdapter;
-import com.velvol.o2o.tool.BaseFragment;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,6 +11,13 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.velvol.o2o.R;
+import com.velvol.o2o.adapter.CartAdapter;
+import com.velvol.o2o.tool.BaseFragment;
 
 public class CartFragmentActivity extends BaseFragment {
 	

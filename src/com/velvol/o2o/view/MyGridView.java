@@ -2,7 +2,9 @@ package com.velvol.o2o.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View.MeasureSpec;
 import android.widget.GridView;
+
 
 public class MyGridView extends GridView {
 
