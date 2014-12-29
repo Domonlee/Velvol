@@ -4,8 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".EvaluateActivity" >
-
+    tools:context=".ui.make.ShopDetailsActivity" >
     <include layout="@layout/base_title_layout" />
 
     <ScrollView
@@ -87,13 +86,14 @@
                 <TextView
                     android:id="@+id/address"
                     android:layout_width="0dp"
-                    android:drawableLeft="@drawable/merchant_path"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:drawableLeft="@drawable/merchant_path"
                     android:gravity="center_vertical"
                     android:minHeight="20dp"
                     android:text="莲湖区大唐西市二楼2080号"
-                    android:textColor="#434343" />
+                    android:textColor="#6c6c6c" />
+
                 <TextView
                     android:id="@+id/show_map"
                     android:layout_width="wrap_content"
@@ -109,47 +109,137 @@
                 android:layout_height="5dip"
                 android:background="#eeeeee" />
 
-			<TextView 
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:layout_marginLeft="10dp"
-			    android:layout_margin="5dp"
-			    android:drawableLeft="@drawable/merchant_jieshao"
-			    android:drawablePadding="5dp"
-			    android:text="餐厅介绍"
-			    android:gravity="center_vertical"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/merchant_jieshao"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:text="餐厅介绍"
+                android:textColor="#6c6c6c" />
+
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="1dip"
                 android:background="#eeeeee" />
-			<TextView 
-			    android:id="@+id/shop_context"
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:layout_marginLeft="10dp"
-			    android:layout_margin="5dp"
-			    android:text="     我是餐厅介绍的内容我是餐厅介绍的内容我是餐厅介绍的内容我是餐厅介绍的内容"
-			    android:textColor="#9b9b9b"
-			    android:textScaleX="1.1"
-			    
-			    android:gravity="center_vertical"/>
-            <LinearLayout
+
+            <TextView
+                android:id="@+id/shop_context"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                
-                >
-            </LinearLayout>
+                android:layout_margin="5dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="     我是餐厅介绍的内容我是餐厅介绍的内容我是餐厅介绍的内容我是餐厅介绍的内容我是餐厅介绍的内容我是餐厅介绍的内容我是餐厅介绍的内容我是餐厅介绍的内容"
+                android:textColor="#9b9b9b"
+                android:textSize="14sp" />
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="10dp"
                 android:background="#eeeeee" />
 
-            <com.velvol.o2o.tool.MyListView
-                android:id="@+id/listview"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:divider="@null" />
+                android:layout_margin="5dp"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/merchant_all"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:text="所有菜品"
+                android:textColor="#6c6c6c" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#eeeeee" />
+
+            <RadioGroup
+                android:id="@+id/shop_radio_button_group"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/order_all"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:checked="true"
+                    android:textSize="14sp"
+                    android:textColor="@color/make_shop_radiobutton"
+                    android:button="@null"
+                    android:background="#00000000"
+                    android:text="默认排序" />
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:background="#eeeeee" />
+
+                <RadioButton
+                    android:id="@+id/order_totl"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:textColor="@color/make_shop_radiobutton"
+                    android:button="@null"
+                    android:background="#00000000"
+                    android:text="销量最高" />
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:background="#eeeeee" />
+
+                <RadioButton
+                    android:id="@+id/order_price"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:textColor="@color/make_shop_radiobutton"
+                    android:button="@null"
+                    android:background="#00000000"
+                    android:text="价格最低" />
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:background="#eeeeee" />
+
+                <RadioButton
+                    android:id="@+id/order_good"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:background="#00000000"
+                    android:textColor="@color/make_shop_radiobutton"
+                    android:button="@null"
+                    android:text="评分最高" />
+            </RadioGroup>
+        
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee" />
+
+        <com.velvol.o2o.tool.MyListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null" />
         </LinearLayout>
     </ScrollView>
 
