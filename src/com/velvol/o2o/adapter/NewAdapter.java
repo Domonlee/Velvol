@@ -1,7 +1,6 @@
 package com.velvol.o2o.adapter;
 
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.velvol.o2o.R;
-import com.velvol.o2o.fragment.MakeFragmentActivity;
 
 public class NewAdapter extends BaseAdapter {
 	private int[] r = { R.drawable.test1, R.drawable.test2, R.drawable.test3,
@@ -60,6 +58,7 @@ public class NewAdapter extends BaseAdapter {
 			holder.status = (TextView) convertView.findViewById(R.id.status);
 			holder.buy = (Button) convertView.findViewById(R.id.buy);
 			convertView.setTag(holder);
+			
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}

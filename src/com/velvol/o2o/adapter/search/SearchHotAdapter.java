@@ -25,7 +25,11 @@ public class SearchHotAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		return list.size();
+
+		if (list.size() % 2 == 0)
+			return list.size() / 2;
+		else
+			return list.size() / 2 + 1;
 	}
 
 	@Override

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
@@ -169,7 +170,10 @@ public class SearchFragmentActivity extends BaseFragment {
 		window.setContentView(view);
 		window.setOutsideTouchable(true);
 		window.setBackgroundDrawable(new ColorDrawable());
-		window.setFocusable(true);
+		window.setFocusable(false);
+		// 全屏PopupWindow 挡住软键盘
+		window.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
+		window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 		window.showAsDropDown(ll1);
 		// 热门搜索
 		ListView gridView = (ListView) view
