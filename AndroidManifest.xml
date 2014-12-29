@@ -43,7 +43,14 @@
             android:screenOrientation="portrait" />
         <activity
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:name="com.velvol.o2o.ModificationPathActivity"
+=======
+            android:name="com.velvol.o2o.ui.make.ShopDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ModificationPathActivity"
+>>>>>>> e44722412540ad2f259fc94309a4a80802551648
             android:screenOrientation="portrait" />
         <activity
             android:name="com.velvol.o2o.RegisterActivity"
