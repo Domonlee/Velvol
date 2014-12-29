@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="ivory">#a7d3ff</color>
     <color name="blue">#17b3ec</color>
     <color name="red">#FF0000</color>
@@ -10,8 +11,11 @@
     <color name="black">#000000</color>
     <color name="result_view">#b0000000</color>
     <color name="viewfinder_mask">#60000000</color>
-    <color name="possible_result_points">#c0ffff00</color> 
+    <color name="possible_result_points">#c0ffff00</color>
     <color name="base_color_text_white">#ffffff</color>
     <color name="base_color_green">#14AE68</color>
     <color name="transparent">#00000000</color>
+    <color name="green2">#2ABE74</color>
+    <color name="gray2">#6c6c6c</color>
+
 </resources>
