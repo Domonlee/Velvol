@@ -37,7 +37,6 @@ public class ParticularsActivity extends BaseActivity {
 	protected void findViewById() {
 		merchantName = (TextView) findViewById(R.id.particulars_tv_merchantName);
 		back = (ImageView) findViewById(R.id.particulars_return);
-
 		classify = (ImageView) findViewById(R.id.classify);
 		listView = (MyListView) findViewById(R.id.listview);
 		popLayout = (LinearLayout) findViewById(R.id.pop_layout);
@@ -75,7 +74,7 @@ public class ParticularsActivity extends BaseActivity {
 				finish();
 				break;
 			case R.id.particulars_tv_merchantName:
-				
+				startActivity(new Intent(ParticularsActivity.this,ShopDetailsActivity.class));
 				break;
 			default:
 				break;

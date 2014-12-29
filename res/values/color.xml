@@ -14,4 +14,6 @@
     <color name="base_color_text_white">#ffffff</color>
     <color name="base_color_green">#14AE68</color>
     <color name="transparent">#00000000</color>
+    <color name="green2">#2ABE74</color>
+    <color name="gray2">#6c6c6c</color>
 </resources>

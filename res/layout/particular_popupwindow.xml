@@ -5,7 +5,8 @@
     android:layout_height="60dp"
     android:background="@drawable/popbackground"
     android:orientation="horizontal"
-    android:visibility="gone" >
+    android:visibility="gone"
+     >
 
     <TextView
         android:layout_width="0dp"
