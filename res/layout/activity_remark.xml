@@ -8,10 +8,14 @@
         android:id="@+id/title_top_layout"
         layout="@layout/base_title_layout" />
 
-    <ListView
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
         android:id="@+id/remark_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
+        android:layout_height="match_parent" 
+        ptr:ptrDrawable="@drawable/refresh_image"
+        ptr:ptrMode="both"
+        >
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
 
 </LinearLayout>

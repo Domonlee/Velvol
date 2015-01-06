@@ -1,7 +1,6 @@
 package com.velvol.o2o.ui.find;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -57,6 +56,7 @@ public class PrivilegeTicketAssignToActivity extends BaseActivity{
 		// TODO Auto-generated method stub
 		
 		merchant_foor_name_textview.setText("芒果巧克力三彩蛋糕优惠券");
+		merchant_foor_name_textview.setTextSize(18);
 		merchant_return_imageview.setOnClickListener(listener);
 	}
 	View.OnClickListener listener=new OnClickListener() {

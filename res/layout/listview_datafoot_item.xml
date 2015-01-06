@@ -49,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="      摄入1000卡，你又超标哦，健康饮食从点滴做起健康饮食从点滴做起" />
+                    android:text="摄入0卡" />
             </LinearLayout>
 
         </LinearLayout>
@@ -66,12 +66,11 @@
 
         <ImageView
             android:id="@+id/data_foot_left_imageview"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:clickable="true"
-            android:layout_weight="0.5"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/iconfont_qiehuanqizuo" />
+            android:src="@drawable/datafootr" />
 
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView1"
@@ -93,19 +92,19 @@
                         android:id="@+id/data_foot_picture1_imageview"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:layout_toRightOf="@+id/data_foot_selected_picture1_imageview"
+                        android:layout_toRightOf="@+id/data_foot_selected_picture1_checkbox"
                         android:layout_weight="1"
                         android:layout_marginRight="10dp"
                         android:src="@drawable/userface" />
 
-                    <ImageView
-                        android:id="@+id/data_foot_selected_picture2_imageview"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
+                    <CheckBox
+                        android:id="@+id/data_foot_selected_picture2_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:clickable="true"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginRight="2dp"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/data_foot_selected"
+                        android:button="@drawable/data_foot"
                         android:layout_toRightOf="@+id/data_foot_picture1_imageview"
                          />
 
@@ -113,26 +112,26 @@
                         android:id="@+id/data_foot_picture2_imageview"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:layout_toRightOf="@+id/data_foot_selected_picture2_imageview"
+                        android:layout_toRightOf="@+id/data_foot_selected_picture2_checkbox"
                         android:layout_weight="1"
                         android:layout_marginRight="10dp"
                         android:src="@drawable/userface" />
 
-                    <ImageView
-                        android:id="@+id/data_foot_selected_picture3_imageview"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
+                    <CheckBox
+                        android:id="@+id/data_foot_selected_picture3_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:clickable="true"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginRight="2dp"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/data_foot_selected"
+                        android:button="@drawable/data_foot"
                         android:layout_toRightOf="@+id/data_foot_picture2_imageview" />
 
                     <ImageView
                         android:id="@+id/data_foot_picture3_imageview"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:layout_toRightOf="@+id/data_foot_selected_picture3_imageview"
+                        android:layout_toRightOf="@+id/data_foot_selected_picture3_checkbox"
                         android:src="@drawable/userface" />
 
                     <TextView
@@ -141,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignLeft="@+id/data_foot_picture2_imageview"
                         android:layout_below="@+id/data_foot_picture2_imageview"
-                        android:layout_toLeftOf="@+id/data_foot_selected_picture3_imageview"
+                        android:layout_toLeftOf="@+id/data_foot_selected_picture3_checkbox"
                         android:gravity="center"
                         android:text="凉拌鸡丝"
                         android:textSize="12dp" />
@@ -157,15 +156,14 @@
                         android:text="黑胡椒牛柳"
                         android:textSize="12dp" />
 
-                    <ImageView
-                        android:id="@+id/data_foot_selected_picture1_imageview"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:clickable="true"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
+                    <CheckBox
+                        android:id="@+id/data_foot_selected_picture1_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:layout_marginRight="2dp"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/data_foot_selected" />
+                        android:button="@drawable/data_foot" />
 
                     <TextView
                         android:id="@+id/data_foot_name1_textview"
@@ -173,7 +171,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignRight="@+id/data_foot_picture1_imageview"
                         android:layout_below="@+id/data_foot_picture1_imageview"
-                        android:layout_toRightOf="@+id/data_foot_selected_picture1_imageview"
+                        android:layout_toRightOf="@+id/data_foot_selected_picture1_checkbox"
                         android:gravity="center"
                         android:text="红烧牛肉"
                         android:textSize="12dp" />
@@ -185,11 +183,11 @@
 
         <ImageView
             android:id="@+id/data_foot_right_imageview1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:clickable="true"
-            android:src="@drawable/find_layout_off" />
+            android:src="@drawable/datafootl" />
 
     </LinearLayout>
 

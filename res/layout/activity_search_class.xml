@@ -30,6 +30,7 @@
             android:layout_weight="1"
             android:background="@drawable/edit_backgorund"
             android:drawableLeft="@drawable/search"
+            android:hint="菜品名称"
             android:imeOptions="actionSearch"
             android:singleLine="true"
             android:textSize="12sp" />
@@ -44,86 +45,84 @@
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
-    <LinearLayout
+    <RadioGroup
+        android:id="@+id/myorder_titlebar_rg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
+        android:layout_margin="5dp"
         android:background="#FFFFFF"
         android:orientation="horizontal" >
 
-        <RadioGroup
-            android:id="@+id/myorder_titlebar_rg"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:orientation="horizontal" >
+        <RadioButton
+            android:id="@+id/rb_class_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="综合"
+            android:textColor="@color/myorder_tv"
+            android:textSize="16sp" />
 
-            <RadioButton
-                android:id="@+id/rb_class_all"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:button="@null"
-                android:checked="true"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="综合"
-                android:textColor="@color/myorder_tv"
-                android:textSize="16sp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="#e8e8e8" />
 
-            <TextView
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="2dp"
-                android:background="#e8e8e8" />
+        <RadioButton
+            android:id="@+id/rb_class_sales"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="销量↓"
+            android:background="#00000000"
+            android:textColor="@color/myorder_tv"
+            android:textSize="16sp" />
 
-            <RadioButton
-                android:id="@+id/rb_class_sales"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:button="@null"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="销量↓"
-                android:textColor="@color/myorder_tv"
-                android:textSize="16sp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="#e8e8e8" />
 
-            <TextView
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="2dp"
-                android:background="#e8e8e8" />
+        <RadioButton
+            android:id="@+id/rb_class_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="价格↑"
+            android:background="#00000000"
+            android:textColor="@color/myorder_tv"
+            android:textSize="16sp" />
 
-            <RadioButton
-                android:id="@+id/rb_class_price"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:button="@null"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="价格↑"
-                android:textColor="@color/myorder_tv"
-                android:textSize="16sp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="#e8e8e8" />
 
-            <TextView
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="2dp"
-                android:background="#e8e8e8" />
-
-            <RadioButton
-                android:id="@+id/rb_class_new"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:button="@null"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="新品"
-                android:textColor="@color/myorder_tv"
-                android:textSize="16sp" />
-        </RadioGroup>
-    </LinearLayout>
+        <RadioButton
+            android:id="@+id/rb_class_new"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="新品"
+            android:background="#00000000"
+            android:textColor="@color/myorder_tv"
+            android:textSize="16sp" />
+    </RadioGroup>
 
     <View
         android:layout_width="match_parent"

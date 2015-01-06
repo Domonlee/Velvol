@@ -1,23 +1,18 @@
 package com.velvol.o2o.ui.manager;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import com.velvol.o2o.R;
-import com.velvol.o2o.R.id;
-import com.velvol.o2o.R.layout;
+import com.velvol.o2o.adapter.MsgAdapter;
 import com.velvol.o2o.tool.BaseActivity;
-import com.velvol.o2o.ui.login.ForgetPswActivity;
 import com.velvol.o2o.view.CircularImage;
 
-import android.R.string;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 public class MyMsgActivity extends BaseActivity {
@@ -26,6 +21,7 @@ public class MyMsgActivity extends BaseActivity {
 	public TextView title_topbar_tv;
 	public ListView mymsg_info_lv;
 	public CircularImage circularImage;
+	public MsgAdapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,19 +49,10 @@ public class MyMsgActivity extends BaseActivity {
 		title_topbar_back_iv.setOnClickListener(clickListener);
 		title_topbar_right_tv.setOnClickListener(clickListener);
 
-		ArrayList<HashMap<String, String>> msgArrayList = new ArrayList<HashMap<String, String>>();
-		for (int i = 0; i < 10; i++) {
-			HashMap<String, String> map = new HashMap<String, String>();
-			map.put("userName", "Domon");
-			map.put("userMsg", "这里就是一个评论，这里是个评论");
-			msgArrayList.add(map);
-		}
-
-		SimpleAdapter simpleAdapter = new SimpleAdapter(MyMsgActivity.this,
-				msgArrayList, R.layout.listview_mymsg_item, new String[] {
-						"userName", "userMsg" }, new int[] {
-						R.id.mymsg_item_username_tv, R.id.mymsg_item_msg_tv });
-		mymsg_info_lv.setAdapter(simpleAdapter);
+		DisplayMetrics dm = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(dm);
+		adapter = new MsgAdapter(MyMsgActivity.this,dm.widthPixels);
+		mymsg_info_lv.setAdapter(adapter);
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {

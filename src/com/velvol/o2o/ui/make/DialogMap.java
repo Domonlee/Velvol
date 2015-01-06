@@ -34,6 +34,7 @@ public class DialogMap {
 		// 开启交通图
 		mBaiduMap.setTrafficEnabled(false);
 		// 定义Maker坐标点
+		
 		LatLng point = new LatLng(weidu, jingdu);
 		// 构建Marker图标
 		BitmapDescriptor bitmap = BitmapDescriptorFactory
