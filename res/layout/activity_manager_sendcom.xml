@@ -74,6 +74,9 @@
                 android:layout_margin="15dp"
                 android:layout_height="130dp"
                 android:background="@drawable/ed_background"
+                android:textSize="12sp"
+                android:padding="5dp"
+                android:gravity="left"
                 android:hint="亲，您的评价对其他的买家很有帮助!"
                 android:maxHeight="60dp" />
             
@@ -107,13 +110,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
                 >
                 
                  <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
                         android:text="评价"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -122,8 +126,9 @@
                         android:id="@+id/sendcom_rb"
                         style="@android:attr/ratingBarStyleIndicator"
                         android:layout_width="wrap_content"
-                        android:layout_height="45dp"
+                        android:layout_height="23px"
                         android:isIndicator="true"
+                        android:layout_marginLeft="5dp"
                         android:numStars="5"
                         android:progress="4"
                         android:progressDrawable="@anim/ratingstart"

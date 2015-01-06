@@ -2,150 +2,115 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mymsg_item_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffffff"
-        android:orientation="vertical"
-        android:padding="5dp" >
+        android:layout_width="fill_parent"
+        android:layout_height="42dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical" >
 
-        <!-- 头像栏 -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <com.velvol.o2o.view.CircularImage
-                android:id="@+id/mymsg_item_face_ci"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/userface" />
-
-            <TextView
-                android:id="@+id/mymsg_item_username_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:hint="Username"
-                android:textColor="@color/gray"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/mymsg_item_date_tv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:hint="2014-12-25"
-                android:textColor="@color/gray"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-        <!-- 评论文字 -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="10dp" >
-
-            <TextView
-                android:id="@+id/mymsg_item_msg_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="这里应该有评论." />
-        </LinearLayout>
-
-        <!-- 菜品截图 -->
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp" >
-
-            <ImageView
-                android:id="@+id/mymsg_item_pic1_iv"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:scaleType="center"
-                android:src="@drawable/test1" />
-
-            <ImageView
-                android:id="@+id/mymsg_item_pic2_iv"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:scaleType="center"
-                android:src="@drawable/test2" />
-
-            <ImageView
-                android:id="@+id/mymsg_item_pic3_iv"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:scaleType="center"
-                android:src="@drawable/test3" />
-        </LinearLayout>
-
-        <!-- 线 -->
+        <com.velvol.o2o.view.CircularImage
+            android:id="@+id/user_img"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="#a8a8a8" />
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="zhangyan"
+            android:textColor="#303030" />
 
-        <!-- 功能区：点评和赞 -->
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="2014-11-28 13:20:21"
+            android:textColor="#919191" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#eeeeee" />
+
+    <RatingBar
+        android:id="@+id/lv"
+        style="@android:attr/ratingBarStyleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="23px"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:progress="4"
+        android:progressDrawable="@anim/ratingstart"
+        android:stepSize="1" />
+
+    <TextView
+        android:id="@+id/context"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:minHeight="20dp"
+        android:text="我是评价我是评价我是评价我是评价我是评价我是评价我是评价我是评价."
+        android:textColor="#434343" />
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="10dp"
-            android:paddingBottom="10dp"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:text="点评（30）"
-                android:textColor="@color/gray"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="#a8a8a8" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:paddingLeft="40dp"
-                android:paddingRight="50dp"
-                android:text="(0)"
-                android:drawableLeft="@drawable/mymsg_good_check"
-                android:textColor="@color/gray"
-                android:textSize="18sp" />
-
+            android:id="@+id/img_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
         </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#eeeeee" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" >
+
+        <TextView
+            android:id="@+id/praise"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="赞(10)" />
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:background="#eeeeee" />
+
+        <TextView
+            android:id="@+id/reply"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="回复(10)" />
     </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#eeeeee" />
 
 </LinearLayout>

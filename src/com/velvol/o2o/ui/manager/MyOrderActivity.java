@@ -55,7 +55,6 @@ public class MyOrderActivity extends BaseActivity {
 	@Override
 	protected void initView() {
 		title_topbar_tv.setText("ÎÒµÄ¶©µ¥");
-		title_topbar_right_tv.setText("±à¼­");
 		title_topbar_back_iv.setOnClickListener(clickListener);
 		title_topbar_right_tv.setOnClickListener(clickListener);
 		myorder_all_tv.setOnClickListener(clickListener);

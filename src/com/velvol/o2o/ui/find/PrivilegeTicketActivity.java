@@ -3,13 +3,11 @@ package com.velvol.o2o.ui.find;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
@@ -26,18 +24,18 @@ public class PrivilegeTicketActivity extends BaseActivity{
 	private GridView privilegeTicketGridView;
 	private ImageView imageview;
 	int [] imageIds=new int[]{
-			R.drawable.test1,
-			R.drawable.test2,
-			R.drawable.test3,
-			R.drawable.test4,
-			R.drawable.test1,
-			R.drawable.test2,
-			R.drawable.test3,
-			R.drawable.test4,
-			R.drawable.test1,
-			R.drawable.test2,
-			R.drawable.test3,
-			R.drawable.test4,
+			R.drawable.restaurant_gali,
+			R.drawable.restaurant_mingjian,
+			R.drawable.restaurant_pingding,
+			R.drawable.restaurant_xiangdao,
+			R.drawable.restaurant_gali,
+			R.drawable.restaurant_mingjian,
+			R.drawable.restaurant_pingding,
+			R.drawable.restaurant_xiangdao,
+			R.drawable.restaurant_gali,
+			R.drawable.restaurant_mingjian,
+			R.drawable.restaurant_pingding,
+			R.drawable.restaurant_xiangdao,
 	};
 	//图片数据
 	private ArrayList<Map<String, Object>> listItems;
@@ -49,6 +47,7 @@ public class PrivilegeTicketActivity extends BaseActivity{
 	private TextView title_topbar_tv;
 	//右边的标题
 	private TextView title_topbar_right_tv;
+	private ImageView restaurant_dashu;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -103,7 +102,7 @@ public class PrivilegeTicketActivity extends BaseActivity{
 				long id) {
 			// TODO Auto-generated method stub
 			switch (imageIds[position]) {
-			case R.drawable.test1:
+			case R.drawable.restaurant_gali:
 				startActivity(new Intent(PrivilegeTicketActivity.this, PrivilegeTicketAssignActivity.class));
 				break;
 			}

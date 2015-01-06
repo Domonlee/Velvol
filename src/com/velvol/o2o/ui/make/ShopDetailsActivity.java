@@ -47,7 +47,7 @@ public class ShopDetailsActivity extends BaseActivity {
 		public void onClick(View v) {
 			switch (v.getId()) {
 			case R.id.show_map:
-				map.showDitu(ShopDetailsActivity.this, 34.260921*1E6, 108.895761*1E6);
+				map.showDitu(ShopDetailsActivity.this, 108.895761,34.260921);
 				break;
 			case R.id.title_topbar_back_iv:
 				finish();

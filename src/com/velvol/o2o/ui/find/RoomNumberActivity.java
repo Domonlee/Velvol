@@ -73,6 +73,7 @@ public class RoomNumberActivity extends BaseActivity{
 		//共同点餐的ListView
 		RoomNumberEveryoneFootAdapter everyoneadapter=new RoomNumberEveryoneFootAdapter(this);
 		roomCommonFoolListview.setAdapter(everyoneadapter);
+		roomMergeMoneyTextview.setText(everyoneadapter.getFoodpricetotal()+"");
 		//获取上一个Activity传递过来的参数
 		toGetIntent();
 	}

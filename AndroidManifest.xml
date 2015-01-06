@@ -120,6 +120,9 @@
             android:name="com.velvol.o2o.ui.find.PrivilegeTicketAssignActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.velvol.o2o.ui.find.PrivilegeTicketAssignToActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.velvol.o2o.ui.find.ReviewActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -142,7 +145,7 @@
 		<!-- 百度Key -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="5UCHTRkS2K0ob7ZvUpkAOEvN" />
+            android:value="7OGE6IDTbTOXkTbMN8hQ6MVi" />
     </application>
 
 </manifest>

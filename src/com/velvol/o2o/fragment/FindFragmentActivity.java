@@ -1,6 +1,5 @@
 package com.velvol.o2o.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,7 +21,6 @@ import com.velvol.o2o.ui.find.ReviewActivity;
 public class FindFragmentActivity extends BaseFragment {
 
 	private View view;
-	private Context mContext;
 
 	// ∆¥µ•
 	private LinearLayout pindan;
@@ -43,30 +41,18 @@ public class FindFragmentActivity extends BaseFragment {
 		view = inflater.inflate(R.layout.fragment_find, container, false);
 		findViewById();
 		initView();
-		pindan.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(getActivity(),
-						FoundMargeRoomActivity.class);
-				startActivity(i);
-			}
-		});
 		return view;
 	}
 
 	@Override
 	protected void findViewById() {
 		title_topbar_tv = (TextView) view.findViewById(R.id.title_topbar_tv);
-		title_topbar_right_tv = (TextView) view
-				.findViewById(R.id.title_topbar_right_tv);
-		title_topbar_back_iv = (ImageView) view
-				.findViewById(R.id.title_topbar_back_iv);
+		title_topbar_right_tv = (TextView) view.findViewById(R.id.title_topbar_right_tv);
+		title_topbar_back_iv = (ImageView) view.findViewById(R.id.title_topbar_back_iv);
 		pindan = (LinearLayout) view.findViewById(R.id.find_join_layout);
 		comment = (LinearLayout) view.findViewById(R.id.find_comment_layout);
 		dataFoot = (LinearLayout) view.findViewById(R.id.find_data_layout);
-		privilegeTicket = (LinearLayout) view
-				.findViewById(R.id.find_ticket_layout);
+		privilegeTicket = (LinearLayout) view.findViewById(R.id.find_ticket_layout);
 
 	}
 
@@ -76,6 +62,7 @@ public class FindFragmentActivity extends BaseFragment {
 		title_topbar_right_tv.setVisibility(View.GONE);
 		title_topbar_tv.setText("∑¢œ÷");
 
+		
 		pindan.setOnClickListener(listener);
 		comment.setOnClickListener(listener);
 		dataFoot.setOnClickListener(listener);
@@ -89,21 +76,17 @@ public class FindFragmentActivity extends BaseFragment {
 		public void onClick(View v) {
 			switch (v.getId()) {
 			case R.id.find_comment_layout:
-				startActivity(new Intent(getActivity(), ReviewActivity.class));
+				startActivity(new Intent(getActivity(),ReviewActivity.class));
 				break;
 			case R.id.find_data_layout:
-				startActivity(new Intent(getActivity(), DataFootActivity.class));
+				startActivity(new Intent(getActivity(),DataFootActivity.class));
 				break;
 			case R.id.find_join_layout:
-				Intent i = new Intent(getActivity(),
-						FoundMargeRoomActivity.class);
-				startActivity(i);
+				startActivity(new Intent(getActivity(),FoundMargeRoomActivity.class));
 				break;
 			case R.id.find_ticket_layout:
-				startActivity(new Intent(getActivity(),
-						PrivilegeTicketActivity.class));
+				startActivity(new Intent(getActivity(),PrivilegeTicketActivity.class));
 				break;
-
 			}
 		}
 	};

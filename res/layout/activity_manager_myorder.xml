@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a8a8a8"
+    android:background="#EEEEEE"
     tools:context="com.velvol.o2o.ui.login.ForgetPswActivity" >
 
     <LinearLayout
@@ -35,13 +35,12 @@
 
         <TextView
             android:id="@+id/title_topbar_right_tv"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1.8"
             android:gravity="center"
             android:drawableLeft="@drawable/myorder_search_icon"
-            android:text="编辑"
+            android:layout_marginRight="5dp"
             android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
@@ -68,8 +67,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:checked="true"
                 android:button="@null"
                 android:text=" 全部 "
+                android:background="#00000000"
                 android:textColor="@color/myorder_tv"
                 android:textSize="16sp" />
 
@@ -80,6 +81,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:button="@null"
+                android:background="#00000000"
                 android:text="待付款"
                 android:textColor="@color/myorder_tv"
                 android:textSize="16sp" />
@@ -92,6 +94,7 @@
                 android:layout_weight="1"
                 android:button="@null"
                 android:text="待派送"
+                android:background="#00000000"
                 android:textColor="@color/myorder_tv"
                 android:textSize="16sp" />
 
@@ -103,6 +106,7 @@
                 android:layout_weight="1"
                 android:button="@null"
                 android:text="待确认"
+                android:background="#00000000"
                 android:textColor="@color/myorder_tv"
                 android:textSize="16sp" />
 
@@ -114,6 +118,7 @@
                 android:layout_weight="1"
                 android:button="@null"
                 android:text="待评价"
+                android:background="#00000000"
                 android:textColor="@color/myorder_tv"
                 android:textSize="16sp" />
         </RadioGroup>
