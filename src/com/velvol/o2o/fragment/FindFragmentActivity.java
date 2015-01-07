@@ -15,6 +15,7 @@ import com.velvol.o2o.R;
 import com.velvol.o2o.tool.BaseFragment;
 import com.velvol.o2o.ui.find.DataFootActivity;
 import com.velvol.o2o.ui.find.FoundMargeRoomActivity;
+import com.velvol.o2o.ui.find.MargeActivity;
 import com.velvol.o2o.ui.find.PrivilegeTicketActivity;
 import com.velvol.o2o.ui.find.ReviewActivity;
 
@@ -82,7 +83,7 @@ public class FindFragmentActivity extends BaseFragment {
 				startActivity(new Intent(getActivity(),DataFootActivity.class));
 				break;
 			case R.id.find_join_layout:
-				startActivity(new Intent(getActivity(),FoundMargeRoomActivity.class));
+				startActivity(new Intent(getActivity(),MargeActivity.class));
 				break;
 			case R.id.find_ticket_layout:
 				startActivity(new Intent(getActivity(),PrivilegeTicketActivity.class));

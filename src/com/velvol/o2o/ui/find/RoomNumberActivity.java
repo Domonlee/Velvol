@@ -13,6 +13,7 @@ import com.velvol.o2o.R;
 import com.velvol.o2o.adapter.find.RoomNumberEveryoneFootAdapter;
 import com.velvol.o2o.adapter.find.RoomNumberRequestAdapter;
 import com.velvol.o2o.tool.BaseActivity;
+import com.velvol.o2o.tool.MyListView;
 import com.velvol.o2o.view.CircularImage;
 //房主拼单房间
 public class RoomNumberActivity extends BaseActivity{
@@ -44,9 +45,9 @@ public class RoomNumberActivity extends BaseActivity{
 	private String roomFriendName2; 
 	private TextView roomFriendNameTextview2;
 	//请求加入Listview
-	private ListView roomRequestitemListview;
+	private MyListView roomRequestitemListview;
 	//共同点的菜listview（房主点菜listview）（朋友点菜listview）
-	private ListView roomCommonFoolListview;
+	private MyListView roomCommonFoolListview;
 	//继续点餐
 	private ImageView roomContinueOrderImageview;
 	//确认点餐
@@ -96,8 +97,8 @@ public class RoomNumberActivity extends BaseActivity{
 		roomFriendImageCI2=(CircularImage)findViewById(R.id.room_friend_image2);
 		roomFriendNameTextview1=(TextView)findViewById(R.id.room_friend_name1);
 		roomFriendNameTextview2=(TextView)findViewById(R.id.room_friend_name2);
-		roomRequestitemListview=(ListView)findViewById(R.id.room_requestitem_listView1);
-		roomCommonFoolListview=(ListView)findViewById(R.id.room_commonfood_listview);
+		roomRequestitemListview=(MyListView)findViewById(R.id.room_requestitem_listView1);
+		roomCommonFoolListview=(MyListView)findViewById(R.id.room_commonfood_listview);
 		roomContinueOrderImageview=(ImageView)findViewById(R.id.room_continueorder_imageview);
 		roomConfirmOrderImageview=(ImageView)findViewById(R.id.room_confirmorder_imageview);
 	}

@@ -66,6 +66,7 @@
             android:background="@color/base_color_green"
             android:gravity="center"
             android:paddingLeft="5dp"
+            android:visibility="gone"
             android:clickable="true"
             android:textColor="#ffffff"
             android:textSize="18sp"

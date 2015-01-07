@@ -1,7 +1,6 @@
 package com.velvol.o2o.adapter.find;
 
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.util.Log;
@@ -14,7 +13,6 @@ import android.widget.TextView;
 
 import com.velvol.o2o.R;
 //房主页面大家一起点的食物ListView
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class RoomNumberEveryoneFootAdapter extends BaseAdapter{
 
 	private Context context;

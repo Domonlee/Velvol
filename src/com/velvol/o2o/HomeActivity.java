@@ -35,7 +35,6 @@ public class HomeActivity extends FragmentActivity {
 	private CartFragmentActivity cartFragment;
 	private ManagerFragmentActivity managerFragment;
 	private ArrayList<Fragment> fragmentList;
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +56,7 @@ public class HomeActivity extends FragmentActivity {
 	}
 
 	private void initView() {
-		
+
 		fragmentList = new ArrayList<Fragment>();
 		makeFragment = new MakeFragmentActivity();
 		searchFragment = new SearchFragmentActivity();
