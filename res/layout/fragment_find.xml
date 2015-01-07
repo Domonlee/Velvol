@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:background="#eeeeee"
-    android:fillViewport="true" >
+    android:orientation="vertical" >
 
-    <LinearLayout
+    <include
+        android:id="@+id/title_top_layout"
+        layout="@layout/base_title_layout" />
+
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <include
-            android:id="@+id/title_top_layout"
-            layout="@layout/base_title_layout" />
+        android:layout_height="fill_parent"
+        android:background="#eeeeee"
+        android:fillViewport="true" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,13 +27,14 @@
             <LinearLayout
                 android:id="@+id/find_comment_layout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:padding="5dp" >
 
                 <TextView
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/find_layout1" />
@@ -48,11 +50,14 @@
 
                 <TextView
                     android:id="@+id/textViewtitle2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
                     android:gravity="right"
-                    android:paddingLeft="10dp"
+                    android:maxLines="1"
+                    android:paddingRight="10dp"
                     android:text="点评赠积分，好礼换不停"
                     android:textColor="#b6b6b6"
                     android:textSize="16sp" />
@@ -61,7 +66,6 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
                     android:background="@drawable/dayuhao"
                     android:gravity="right" />
             </LinearLayout>
@@ -154,17 +158,6 @@
                             android:text="点评(33)"
                             android:textSize="14sp" />
 
-                        <!--
-                        <TextView
-                            android:id="@+id/tv_find_up"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginLeft="5dp"
-                            android:text="123"
-                            android:textSize="10sp" />
-                        -->
-
                         <ImageView
                             android:id="@+id/iv_find_down"
                             android:layout_width="0dp"
@@ -173,189 +166,53 @@
                             android:layout_weight="1"
                             android:src="@drawable/mymsg_good_red_icon" />
 
-                        <!--
-                        <TextView
-                            android:id="@+id/find_share_num"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginLeft="5dp"
-                            android:text="123"
-                            android:textSize="10sp" />
-                        -->
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:background="#eeeeee" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="15dp"
+                android:background="#eeeeee" />
 
-        <!-- 餐饮数据 -->
-
-        <LinearLayout
-            android:id="@+id/find_data_layout"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/white"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/find_layout2" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:gravity="center_vertical"
-                android:text="数据餐饮"
-                android:textColor="#484848"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textViewtitle3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="right"
-                android:paddingLeft="10dp"
-                android:text="科学饮食，健康生活"
-                android:textColor="#b6b6b6"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/dayuhao"
-                android:gravity="right" />
-        </LinearLayout>
-
-        <!-- 拼单 -->
-
-        <LinearLayout
-            android:id="@+id/find_join_layout"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/white"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/find_layout3" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="拼单"
-                android:textColor="#484848"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textViewtitle4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="right"
-                android:paddingLeft="10dp"
-                android:text="找小伙伴一起吃饭吧"
-                android:textColor="#b6b6b6"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="60dp"
-                android:background="@drawable/dayuhao"
-                android:gravity="right" />
-
-            <!--
-            <TextView
-                android:id="@+id/textViewtitle2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="25dp"
-                android:gravity="right"
-                android:text="找小伙伴一起吃饭吧"
-                android:textColor="#b6b6b6"
-                android:textSize="14sp" />
-            -->
-        </LinearLayout>
-
-        <!-- 优惠券 -->
-
-        <LinearLayout
-            android:id="@+id/find_ticket_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="15dp"
-            android:background="#fff"
-            android:orientation="vertical"
-            android:paddingBottom="15dp" >
+            <!-- 餐饮数据 -->
 
             <LinearLayout
+                android:id="@+id/find_data_layout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:padding="5dp" >
 
                 <TextView
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/find_layout4" />
+                    android:background="@drawable/find_layout2" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="10dp"
-                    android:text="优惠券"
+                    android:gravity="center_vertical"
+                    android:text="数据餐饮"
                     android:textColor="#484848"
                     android:textSize="18sp" />
 
-                <!--
                 <TextView
-                    android:id="@+id/textViewtitle2"
-                    android:layout_width="match_parent"
+                    android:id="@+id/textViewtitle3"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
                     android:gravity="right"
-                    android:text="1元吃大餐"
-                    android:textColor="#b6b6b6"
-                    android:textSize="14sp" />
-                -->
-
-                <TextView
-                    android:id="@+id/textViewtitle5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="right"
-                    android:paddingLeft="10dp"
-                    android:text="1元吃大餐"
+                    android:maxLines="1"
+                    android:paddingRight="10dp"
+                    android:text="科学饮食，健康生活"
                     android:textColor="#b6b6b6"
                     android:textSize="16sp" />
 
@@ -363,62 +220,175 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="110dp"
                     android:background="@drawable/dayuhao"
                     android:gravity="right" />
             </LinearLayout>
+            <!-- 拼单 -->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="15dp"
                 android:background="#eeeeee" />
 
             <LinearLayout
+                android:id="@+id/find_join_layout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal" >
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="5dp" >
 
-                <ImageView
-                    android:id="@+id/iv_bottom1"
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/find_layout3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:text="拼单"
+                    android:textColor="#484848"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewtitle4"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/test1" />
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:paddingRight="10dp"
+                    android:text="找小伙伴一起吃饭吧"
+                    android:textColor="#b6b6b6"
+                    android:textSize="16sp" />
 
-                <ImageView
-                    android:id="@+id/iv_bottom2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="1"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/test2" />
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/dayuhao"
+                    android:gravity="right" />
 
-                <ImageView
-                    android:id="@+id/iv_bottom3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="1"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/test3" />
+            </LinearLayout>
+            <!-- 优惠券 -->
 
-                <ImageView
-                    android:id="@+id/iv_bottom4"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="15dp"
+                android:background="#eeeeee" />
+
+            <LinearLayout
+                android:id="@+id/find_ticket_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="#fff"
+                android:orientation="vertical"
+                android:paddingBottom="15dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/find_layout4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="优惠券"
+                        android:textColor="#484848"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textViewtitle5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:maxLines="1"
+                        android:paddingRight="10dp"
+                        android:text="1元吃大餐"
+                        android:textColor="#b6b6b6"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/dayuhao"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/test4" />
+                    android:background="#eeeeee" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/iv_bottom1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/test1" />
+
+                    <ImageView
+                        android:id="@+id/iv_bottom2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/test2" />
+
+                    <ImageView
+                        android:id="@+id/iv_bottom3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/test3" />
+
+                    <ImageView
+                        android:id="@+id/iv_bottom4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/test4" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
-</ScrollView>
+</LinearLayout>

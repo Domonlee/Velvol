@@ -1,16 +1,22 @@
 package com.velvol.o2o.ui.login;
 
-import com.velvol.o2o.HomeActivity;
-import com.velvol.o2o.R;
-import com.velvol.o2o.RegisterActivity;
-import com.velvol.o2o.tool.BaseActivity;
-import com.velvol.o2o.tool.ConfigUtil;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.velvol.o2o.HomeActivity;
+import com.velvol.o2o.R;
+import com.velvol.o2o.RegisterActivity;
+import com.velvol.o2o.constant.GetUrl;
+import com.velvol.o2o.tool.BaseActivity;
+import com.velvol.o2o.tool.ConfigUtil;
+import com.velvol.o2o.tool.MD5;
 
 public class LoginActivity extends BaseActivity {
 
@@ -57,7 +63,7 @@ public class LoginActivity extends BaseActivity {
 						if (isNetworkConnected(LoginActivity.this)) {
 							 showProgressDialog(LoginActivity.this);
 							 // XXX 接口地址    测试链接
-							 httpget("http://m.baidu.com/", 1);  
+							 httpget(GetUrl.getLoginUrl(new MD5(pw).getMd5_32(), name), 1);  
 						} else
 							ShowToast("请检查网络连接");
 					} else
@@ -68,18 +74,14 @@ public class LoginActivity extends BaseActivity {
 			case R.id.reg:
 				startActivity(new Intent(LoginActivity.this,
 						RegisterActivity.class));
-				finish();
 				break;
 			case R.id.login2:
 				ShowToast("待开发");
-				// startActivity(new
-				// Intent(LoginActivity.this,AboutActivity.class));
-				// finish();
+				
 				break;
 			case R.id.forget_tv:
 				startActivity(new Intent(LoginActivity.this,
 						ForgetPswActivity.class));
-				finish();
 				break;
 			}
 		}
@@ -90,22 +92,22 @@ public class LoginActivity extends BaseActivity {
 	 */
 	protected void result(String result) {
 		loadingDialog.dismiss();
-		ConfigUtil.putBoolean("login_flag", data.login_flag = true);
-		startActivity(new Intent(LoginActivity.this,
-				HomeActivity.class));
-		finish();
-		// XXX 正式流程代码
-//		try {
-//			JSONObject c = new JSONObject(result);
-//			if (c.getInt("mark") == 1) {
-//				ConfigUtil.putBoolean("login_flag", data.login_flag = true);
-//			}
-//			else
-//				Toast.makeText(getApplicationContext(), c.getString("meg"), 0).show();
-//		} catch (JSONException e) {
-//			e.printStackTrace();
-//			Toast.makeText(getApplicationContext(),"服务接口异常", 0).show();
-//		}
+		
+		try {
+			JSONObject c = new JSONObject(result);
+			if (c.getInt("mark") == 1) {
+				ConfigUtil.putBoolean("login_flag", data.login_flag = true);
+				ConfigUtil.putString("user_id", data.User_id = c.getInt("result")+"");
+				startActivity(new Intent(LoginActivity.this,
+						HomeActivity.class));
+				finish();
+			}
+			else
+				Toast.makeText(getApplicationContext(), "密码错误。", 0).show();
+		} catch (JSONException e) {
+			e.printStackTrace();
+			Toast.makeText(getApplicationContext(),"网络不给力", 0).show();
+		}
 	}
 
 }

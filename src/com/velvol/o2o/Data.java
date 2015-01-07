@@ -17,6 +17,7 @@ public class Data extends Application {
 	
 	private static Data mInstance = null;
 	public boolean login_flag = false;
+	public String User_id = "";
 	public DisplayImageOptions displayImageOptions;
 	public static Data getInstance() {
 		return mInstance;
@@ -35,6 +36,7 @@ public class Data extends Application {
 	}
 	public void initData(){
 		login_flag = ConfigUtil.getBoolean("login_flag", false);
+		User_id = ConfigUtil.getString("user_id", "");
 	}
 	
 	public void initImageLoader() {

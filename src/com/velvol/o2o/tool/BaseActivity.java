@@ -180,7 +180,7 @@ public abstract class BaseActivity extends Activity {
 			if (Code == 1)
 				get();
 			else
-				result = uploadFile();
+				result = "";
 			Log.v("http--result", result);
 			bundle.putString("result", String.valueOf(result));
 			msg.setData(bundle);
@@ -214,65 +214,6 @@ public abstract class BaseActivity extends Activity {
 		}
 	}
 
-	private String uploadFile() {
-		String end = "\r\n";
-		String twoHyphens = "--";
-		String boundary = "*****";
-		try {
-			URL url = new URL("http://www.qipeio.com/Sell/setimage.ashx");
-			HttpURLConnection con = (HttpURLConnection) url.openConnection();
-			con.setDoInput(true);
-			con.setDoOutput(true);
-			con.setUseCaches(false);
-			con.setRequestMethod("POST");
-			/* setRequestProperty */
-			con.setRequestProperty("Connection", "Keep-Alive");
-			con.setRequestProperty("Charset", "UTF-8");
-			con.setRequestProperty("Content-Type",
-					"multipart/form-data;boundary=" + boundary);
-			DataOutputStream ds = new DataOutputStream(con.getOutputStream());
-			ds.writeBytes(twoHyphens + boundary + end);
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
-			Date date = new Date(System.currentTimeMillis());
-			String filesString = formatter.format(date).substring(0, 8);
-			ds.writeBytes("Content-Disposition: form-data; "
-					+ "name=\"file\";filename=\"" + formatter.format(date)
-					+ "\"" + end);
-			ds.writeBytes(end);
-			FileInputStream fStream = new FileInputStream(aPath);
-			int bufferSize = 1024;
-			byte[] buffer = new byte[bufferSize];
-			int length = -1;
-			/* ä»æ–‡ä»¶è¯»å–æ•°æ®è‡³ç¼“å†²åŒ? */
-			while ((length = fStream.read(buffer)) != -1) {
-				/* å°†èµ„æ–™å†™å…¥DataOutputStreamä¸? */
-				ds.write(buffer, 0, length);
-			}
-			ds.writeBytes(end);
-			ds.writeBytes(twoHyphens + boundary + twoHyphens + end);
-			/* close streams */
-			fStream.close();
-			ds.flush();
-			/* å–å¾—Responseå†…å®¹ */
-			InputStream is = con.getInputStream();
-			int ch;
-			StringBuffer b = new StringBuffer();
-			while ((ch = is.read()) != -1) {
-				b.append((char) ch);
-			}
-			/* å…³é—­DataOutputStream */
-			ds.close();
-			/* å°†Responseæ˜¾ç¤ºäºDialog */
-			if (b.toString().equals("0"))
-				return "{\"sell\":[{\"msg\":\"1\"}]}";
-			else
-				return "{\"sell\":[{\"msg\":\"" + "/UploadFiles/Product/"
-						+ filesString + "/" + formatter.format(date)
-						+ ".png\"}]}";
-		} catch (Exception e) {
-			return "{\"sell\":[{\"msg\":\"error\"}]}";
-		}
-	}
 
 	/**
 	 * @ËµÃ÷ String ´ı¼ìÑé×Ö·û´® Int ¼ìÑé¶¯×÷ 1:ÓÊÏä 2:ÊÖ»ú
