@@ -19,6 +19,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -37,7 +38,7 @@ public class UserFaceActivity extends BaseActivity {
 	public TextView title_topbar_tv;
 	private ImageView manage_userface_big_iv;
 	private LinearLayout manage_userface_big_layout;
-	private int w_screen,h_screen;
+	private int w_screen, h_screen;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class UserFaceActivity extends BaseActivity {
 		title_topbar_back_iv = (ImageView) findViewById(R.id.title_topbar_back_iv);
 		manage_userface_big_iv = (ImageView) findViewById(R.id.manage_userface_big_iv);
 		title_topbar_tv = (TextView) findViewById(R.id.title_topbar_tv);
-		manage_userface_big_layout = (LinearLayout)findViewById(R.id.manage_userface_big_layout);
+		manage_userface_big_layout = (LinearLayout) findViewById(R.id.manage_userface_big_layout);
 	}
 
 	@Override
@@ -63,9 +64,17 @@ public class UserFaceActivity extends BaseActivity {
 		manage_userface_big_iv.setOnClickListener(clickListener);
 		DisplayMetrics dm = getResources().getDisplayMetrics();
 		w_screen = dm.widthPixels;
-		h_screen = dm.heightPixels;
-		manage_userface_big_layout.setLayoutParams(new LinearLayout.LayoutParams(w_screen, w_screen));
-		Log.w("屏幕长度", w_screen +";"+h_screen);
+//		h_screen = dm.heightPixels;
+		int ivw_screen = (int) (w_screen * 0.8);
+		
+		LayoutParams params = manage_userface_big_iv.getLayoutParams();  
+	    params.height=ivw_screen;  
+	    params.width =ivw_screen;  
+	    manage_userface_big_iv.setLayoutParams(params);  
+//		manage_userface_big_iv
+//				.setLayoutParams(new ImageView.LayoutParams(ivw_screen,
+//						ivw_screen));
+		Log.w("屏幕长度", w_screen + ";" + h_screen);
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {
@@ -88,22 +97,21 @@ public class UserFaceActivity extends BaseActivity {
 
 	}
 
-	
 	/**
 	 * 更新头像 refreshAvatar
 	 * 
 	 * @return void
 	 * @throws
 	 */
-//	private void refreshAvatar(String avatar) {
-//		if (avatar != null && !avatar.equals("")) {
-//			ImageLoader.getInstance().displayImage(avatar, iv_set_avator,
-//					ImageLoadOptions.getOptions());
-//		} else {
-//			iv_set_avator.setImageResource(R.drawable.default_head);
-//		}
-//	}
-	
+	// private void refreshAvatar(String avatar) {
+	// if (avatar != null && !avatar.equals("")) {
+	// ImageLoader.getInstance().displayImage(avatar, iv_set_avator,
+	// ImageLoadOptions.getOptions());
+	// } else {
+	// iv_set_avator.setImageResource(R.drawable.default_head);
+	// }
+	// }
+
 	RelativeLayout layout_choose;
 	RelativeLayout layout_photo;
 	PopupWindow avatorPop;
@@ -173,7 +181,6 @@ public class UserFaceActivity extends BaseActivity {
 				return false;
 			}
 		});
-
 		avatorPop.setWidth(WindowManager.LayoutParams.MATCH_PARENT);
 		avatorPop.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
 		avatorPop.setTouchable(true);
@@ -184,12 +191,11 @@ public class UserFaceActivity extends BaseActivity {
 		avatorPop.setAnimationStyle(R.style.Animations_GrowFromBottom);
 		avatorPop.showAtLocation(manage_userface_big_layout, Gravity.BOTTOM, 0, 0);
 	}
-	
-	
+
 	/**
 	 * @Title: startImageAction
 	 * @return void
-	 * @throws
+	 * @throws 剪切图片
 	 */
 	private void startImageAction(Uri uri, int outputX, int outputY,
 			int requestCode, boolean isCrop) {
@@ -257,7 +263,6 @@ public class UserFaceActivity extends BaseActivity {
 			} else {
 				ShowToast("照片获取失败");
 			}
-
 			break;
 		case VelvolConstants.REQUESTCODE_UPLOADAVATAR_CROP:// 裁剪头像返回
 			// TODO sent to crop
@@ -266,6 +271,7 @@ public class UserFaceActivity extends BaseActivity {
 			}
 			if (data == null) {
 				// Toast.makeText(this, "取消选择", Toast.LENGTH_SHORT).show();
+				ShowToast("取消选择");
 				return;
 			} else {
 				saveCropAvator(data);
@@ -273,14 +279,14 @@ public class UserFaceActivity extends BaseActivity {
 			// 初始化文件路径
 			filePath = "";
 			// 上传头像
-//			uploadAvatar();
+			// uploadAvatar();
 			break;
 		default:
 			break;
 
 		}
 	}
-	
+
 	String path;
 
 	/**
@@ -302,7 +308,7 @@ public class UserFaceActivity extends BaseActivity {
 				// 保存图片
 				String filename = new SimpleDateFormat("yyMMddHHmmss")
 						.format(new Date());
-				path =VelvolConstants.MyAvatarDir + filename;
+				path = VelvolConstants.MyAvatarDir + filename;
 				PhotoUtil.saveBitmap(VelvolConstants.MyAvatarDir, filename,
 						bitmap, true);
 				// 上传头像
@@ -312,6 +318,5 @@ public class UserFaceActivity extends BaseActivity {
 			}
 		}
 	}
-
 
 }
