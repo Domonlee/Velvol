@@ -50,9 +50,6 @@ public class FriendRoomNumberActivity extends BaseActivity{
 	//ÓÒ±ßµÄ±êÌâ
 	private TextView title_topbar_right_tv;
 
-
-
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

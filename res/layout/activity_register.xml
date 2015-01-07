@@ -23,6 +23,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
+            android:clickable="false"
             android:paddingRight="5dp"
             android:paddingTop="1dp" >
 
@@ -34,6 +35,7 @@
                 android:background="@drawable/register_01_check"
                 android:button="@null"
                 android:checked="true"
+                android:clickable="false"
                 android:gravity="center"
                 android:text="输入手机号"
                 android:textColor="@color/reg_tab_text_color_selector" />
@@ -46,6 +48,7 @@
                 android:background="@drawable/register_02_check"
                 android:button="@null"
                 android:gravity="center"
+                android:clickable="false"
                 android:text="输入验证码"
                 android:textColor="@color/reg_tab_text_color_selector" />
 
@@ -56,7 +59,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/register_03_check"
                 android:button="@null"
-                android:checked="true"
+                android:clickable="false"
                 android:gravity="center"
                 android:text="设置账号"
                 android:textColor="@color/reg_tab_text_color_selector" />

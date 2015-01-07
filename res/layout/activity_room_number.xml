@@ -17,8 +17,8 @@
         android:layout_height="wrap_content"
         android:background="#ffffff"
         android:orientation="horizontal"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp" >
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
 
         <TextView
             android:id="@+id/textView1"
@@ -28,7 +28,7 @@
             android:paddingRight="3dp"
             android:text="房主："
             android:textColor="#8A8A8A"
-            android:textSize="13sp" />
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/room_master_name"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:paddingRight="60dp"
             android:text="zhangsan"
-            android:textSize="13sp" />
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -46,7 +46,7 @@
             android:paddingRight="5dp"
             android:text="拼单人数："
             android:textColor="#8A8A8A"
-            android:textSize="13sp" />
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/room_merge_many"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:paddingRight="5dp"
             android:text="2"
-            android:textSize="13sp" />
+            android:textSize="10sp" />
     </LinearLayout>
     <!-- 共计  头像  名称 -->
 
@@ -62,8 +62,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:paddingBottom="5dp" >
 
         <TextView
             android:id="@+id/textView2"
@@ -73,14 +73,14 @@
             android:paddingRight="4dp"
             android:text="共计："
             android:textColor="#8A8A8A"
-            android:textSize="13sp" />
+            android:textSize="10sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="￥"
             android:textColor="#E7352B"
-            android:textSize="13sp" />
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/room_merge_money"
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:text="125"
             android:textColor="#E7352B"
-            android:textSize="13sp" />
+            android:textSize="10sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -104,147 +104,151 @@
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ffffff"
+                android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
+                android:background="#ffffff"
                 android:orientation="horizontal" >
 
                 <com.velvol.o2o.view.CircularImage
                     android:id="@+id/room_master_image"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_alignParentTop="true"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="28dp"
-                    android:background="@drawable/ic_launcher" />
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/ic_launcher"
+                    android:paddingBottom="5dp" />
 
                 <com.velvol.o2o.view.CircularImage
                     android:id="@+id/room_friend_image1"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="60dp"
                     android:layout_toRightOf="@+id/room_master_image"
-                    android:background="@drawable/ic_launcher" />
+                    android:background="@drawable/ic_launcher"
+                    android:paddingBottom="5dp" />
 
                 <com.velvol.o2o.view.CircularImage
                     android:id="@+id/room_friend_image2"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="60dp"
                     android:layout_toRightOf="@+id/room_friend_image1"
-                    android:background="@drawable/ic_launcher" />
+                    android:background="@drawable/ic_launcher"
+                    android:paddingBottom="5dp" />
 
                 <TextView
                     android:id="@+id/textView7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/room_master_image"
                     android:layout_alignLeft="@+id/room_master_image"
                     android:layout_alignRight="@+id/room_master_image"
-                    android:gravity="center"
-                    android:paddingLeft="22dp"
+                    android:layout_below="@+id/room_master_image"
+                    android:paddingLeft="20dp"
                     android:text="房主"
-                    android:textSize="13dp" />
+                    android:textSize="10sp" />
 
                 <TextView
                     android:id="@+id/room_friend_name1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/room_friend_image1"
                     android:layout_alignLeft="@+id/room_friend_image1"
                     android:layout_alignRight="@+id/room_friend_image1"
-                     android:gravity="center"
-                     android:paddingLeft="22dp"
+                    android:layout_below="@+id/room_friend_image1"
+                    android:paddingLeft="20dp"
                     android:text="yiyao"
-                    android:textSize="13dp" />
+                    android:textSize="10sp" />
 
                 <TextView
                     android:id="@+id/room_friend_name2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/room_friend_image2"
                     android:layout_alignLeft="@+id/room_friend_image2"
                     android:layout_alignRight="@+id/room_friend_image2"
-                    android:gravity="center"
-                    android:paddingLeft="22dp"
+                    android:layout_below="@+id/room_friend_image2"
+                    android:paddingLeft="20dp"
                     android:text="lilist"
-                    android:textSize="13dp" />
+                    android:textSize="10sp" />
             </RelativeLayout>
-
         </HorizontalScrollView>
-
     </LinearLayout>
 
     <!-- 请求加入房间 -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         android:layout_marginTop="3dp"
-        android:background="#ffffff"
-        android:orientation="vertical" >
+        android:fillViewport="true" >
 
-        <ListView
-            android:id="@+id/room_requestitem_listView1"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp" >
-        </ListView>
-    </LinearLayout>
-    <!-- 大家点的菜 -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        android:background="#ffffff"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp" >
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:padding="5dp"
-            android:src="@drawable/everyone_food" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="大家点的菜"
-            android:textSize="13dp" />
-    </LinearLayout>
-    <!-- 展现大家点的菜的listview（包含房主的点菜Listview和朋友点菜的Listview） -->
+            android:background="#ffffff"
+            android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:orientation="vertical" >
+            <com.velvol.o2o.tool.MyListView
+                android:id="@+id/room_requestitem_listView1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" >
+            </com.velvol.o2o.tool.MyListView>
+            <!-- 大家点的菜 -->
 
-        <ListView
-            android:id="@+id/room_commonfood_listview"
-            android:layout_width="match_parent"
-            android:layout_height="230dp" >
-        </ListView>
-    </LinearLayout>
-    <!-- 继续点菜  确认点菜 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp" >
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:src="@drawable/everyone_food" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="大家点的菜"
+                    android:textSize="10sp" />
+            </LinearLayout>
+            <!-- 展现大家点的菜的listview（包含房主的点菜Listview和朋友点菜的Listview） -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="vertical" >
+
+                <com.velvol.o2o.tool.MyListView
+                    android:id="@+id/room_commonfood_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp" >
+                </com.velvol.o2o.tool.MyListView>
+            </LinearLayout>
+            <!-- 继续点菜  确认点菜 -->
+
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingLeft="15dp"
+        android:background="#fff"
         android:paddingRight="15dp" >
 
         <ImageView
@@ -253,10 +257,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:paddingBottom="2dp"
+            android:paddingBottom="1dp"
             android:paddingLeft="2dp"
             android:paddingRight="5dp"
-            android:paddingTop="2dp"
+            android:paddingTop="1dp"
             android:src="@drawable/continue_order" />
 
         <ImageView
@@ -265,10 +269,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
-            android:paddingBottom="2dp"
+            android:paddingBottom="1dp"
             android:paddingLeft="5dp"
             android:paddingRight="2dp"
-            android:paddingTop="2dp"
+            android:paddingTop="1dp"
             android:src="@drawable/determine_order" />
     </LinearLayout>
 

@@ -3,8 +3,10 @@ package com.velvol.o2o.ui.login;
 import com.velvol.o2o.HomeActivity;
 import com.velvol.o2o.R;
 import com.velvol.o2o.RegisterActivity;
+import com.velvol.o2o.constant.GetUrl;
 import com.velvol.o2o.tool.BaseActivity;
 import com.velvol.o2o.tool.ConfigUtil;
+import com.velvol.o2o.tool.MD5;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -57,7 +59,7 @@ public class LoginActivity extends BaseActivity {
 						if (isNetworkConnected(LoginActivity.this)) {
 							 showProgressDialog(LoginActivity.this);
 							 // XXX 接口地址    测试链接
-							 httpget("http://m.baidu.com/", 1);  
+							 httpget(GetUrl.getLoginUrl(new MD5(pw).getMd5_32(), name), 1);  
 						} else
 							ShowToast("请检查网络连接");
 					} else
@@ -68,18 +70,14 @@ public class LoginActivity extends BaseActivity {
 			case R.id.reg:
 				startActivity(new Intent(LoginActivity.this,
 						RegisterActivity.class));
-				finish();
 				break;
 			case R.id.login2:
 				ShowToast("待开发");
-				// startActivity(new
-				// Intent(LoginActivity.this,AboutActivity.class));
-				// finish();
+				
 				break;
 			case R.id.forget_tv:
 				startActivity(new Intent(LoginActivity.this,
 						ForgetPswActivity.class));
-				finish();
 				break;
 			}
 		}
