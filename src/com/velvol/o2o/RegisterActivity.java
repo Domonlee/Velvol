@@ -146,14 +146,15 @@ public class RegisterActivity extends BaseActivity {
 					if (str_code.equals(sendcode)){
 						sub_action++;
 						reg_tab03_tv.setChecked(true);
+						reg_info_line1_tv.setText("");
 					}
 					else
 						Toast.makeText(getApplicationContext(), "ÑéÖ¤Âë²»Æ¥Åä", 0).show();
 					break;
 				case 2:
-					String pass1 = reg_info_line1_tv.getText().toString();
-					String pass2 = reg_info_line2_tv.getText().toString();
-					String nickname = reg_info_line3_tv.getText().toString();
+					String pass1 = reg_info_line2_tv.getText().toString();
+					String pass2 = reg_info_line3_tv.getText().toString();
+					String nickname = reg_info_line1_tv.getText().toString();
 					if (pass1.equals(pass2))
 						if (pass1.length() > 6)
 							if (isNetworkConnected(getApplicationContext())) {

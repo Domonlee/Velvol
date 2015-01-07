@@ -179,7 +179,8 @@ public abstract class BaseActivity extends Activity {
 			Bundle bundle = new Bundle();
 			if (Code == 1)
 				get();
-			result = "";
+			else
+				result = "";
 			Log.v("http--result", result);
 			bundle.putString("result", String.valueOf(result));
 			msg.setData(bundle);

@@ -25,7 +25,6 @@ public class ForgetPswActivity extends BaseActivity {
 
 	private TimeCount time;
 	private String strphone, sendcode = "aaaaaa";
-	private boolean reg_flag = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +52,7 @@ public class ForgetPswActivity extends BaseActivity {
 		title_topbar_tv.setText("’“ªÿ√‹¬Î");
 		title_topbar_back_iv.setOnClickListener(clickListener);
 		forget_next_btn.setOnClickListener(clickListener);
+		reg_info_mcode_btn.setOnClickListener(clickListener);
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {
@@ -73,6 +73,8 @@ public class ForgetPswActivity extends BaseActivity {
 				startActivity(new Intent(ForgetPswActivity.this,
 						ResetPswActivity.class));
 				finish();
+			case R.id.reg_info_mcode_btn:
+				
 				break;
 			}
 

@@ -1,5 +1,15 @@
 package com.velvol.o2o.ui.login;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.velvol.o2o.HomeActivity;
 import com.velvol.o2o.R;
 import com.velvol.o2o.RegisterActivity;
@@ -7,12 +17,6 @@ import com.velvol.o2o.constant.GetUrl;
 import com.velvol.o2o.tool.BaseActivity;
 import com.velvol.o2o.tool.ConfigUtil;
 import com.velvol.o2o.tool.MD5;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 
 public class LoginActivity extends BaseActivity {
 
@@ -88,22 +92,22 @@ public class LoginActivity extends BaseActivity {
 	 */
 	protected void result(String result) {
 		loadingDialog.dismiss();
-		ConfigUtil.putBoolean("login_flag", data.login_flag = true);
-		startActivity(new Intent(LoginActivity.this,
-				HomeActivity.class));
-		finish();
-		// XXX 正式流程代码
-//		try {
-//			JSONObject c = new JSONObject(result);
-//			if (c.getInt("mark") == 1) {
-//				ConfigUtil.putBoolean("login_flag", data.login_flag = true);
-//			}
-//			else
-//				Toast.makeText(getApplicationContext(), c.getString("meg"), 0).show();
-//		} catch (JSONException e) {
-//			e.printStackTrace();
-//			Toast.makeText(getApplicationContext(),"服务接口异常", 0).show();
-//		}
+		
+		try {
+			JSONObject c = new JSONObject(result);
+			if (c.getInt("mark") == 1) {
+				ConfigUtil.putBoolean("login_flag", data.login_flag = true);
+				ConfigUtil.putString("user_id", data.User_id = c.getInt("result")+"");
+				startActivity(new Intent(LoginActivity.this,
+						HomeActivity.class));
+				finish();
+			}
+			else
+				Toast.makeText(getApplicationContext(), "密码错误。", 0).show();
+		} catch (JSONException e) {
+			e.printStackTrace();
+			Toast.makeText(getApplicationContext(),"网络不给力", 0).show();
+		}
 	}
 
 }
