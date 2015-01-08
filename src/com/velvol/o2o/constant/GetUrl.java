@@ -1,5 +1,7 @@
 package com.velvol.o2o.constant;
 
+import android.util.Log;
+
 public class GetUrl {
 
 	// private static String HOST = "http://192.168.1.124:8888/diancan/check_";
@@ -7,7 +9,7 @@ public class GetUrl {
 	// 图片头部
 	// public static String IMAGE_URL = "http://192.168.1.124:8888/diancan/";
 
-	private static String CODE = HOST +"UserApi_loadValidateCode";
+	private static String CODE = HOST + "UserApi_loadValidateCode";
 	private static String REGISTER = HOST + "UserApi_register";
 	private static String UPDATE = HOST + "UserApi_updatePwd";
 	private static String LOGIN = HOST + "UserApi_login";
@@ -16,49 +18,59 @@ public class GetUrl {
 	private static String ADDRESS_ADD = HOST + "UserApi_addUserAddress";
 	private static String MYINFO = HOST + "UserApi_loadMyInfo";
 	private static String MYINFO_UPDATE = HOST + "UserApi_updateUserInfo";
-	
+
 	/**
-	 * 修改我的资料接口
+	 * 
+	 * Title: getUpdateMyInfoUrl 
+	 * Description: 修改我的资料接口
+	 * @param userid
+	 * @param updatefield
+	 * @param context
+	 * @return
 	 */
-	public static String getUpdateMyInfoUrl(String userid,String updatefield,String context) {
-		return MYINFO_UPDATE + "?userid=" + userid+"&updatefield="+updatefield+"&context="+context;
+	public static String getUpdateMyInfoUrl(String userid, String updatefield,
+			String context) {
+		return MYINFO_UPDATE + "?userid=" + userid + "&updatefield="
+				+ updatefield + "&context=" + context;
 	}
-	
+
 	/**
 	 * 我的资料接口
 	 */
 	public static String getMyInfoUrl(String userid) {
 		return MYINFO + "?userid=" + userid;
 	}
-	
+
 	/**
 	 * 新增地址接口
 	 */
-	public static String getAddAddressUrl(String userid,String uadressid,String floor) {
-		return ADDRESS_ADD + "?userid=" + userid + "&uadressid=" + uadressid + "&floor=" + floor ;
+	public static String getAddAddressUrl(String userid, String uadressid,
+			String floor) {
+		return ADDRESS_ADD + "?userid=" + userid + "&uadressid=" + uadressid
+				+ "&floor=" + floor;
 	}
-	
+
 	/**
 	 * 历史地址接口
 	 */
 	public static String getOldAddressUrl(String userid) {
 		return ADDRESS_OLD + "?userid=" + userid;
 	}
-	
+
 	/**
 	 * 搜索地址接口
 	 */
 	public static String getAddressUrl(String keywords) {
 		return ADDRESS + "?keywords=" + keywords;
 	}
-	
+
 	/**
 	 * 修改密码接口
 	 */
 	public static String getUpdateUrl(String newpassword, String phone) {
 		return UPDATE + "?phone=" + phone + "&newpassword=" + newpassword;
 	}
-	
+
 	/**
 	 * 注册接口
 	 */

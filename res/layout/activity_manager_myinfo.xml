@@ -113,7 +113,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/myaddr_info_city_ed"
+                    android:id="@+id/myinfo_base_name_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="6"
@@ -174,14 +174,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="女" />
+                        android:text="男" />
 
                     <RadioButton
                         android:id="@+id/myinfo_base_sexman_rb"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="男" />
+                        android:text="女" />
                 </RadioGroup>
             </LinearLayout>
 
@@ -473,6 +473,7 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/myinfo_base_myscore_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"

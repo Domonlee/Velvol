@@ -150,6 +150,13 @@ public abstract class BaseActivity extends Activity {
 		return false;
 	}
 
+	/**
+	 * 
+	*  Title: httpget 
+	*  Description: 
+	*  @param http_get
+	*  @param code : 1:get方法,0:post方法
+	 */
 	public void httpget(String http_get, int code) {
 		Log.v("http--Url", http_get);
 		if (code == 1) {

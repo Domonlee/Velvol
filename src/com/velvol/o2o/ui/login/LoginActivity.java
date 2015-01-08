@@ -61,9 +61,10 @@ public class LoginActivity extends BaseActivity {
 				if (emailFormat(name, 2))
 					if (!name.equals("") && !pw.equals("")) {
 						if (isNetworkConnected(LoginActivity.this)) {
-							 showProgressDialog(LoginActivity.this);
-							 // XXX 接口地址    测试链接
-							 httpget(GetUrl.getLoginUrl(new MD5(pw).getMd5_32(), name), 1);  
+							showProgressDialog(LoginActivity.this);
+							// XXX 接口地址 测试链接
+							httpget(GetUrl.getLoginUrl(new MD5(pw).getMd5_32(),
+									name), 1);
 						} else
 							ShowToast("请检查网络连接");
 					} else
@@ -77,7 +78,7 @@ public class LoginActivity extends BaseActivity {
 				break;
 			case R.id.login2:
 				ShowToast("待开发");
-				
+
 				break;
 			case R.id.forget_tv:
 				startActivity(new Intent(LoginActivity.this,
@@ -92,21 +93,20 @@ public class LoginActivity extends BaseActivity {
 	 */
 	protected void result(String result) {
 		loadingDialog.dismiss();
-		
+
 		try {
 			JSONObject c = new JSONObject(result);
 			if (c.getInt("mark") == 1) {
 				ConfigUtil.putBoolean("login_flag", data.login_flag = true);
-				ConfigUtil.putString("user_id", data.User_id = c.getInt("result")+"");
-				startActivity(new Intent(LoginActivity.this,
-						HomeActivity.class));
+				ConfigUtil.putString("user_id",
+						data.User_id = c.getInt("result") + "");
+				startActivity(new Intent(LoginActivity.this, HomeActivity.class));
 				finish();
-			}
-			else
-				Toast.makeText(getApplicationContext(), "密码错误。", 0).show();
+			} else
+				ShowToast("密码错误");
 		} catch (JSONException e) {
 			e.printStackTrace();
-			Toast.makeText(getApplicationContext(),"网络不给力", 0).show();
+			ShowToast("网络不给力");
 		}
 	}
 
