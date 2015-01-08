@@ -4,6 +4,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import android.R.fraction;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -195,7 +196,8 @@ public class UserFaceActivity extends BaseActivity {
 	/**
 	 * @Title: startImageAction
 	 * @return void
-	 * @throws ºÙ«–Õº∆¨
+	 * @throws 
+	 * ºÙ«–Õº∆¨
 	 */
 	private void startImageAction(Uri uri, int outputX, int outputY,
 			int requestCode, boolean isCrop) {
