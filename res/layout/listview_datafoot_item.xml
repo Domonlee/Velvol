@@ -31,9 +31,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginRight="10dp"
+			android:layout_marginLeft="10dp"
             android:background="#14AE68"
             android:orientation="vertical" >
 
@@ -49,25 +49,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="摄入0卡" />
+                    android:text="摄入了1000卡，你有超标哦，正常饮食从点滴做起。" />
             </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:background="#ffffff"
-        android:orientation="horizontal"
-        android:padding="10dp" >
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal" >
 
         <ImageView
             android:id="@+id/data_foot_left_imageview"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
             android:clickable="true"
+            android:layout_gravity="center_vertical"
             android:src="@drawable/datafootr" />
 
         <HorizontalScrollView
@@ -77,99 +79,10 @@
             android:layout_weight="1" >
 
             <LinearLayout
+                android:id="@+id/datafoot_linearlayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
-
-                <CheckBox
-                    android:id="@+id/data_foot_selected_picture1_checkbox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="2dp"
-                    android:button="@drawable/data_foot"
-                    android:clickable="true" />
-
-                <LinearLayout
-                    android:layout_width="70dp"
-                    android:layout_height="90dp"
-                    android:orientation="vertical" >
-
-                    <ImageView
-                        android:id="@+id/data_foot_picture1_imageview"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_toRightOf="@+id/data_foot_selected_picture1_checkbox"
-                        android:src="@drawable/userface" />
-
-                    <TextView
-                        android:id="@+id/data_foot_name1_textview"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="红烧牛肉"
-                        android:textSize="12dp" />
-                </LinearLayout>
-
-                <CheckBox
-                    android:id="@+id/data_foot_selected_picture2_checkbox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="2dp"
-                    android:button="@drawable/data_foot"
-                    android:clickable="true" />
-
-                <LinearLayout
-                    android:layout_width="70dp"
-                    android:layout_height="90dp"
-                    android:orientation="vertical" >
-
-                    <ImageView
-                        android:id="@+id/data_foot_picture2_imageview"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_toRightOf="@+id/data_foot_selected_picture1_checkbox"
-                        android:src="@drawable/userface" />
-
-                    <TextView
-                        android:id="@+id/data_foot_name2_textview"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="红烧牛肉"
-                        android:textSize="12dp" />
-                </LinearLayout>
-
-                <CheckBox
-                    android:id="@+id/data_foot_selected_picture3_checkbox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="2dp"
-                    android:button="@drawable/data_foot"
-                    android:clickable="true" />
-
-                <LinearLayout
-                    android:layout_width="70dp"
-                    android:layout_height="90dp"
-                    android:orientation="vertical" >
-
-                    <ImageView
-                        android:id="@+id/data_foot_picture3_imageview"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_toRightOf="@+id/data_foot_selected_picture3_checkbox"
-                        android:src="@drawable/userface" />
-
-                    <TextView
-                        android:id="@+id/data_foot_name3_textview"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="红烧牛肉"
-                        android:textSize="12dp" />
-                </LinearLayout>
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -180,6 +93,7 @@
             android:layout_gravity="center_vertical"
             android:clickable="true"
             android:src="@drawable/datafootl" />
+
     </LinearLayout>
 
 </LinearLayout>

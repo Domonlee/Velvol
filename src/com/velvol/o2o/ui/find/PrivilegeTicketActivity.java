@@ -105,6 +105,9 @@ public class PrivilegeTicketActivity extends BaseActivity{
 			case R.drawable.restaurant_gali:
 				startActivity(new Intent(PrivilegeTicketActivity.this, PrivilegeTicketAssignActivity.class));
 				break;
+			case R.drawable.restaurant_mingjian:
+				startActivity(new Intent(PrivilegeTicketActivity.this, IndentAccountActivity.class));
+				break;
 			}
 		}
 	};

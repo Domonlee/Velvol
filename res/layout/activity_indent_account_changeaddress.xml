@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title_top_layout"
+        layout="@layout/base_title_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/base_color_green"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/indent_account_changeaddress_seek_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.2"
+            android:paddingLeft="5dp"
+            android:background="@drawable/edit_backgorund"
+            android:ems="10"
+            android:hint="都市之门" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/indent_account_changeaddress_seek_cancel_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/base_color_green"
+            android:text="取消"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/indent_account_changeaddress_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

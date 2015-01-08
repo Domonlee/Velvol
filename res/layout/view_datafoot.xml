@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff" >
+
+        <ImageView
+            android:id="@+id/data_foot_picture1_imageview"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/data_foot_selected_picture1_checkbox"
+            android:src="@drawable/userface" />
+
+        <TextView
+            android:id="@+id/data_foot_name1_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/data_foot_picture1_imageview"
+            android:layout_below="@+id/data_foot_picture1_imageview"
+            android:layout_toRightOf="@+id/data_foot_selected_picture1_checkbox"
+            android:gravity="center"
+            android:text="红烧牛肉"
+            android:textSize="12dp" />
+
+        <CheckBox
+            android:id="@+id/data_foot_selected_picture1_checkbox"
+            android:button="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/data_foot_picture1_imageview"
+            android:layout_marginBottom="15dp"
+            android:drawableStart="@drawable/todatafoot"
+            android:clickable="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -5,9 +5,12 @@ import java.util.Date;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -16,12 +19,14 @@ import android.widget.TextView;
 
 import com.velvol.o2o.EvaluateActivity;
 import com.velvol.o2o.R;
+import com.velvol.o2o.ui.find.DataFootActivity;
 import com.velvol.o2o.view.CircularImage;
 //神点评adapter
 public class RemarkAdapter extends BaseAdapter{
 	
 	private Context context;
 	private LayoutInflater inflater;
+	private String reviewGoodCount;
 	
 	public RemarkAdapter(Context context){
 		this.context=context;
@@ -57,6 +62,7 @@ public class RemarkAdapter extends BaseAdapter{
 			holder.reviewFootPictureImageView3=(ImageView)convertView.findViewById(R.id.review_foot_picture_imageView3);
 			holder.reviewCountTextview=(TextView)convertView.findViewById(R.id.review_count_textview);
 			holder.reviewGoodCountTextview=(TextView)convertView.findViewById(R.id.review_good_count_textview);
+			reviewGoodCount=holder.reviewGoodCountTextview.getText().toString();
 			holder.reviewClick=(LinearLayout)convertView.findViewById(R.id.review_click_linerlayout);
 			holder.reviewGoodClick=(LinearLayout)convertView.findViewById(R.id.review_good_click_linerlayout);
 			holder.goodImageview=(ImageView)convertView.findViewById(R.id.imageView4);
@@ -66,11 +72,8 @@ public class RemarkAdapter extends BaseAdapter{
 		}
 		holder.review_people_name_Head_CircularImage.setImageResource(R.drawable.userface);
 		holder.reviewTimeTextView.setText(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
-		MyClick listener = new MyClick(position, holder.reviewGoodCountTextview, holder.goodImageview);
-		holder.reviewClick.setOnClickListener(listener);
-		holder.reviewGoodClick.setOnClickListener(listener);
-		
 		//设置监听
+		setTouchListener(holder.goodImageview,reviewGoodCount,holder.reviewGoodCountTextview,holder.reviewGoodClick,holder.reviewClick);
 		return convertView;
 	}
 	class ViewHolder{
@@ -99,34 +102,26 @@ public class RemarkAdapter extends BaseAdapter{
 		//赞的小手图标
 		 ImageView goodImageview;
 	}
-	
-	class MyClick implements OnClickListener{
-		private int index;
-		private TextView reviewGoodCountTextview;
-		private ImageView goodImageview;
-		public MyClick(int index,TextView reviewGoodCountTextview,ImageView goodImageview){
-			this.index = index;
-			this.reviewGoodCountTextview = reviewGoodCountTextview;
-			this.goodImageview = goodImageview;
-		}
-		@Override
-		public void onClick(View v) {
-			switch (v.getId()) {
-			case R.id.review_good_click_linerlayout:
-				int count=Integer.parseInt(reviewGoodCountTextview.getText().toString());
-				count++;
-				reviewGoodCountTextview.setText(count+"");
-				goodImageview.setImageResource(R.drawable.mymsg_good_red_icon);
-				break;
-			case R.id.review_click_linerlayout:
-				context.startActivity(new Intent(context,EvaluateActivity.class).putExtra("index", index));
-				break;
-			default:
-				break;
-			}
+	private void setTouchListener(final ImageView goodImageview,final String reviewGoodCount,final TextView reviewGoodCountTextview,final LinearLayout reviewGoodClick,final LinearLayout reviewClick) {
+		// TODO Auto-generated method stub0
+		reviewClick.setOnClickListener(new OnClickListener() {
 			
-		}
-		
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				context.startActivity(new Intent(context,EvaluateActivity.class));
+			}
+		});
+		reviewGoodClick.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				// TODO Auto-generated method stub
+					int count=Integer.parseInt(reviewGoodCount);
+					count++;
+					reviewGoodCountTextview.setText(count+"");
+					goodImageview.setImageResource(R.drawable.mymsg_good_red_icon);
+				return true;
+			}
+		});
 	}
-	
 }

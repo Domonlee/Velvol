@@ -2,7 +2,6 @@ package com.velvol.o2o;
 
 import java.util.ArrayList;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,23 +9,18 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.velvol.o2o.fragment.CartFragmentActivity;
 import com.velvol.o2o.fragment.FindFragmentActivity;
 import com.velvol.o2o.fragment.MakeFragmentActivity;
 import com.velvol.o2o.fragment.ManagerFragmentActivity;
 import com.velvol.o2o.fragment.SearchFragmentActivity;
-import com.velvol.o2o.ui.manager.ChangeAddressActivity;
 
 public class HomeActivity extends FragmentActivity {
 
 	private ViewPager mPager;
-	private RadioGroup radioGrop;
 	private RadioButton[] radioButtons = new RadioButton[5];
 	private RadioGroup mGroup;
 	private MakeFragmentActivity makeFragment;

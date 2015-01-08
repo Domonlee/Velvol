@@ -1,5 +1,8 @@
 package com.velvol.o2o.ui.login;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -9,8 +12,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.velvol.o2o.R;
+import com.velvol.o2o.constant.GetUrl;
 import com.velvol.o2o.tool.BaseActivity;
 
 public class ForgetPswActivity extends BaseActivity {
@@ -24,7 +29,8 @@ public class ForgetPswActivity extends BaseActivity {
 	public String pswFlag;
 
 	private TimeCount time;
-	private String strphone, sendcode = "aaaaaa";
+	private String strphone,smscode = "aaaaaa";
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,7 @@ public class ForgetPswActivity extends BaseActivity {
 
 		findViewById();
 		initView();
+		time = new TimeCount(100000, 1000);
 	}
 
 	@Override
@@ -70,11 +77,23 @@ public class ForgetPswActivity extends BaseActivity {
 				}
 				break;
 			case R.id.forget_next_btn:
-				startActivity(new Intent(ForgetPswActivity.this,
-						ResetPswActivity.class));
-				finish();
+				String str_code = reg_info_mcode_tv.getText().toString();
+				if (str_code.equals(smscode)){
+					startActivity(new Intent(ForgetPswActivity.this,
+							ResetPswActivity.class).putExtra("phone", strphone));
+					finish();
+				}
+				else
+					Toast.makeText(getApplicationContext(), "验证码不匹配", 0).show();
 			case R.id.reg_info_mcode_btn:
-				
+				strphone = forget_phone_tv.getText().toString();
+				if(emailFormat(strphone,2)){
+				httpget(GetUrl.getCodeUrl("0",strphone),1);
+				showProgressDialog(ForgetPswActivity.this);	
+				time.start();
+				}
+				else 
+					Toast.makeText(getApplicationContext(),"手机号码填写错误！",0).show();
 				break;
 			}
 
@@ -83,7 +102,19 @@ public class ForgetPswActivity extends BaseActivity {
 
 	@Override
 	protected void result(String result) {
-
+		loadingDialog.dismiss();
+		JSONObject dataJson;
+		 try {
+			dataJson = new JSONObject(result);
+			if(dataJson.getInt("mark")==1){
+				smscode = dataJson.getString("result");
+			}
+			else
+				Toast.makeText(getApplicationContext(), "账号不存在", Toast.LENGTH_SHORT).show();
+		} catch (JSONException e) {
+			e.printStackTrace();
+			Toast.makeText(getApplicationContext(), "网络不给力！", Toast.LENGTH_SHORT).show();
+		}
 	}
 	
 	class TimeCount extends CountDownTimer {
