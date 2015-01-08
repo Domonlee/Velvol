@@ -29,7 +29,7 @@ public class UserInfo {
 		this.name = name;
 		this.email = email;
 		this.address = address;
-		this.heading = heading;
+//		this.heading = heading;
 	}
 	
 	public UserInfo(JSONObject json){
@@ -42,7 +42,7 @@ public class UserInfo {
 			name = json.getString("name");
 			email = json.getString("email");
 			address = json.getString("address");
-			heading = json.getString("heading");
+//			heading = json.getString("heading");
 		} catch (JSONException e) {
 			Util.ShowErrorLog("用户信息UserApi_loadMyInfo接口错误");
 			e.printStackTrace();

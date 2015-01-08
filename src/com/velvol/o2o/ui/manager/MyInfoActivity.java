@@ -20,6 +20,12 @@ import com.velvol.o2o.tool.MD5;
 
 public class MyInfoActivity extends BaseActivity {
 
+	public static final int NICK = 1;
+	public static final int NAME = 2;
+	public static final int PHONE = 3;
+	public static final int EMAIL = 4;
+	public static final int CHANGEPSW = 9;
+	
 	public TextView title_topbar_tv;
 	public ImageView title_topbar_back_iv;
 	public LinearLayout title_topbar_layout;
@@ -30,7 +36,7 @@ public class MyInfoActivity extends BaseActivity {
 	private TextView  myinfo_base_nick_tv, myinfo_base_name_tv,
 	myinfo_base_phone_tv, myinfo_base_email_tv,myinfo_base_myscore_tv,
 	myinfo_base_addr_tv,myinfo_base_countextra_tv ;
-	public String EDITCODE = "editCode";
+	public static final String EDITCODE = "editCode";
 	
 	private UserInfo userInfo;
 
@@ -88,25 +94,25 @@ public class MyInfoActivity extends BaseActivity {
 				finish();
 				break;
 			case R.id.myinfo_base_nick_edit_tv:
-				intent.putExtra(EDITCODE, "nick");
+				intent.putExtra(EDITCODE,NICK);
 				intent.setClass(getApplicationContext(),
 						ChangeInfoActivity.class);
 				startActivity(intent);
 				break;
 			case R.id.myinfo_base_name_edit_tv:
-				intent.putExtra(EDITCODE, "name");
+				intent.putExtra(EDITCODE, NAME);
 				intent.setClass(getApplicationContext(),
 						ChangeInfoActivity.class);
 				startActivity(intent);
 				break;
 			case R.id.myinfo_base_phone_edit_tv:
-				intent.putExtra(EDITCODE, "phone");
+				intent.putExtra(EDITCODE, PHONE);
 				intent.setClass(getApplicationContext(),
 						ChangeInfoActivity.class);
 				startActivity(intent);
 				break;
 			case R.id.myinfo_base_email_edit_tv:
-				intent.putExtra(EDITCODE, "email");
+				intent.putExtra(EDITCODE, EMAIL);
 				intent.setClass(getApplicationContext(),
 						ChangeInfoActivity.class);
 				startActivity(intent);
@@ -117,7 +123,7 @@ public class MyInfoActivity extends BaseActivity {
 				startActivity(intent);
 				break;
 			case R.id.myinfo_base_changepsw_edit_tv:
-				intent.putExtra(EDITCODE, "changepsw");
+				intent.putExtra(EDITCODE, CHANGEPSW);
 				intent.setClass(getApplicationContext(),
 						ChangeInfoActivity.class);
 				startActivity(intent);
