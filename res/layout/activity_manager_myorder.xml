@@ -69,7 +69,7 @@
                 android:layout_weight="1"
                 android:checked="true"
                 android:button="@null"
-                android:text=" 全部 "
+                android:text="    完成"
                 android:background="#00000000"
                 android:textColor="@color/myorder_tv"
                 android:textSize="16sp" />
@@ -93,7 +93,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:button="@null"
-                android:text="待派送"
+                android:text="配送中"
                 android:background="#00000000"
                 android:textColor="@color/myorder_tv"
                 android:textSize="16sp" />
@@ -105,22 +105,11 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:button="@null"
-                android:text="待确认"
-                android:background="#00000000"
-                android:textColor="@color/myorder_tv"
-                android:textSize="16sp" />
-
-            <RadioButton
-                android:id="@+id/myorder_uncomment_tv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:button="@null"
                 android:text="待评价"
                 android:background="#00000000"
                 android:textColor="@color/myorder_tv"
                 android:textSize="16sp" />
+
         </RadioGroup>
     </LinearLayout>
 

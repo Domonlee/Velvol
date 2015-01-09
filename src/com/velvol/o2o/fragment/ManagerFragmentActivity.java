@@ -89,7 +89,6 @@ public class ManagerFragmentActivity extends BaseFragment {
 		manager_msgboard_layout.setOnClickListener(clickListener);
 		manager_myorder_layout.setOnClickListener(clickListener);
 		manager_score_layout.setOnClickListener(clickListener);
-		
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {

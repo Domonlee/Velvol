@@ -25,7 +25,7 @@ public class MyOrderActivity extends BaseActivity {
 	public TextView title_topbar_tv;
 	public ListView myorder_info_lv;
 	public RadioButton myorder_all_tv, myorder_unpay_tv, myorder_unsend_tv,
-			myorder_uncommit_tv, myorder_uncomment_tv;
+			myorder_uncommit_tv;
 	public RadioGroup myorder_titlebar_rg;
 
 	@Override
@@ -49,7 +49,6 @@ public class MyOrderActivity extends BaseActivity {
 		myorder_unpay_tv = (RadioButton) findViewById(R.id.myorder_unpay_tv);
 		myorder_unsend_tv = (RadioButton) findViewById(R.id.myorder_unsend_tv);
 		myorder_uncommit_tv = (RadioButton) findViewById(R.id.myorder_uncommit_tv);
-		myorder_uncomment_tv = (RadioButton) findViewById(R.id.myorder_uncomment_tv);
 	}
 
 	@Override

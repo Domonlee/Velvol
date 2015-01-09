@@ -25,6 +25,7 @@
                 android:layout_height="130dp"
                 android:background="@drawable/ed_background"
                 android:hint="输入您的建议"
+                android:gravity="top"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp" />
 
