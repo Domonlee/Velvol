@@ -119,7 +119,7 @@ public class MyInfoActivity extends BaseActivity {
 				break;
 			case R.id.myinfo_base_addr_edit_tv:
 				intent.setClass(getApplicationContext(),
-						MyAddressActivity.class);
+						ChangeAddressActivity.class);
 				startActivity(intent);
 				break;
 			case R.id.myinfo_base_changepsw_edit_tv:

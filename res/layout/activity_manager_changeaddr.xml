@@ -17,229 +17,64 @@
             android:id="@+id/myaddr_info_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#ffffff"
-            android:paddingTop="15dp" >
+            android:background="#ffffff" >
 
-            <!-- title -->
-
-            <LinearLayout
-                android:id="@+id/change_addr_new_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/change_addr_new_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:gravity="center_vertical"
-                    android:text="新建地址"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:layout_below="@id/change_addr_new_layout"
-                android:layout_marginTop="2dp"
-                android:background="#a8a8a8" />
-
-            <!-- 省份 -->
-
-            <LinearLayout
-                android:id="@+id/myaddr_info_pro_layout"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/change_addr_new_layout"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:gravity="left|center_vertical"
-                    android:text="省份"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <Spinner
-                    android:id="@+id/myaddr_info_pro_sp"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="90dp"
-                    android:layout_weight="8"
-                    android:background="@drawable/addr_spinner_bg"
-                    android:entries="@array/splist"
-                    android:textColorHint="@color/gray" />
-            </LinearLayout>
-
-            <!-- 市 -->
-
-            <LinearLayout
-                android:id="@+id/myaddr_info_city_layout"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/myaddr_info_pro_layout"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:enabled="false"
-                    android:gravity="left|center_vertical"
-                    android:text="市"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <Spinner
-                    android:id="@+id/myaddr_info_city_ed"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="90dp"
-                    android:layout_weight="8"
-                    android:background="@drawable/addr_spinner_bg"
-                    android:entries="@array/splist"
-                    android:hint="西安市"
-                    android:textColorHint="@color/gray" />
-            </LinearLayout>
-            <!-- 区 -->
-
-            <LinearLayout
-                android:id="@+id/myaddr_info_area_layout"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/myaddr_info_city_layout"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:gravity="left|center_vertical"
-                    android:text="区"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <Spinner
-                    android:id="@+id/myaddr_info_area_ed"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="90dp"
-                    android:layout_weight="8"
-                    android:background="@drawable/addr_spinner_bg"
-                    android:entries="@array/splist"
-                    android:hint="莲湖区"
-                    android:textColorHint="@color/gray" />
-            </LinearLayout>
-            <!-- 路 -->
-
-            <LinearLayout
-                android:id="@+id/myaddr_info_road_layout"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/myaddr_info_area_layout"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:gravity="left|center_vertical"
-                    android:text="路"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <Spinner
-                    android:id="@+id/myaddr_info_road_ed"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="90dp"
-                    android:layout_weight="8"
-                    android:background="@drawable/addr_spinner_bg"
-                    android:entries="@array/splist"
-                    android:hint="沣惠南路"
-                    android:textColorHint="@color/gray" />
-            </LinearLayout>
-            <!-- 街道、建筑大厦、小区 -->
-
-            <LinearLayout
-                android:id="@+id/myaddr_info_street_layout"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/myaddr_info_road_layout"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:gravity="left|center_vertical"
-                    android:text="街道、建筑大厦、小区 "
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <Spinner
-                    android:id="@+id/myaddr_info_street_ed"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/addr_spinner_bg"
-                    android:entries="@array/splist"
-                    android:hint="艺腾商务大厦"
-                    android:textColorHint="@color/gray" />
-            </LinearLayout>
             <!-- 详细信息 -->
+
+            <LinearLayout
+                android:id="@+id/search_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="#14ae68"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@+id/search"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_backgorund"
+                    android:drawableLeft="@drawable/search"
+                    android:hint="请输入地址"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+                <!--
+                <TextView
+                    android:id="@+id/tv_search_cancle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:text="取消"
+                    android:textColor="#FFFFFF" />-->
+            </LinearLayout>
+
+            <!-- 输入详细信息 -->
 
             <LinearLayout
                 android:id="@+id/myaddr_info_more_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/myaddr_info_street_layout"
+                android:layout_below="@id/search_layout"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
                 android:orientation="vertical" >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:gravity="left|center_vertical"
-                    android:text="详细信息"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/myaddr_info_more_ed"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="90dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/ed_background"
+                    android:hint="请输入详细地址"
                     android:textColorHint="@color/gray" />
             </LinearLayout>
 

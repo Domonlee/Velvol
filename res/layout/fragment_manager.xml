@@ -97,6 +97,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="8dp"
+                            android:textSize="16sp"
                             android:text="消息" />
 
                         <TextView
@@ -136,6 +137,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="8dp"
+                            android:textSize="16sp"
                             android:text="积分" />
 
                         <TextView
@@ -176,7 +178,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="15dp"
-                        android:text="我的地址" />
+                        android:text="我的地址"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <TextView
@@ -206,7 +209,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="15dp"
-                        android:text="我的资料" />
+                        android:text="我的资料"
+                        android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -237,7 +241,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="15dp"
-                        android:text="我的订单" />
+                        android:text="我的订单"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <TextView
@@ -267,7 +272,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="15dp"
-                        android:text="留言板" />
+                        android:text="留言板"
+                        android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -298,7 +304,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="15dp"
-                        android:text="意见反馈" />
+                        android:text="意见反馈"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <TextView
@@ -328,7 +335,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="15dp"
-                        android:text="关于" />
+                        android:text="关于"
+                        android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -350,7 +358,8 @@
                     android:gravity="center"
                     android:paddingLeft="5dp"
                     android:text="退出登录"
-                    android:textColor="#ffffff" />
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

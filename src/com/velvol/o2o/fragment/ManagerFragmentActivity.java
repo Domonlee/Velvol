@@ -19,7 +19,6 @@ import com.velvol.o2o.ui.login.LoginActivity;
 import com.velvol.o2o.ui.manager.AboutActivity;
 import com.velvol.o2o.ui.manager.ChangeAddressActivity;
 import com.velvol.o2o.ui.manager.FeedbackActivity;
-import com.velvol.o2o.ui.manager.MyAddressActivity;
 import com.velvol.o2o.ui.manager.MyInfoActivity;
 import com.velvol.o2o.ui.manager.MyMsgActivity;
 import com.velvol.o2o.ui.manager.MyOrderActivity;
@@ -112,7 +111,7 @@ public class ManagerFragmentActivity extends BaseFragment {
 				intent.setClass(mContext, FeedbackActivity.class);
 				break;
 			case R.id.manager_myaddr_layout:
-				intent.setClass(mContext, MyAddressActivity.class);
+				intent.setClass(mContext, ChangeAddressActivity.class);
 				break;
 			case R.id.manager_mydata_layout:
 				intent.setClass(mContext, MyInfoActivity.class);

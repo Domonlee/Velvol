@@ -46,7 +46,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="神点评"
                     android:textColor="#484848"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/textViewtitle2"
@@ -60,7 +60,7 @@
                     android:paddingRight="10dp"
                     android:text="点评赠积分，好礼换不停"
                     android:textColor="#b6b6b6"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="32dp"
@@ -200,7 +200,7 @@
                     android:gravity="center_vertical"
                     android:text="数据餐饮"
                     android:textColor="#484848"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/textViewtitle3"
@@ -214,7 +214,7 @@
                     android:paddingRight="10dp"
                     android:text="科学饮食，健康生活"
                     android:textColor="#b6b6b6"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="32dp"
@@ -252,7 +252,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="拼单"
                     android:textColor="#484848"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/textViewtitle4"
@@ -266,7 +266,7 @@
                     android:paddingRight="10dp"
                     android:text="找小伙伴一起吃饭吧"
                     android:textColor="#b6b6b6"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="32dp"
@@ -313,7 +313,7 @@
                         android:layout_marginLeft="10dp"
                         android:text="优惠券"
                         android:textColor="#484848"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textViewtitle5"
@@ -327,7 +327,7 @@
                         android:paddingRight="10dp"
                         android:text="1元吃大餐"
                         android:textColor="#b6b6b6"
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:layout_width="32dp"

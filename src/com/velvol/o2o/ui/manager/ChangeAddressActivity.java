@@ -23,8 +23,6 @@ public class ChangeAddressActivity extends BaseActivity {
 	public RadioButton change_addr_history1_rb;
 	public ImageView title_topbar_back_iv;
 	public LinearLayout title_topbar_layout;
-	public Spinner myaddr_info_pro_ed, myaddr_info_city_ed,
-			myaddr_info_area_ed, myaddr_info_road_ed, myaddr_info_street_ed;
 	public EditText myaddr_info_more_ed;
 
 	public static String USERADDRESS = "";
@@ -43,11 +41,6 @@ public class ChangeAddressActivity extends BaseActivity {
 		title_topbar_tv = (TextView) findViewById(R.id.title_topbar_tv);
 		title_topbar_right_tv = (TextView) findViewById(R.id.title_topbar_right_tv);
 		title_topbar_back_iv = (ImageView) findViewById(R.id.title_topbar_back_iv);
-		myaddr_info_pro_ed = (Spinner) findViewById(R.id.myaddr_info_pro_ed);
-		myaddr_info_city_ed = (Spinner) findViewById(R.id.myaddr_info_city_ed);
-		myaddr_info_area_ed = (Spinner) findViewById(R.id.myaddr_info_area_ed);
-		myaddr_info_road_ed = (Spinner) findViewById(R.id.myaddr_info_road_ed);
-		myaddr_info_street_ed = (Spinner) findViewById(R.id.myaddr_info_street_ed);
 		myaddr_info_more_ed = (EditText) findViewById(R.id.myaddr_info_more_ed);
 		change_addr_history1_rb = (RadioButton) findViewById(R.id.change_addr_history1_rb);
 	}
@@ -55,11 +48,10 @@ public class ChangeAddressActivity extends BaseActivity {
 	@Override
 	protected void initView() {
 		title_topbar_tv.setText("修改地址");
-		title_topbar_right_tv.setText("完成");
+//		title_topbar_right_tv.setText("完成");
 		title_topbar_back_iv.setOnClickListener(clickListener);
 		title_topbar_right_tv.setOnClickListener(clickListener);
 		change_addr_history1_rb.setOnClickListener(clickListener);
-
 	}
 
 	View.OnClickListener clickListener = new OnClickListener() {
@@ -82,7 +74,6 @@ public class ChangeAddressActivity extends BaseActivity {
 				setResult(0, intent);
 				finish();
 				break;
-
 			}
 		}
 	};
