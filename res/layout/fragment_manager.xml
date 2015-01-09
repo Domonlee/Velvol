@@ -331,6 +331,27 @@
                         android:text="关于" />
                 </LinearLayout>
             </LinearLayout>
+
+            <!-- 退出按钮 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/login"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/login_btn"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:text="退出登录"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

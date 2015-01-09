@@ -156,12 +156,16 @@ public class MyInfoActivity extends BaseActivity {
 				myinfo_base_addr_tv.setText(userInfo.getAddress());
 				myinfo_base_myscore_tv.setText(userInfo.getScore());
 				myinfo_base_countextra_tv.setText("гд"+userInfo.getBalance());
-				
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-
-
 	}
+	
+	@Override
+	protected void onRestart() {
+		httpget(GetUrl.getMyInfoUrl(data.User_id),1);
+		super.onRestart();
+	}
+	
 }

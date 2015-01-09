@@ -54,7 +54,7 @@
                         android:textSize="18sp" />
 
                     <EditText
-                        android:id="@+id/changeinfo_line1_ed"
+                        android:id="@+id/changeinfo_line1_et"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="8"

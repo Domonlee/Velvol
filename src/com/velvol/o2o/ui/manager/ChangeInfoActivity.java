@@ -1,14 +1,20 @@
 package com.velvol.o2o.ui.manager;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.velvol.o2o.R;
+import com.velvol.o2o.constant.GetUrl;
+import com.velvol.o2o.constant.UserInfo;
 import com.velvol.o2o.tool.BaseActivity;
 import com.velvol.o2o.ui.login.ForgetPswActivity;
 
@@ -22,7 +28,9 @@ public class ChangeInfoActivity extends BaseActivity {
 
 	public TextView changeinfo_line1_tv, changeinfo_line2_tv,
 			changeinfo_line3_tv, changeinfo_notice_tv, changeinfo_forgetpsw_tv;
+	private EditText changeinfo_line1_et,changeinfo_line2_et,changeinfo_line3_et;
 	public int editCode;
+	private UserInfo userInfo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +40,9 @@ public class ChangeInfoActivity extends BaseActivity {
 		Intent intent = getIntent();
 		editCode = intent.getIntExtra(MyInfoActivity.EDITCODE,0);
 
-//		editCode = intent.getStringExtra(MyInfoActivity.EDITCODE);
-
+		//获取用户信息
+		httpget(GetUrl.getMyInfoUrl(data.User_id),1);
 		ShowToast(editCode+"");
-
 		findViewById();
 		initView();
 	}
@@ -54,7 +61,10 @@ public class ChangeInfoActivity extends BaseActivity {
 		changeinfo_line3_tv = (TextView) findViewById(R.id.changeinfo_line3_tv);
 		changeinfo_notice_tv = (TextView) findViewById(R.id.changeinfo_notice_tv);
 		changeinfo_forgetpsw_tv = (TextView) findViewById(R.id.changeinfo_forgetpsw_tv);
-
+		
+		changeinfo_line1_et = (EditText)findViewById(R.id.changeinfo_line1_et);
+		changeinfo_line2_et = (EditText)findViewById(R.id.changeinfo_line2_et);
+		changeinfo_line3_et = (EditText)findViewById(R.id.changeinfo_line3_et);
 	}
 
 	@Override
@@ -129,6 +139,9 @@ public class ChangeInfoActivity extends BaseActivity {
 				finish();
 				break;
 			case R.id.title_topbar_right_tv:
+				changeinfo_line1_et.setText("");
+				changeinfo_line2_et.setText("");
+				changeinfo_line3_et.setText("");
 				finish();
 				break;
 			case R.id.changeinfo_forgetpsw_tv:
@@ -145,6 +158,18 @@ public class ChangeInfoActivity extends BaseActivity {
 
 	@Override
 	protected void result(String result) {
+		try {
+			//FIXME 接口数据有问题
+			JSONObject userInfoJson = new JSONObject(result);
+			if (userInfoJson.getInt("mark") == 1) {
+				userInfo = new UserInfo(userInfoJson);
+				userInfo.setName(changeinfo_line1_et.getText().toString());
+				
+			}
+		} catch (JSONException e) {
+			ShowLog("修改信息->个人资料获取异常");
+			e.printStackTrace();
+		}
 
 	}
 }
