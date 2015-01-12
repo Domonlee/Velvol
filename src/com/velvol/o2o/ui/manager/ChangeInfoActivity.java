@@ -41,7 +41,7 @@ public class ChangeInfoActivity extends BaseActivity {
 		editCode = intent.getIntExtra(MyInfoActivity.EDITCODE,0);
 
 		//获取用户信息
-		httpget(GetUrl.getMyInfoUrl(data.User_id),1);
+//		httpget(GetUrl.getMyInfoUrl(data.User_id),1);
 		ShowToast(editCode+"");
 		findViewById();
 		initView();
@@ -79,6 +79,8 @@ public class ChangeInfoActivity extends BaseActivity {
 			changeinfo_history_layout.setVisibility(View.GONE);
 			changeinfo_notice_tv.setVisibility(View.VISIBLE);
 			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
+//			httpget(GetUrl.getMyInfoUrl(data.User_id),1);
+			httpget(GetUrl.getUpdateMyInfoUrl(data.User_id, 1, changeinfo_line1_et.getText().toString()),1);
 			break;
 		case 2:
 			title_topbar_tv.setText("修改真实姓名");
@@ -88,6 +90,7 @@ public class ChangeInfoActivity extends BaseActivity {
 			changeinfo_history_layout.setVisibility(View.GONE);
 			changeinfo_notice_tv.setVisibility(View.GONE);
 			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
+			httpget(GetUrl.getUpdateMyInfoUrl(data.User_id, 2, changeinfo_line1_et.getText().toString()),1);
 			break;
 
 		case 4:
@@ -98,6 +101,7 @@ public class ChangeInfoActivity extends BaseActivity {
 			changeinfo_history_layout.setVisibility(View.GONE);
 			changeinfo_notice_tv.setVisibility(View.GONE);
 			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
+			httpget(GetUrl.getUpdateMyInfoUrl(data.User_id, 5, changeinfo_line1_et.getText().toString()),1);
 			break;
 
 		case 9:
@@ -120,6 +124,7 @@ public class ChangeInfoActivity extends BaseActivity {
 			changeinfo_history_layout.setVisibility(View.VISIBLE);
 			changeinfo_notice_tv.setVisibility(View.GONE);
 			changeinfo_forgetpsw_tv.setVisibility(View.GONE);
+			httpget(GetUrl.getUpdateMyInfoUrl(data.User_id, 4, changeinfo_line1_et.getText().toString()),1);
 			break;
 			
 			default:
@@ -159,12 +164,10 @@ public class ChangeInfoActivity extends BaseActivity {
 	@Override
 	protected void result(String result) {
 		try {
-			//FIXME 接口数据有问题
 			JSONObject userInfoJson = new JSONObject(result);
 			if (userInfoJson.getInt("mark") == 1) {
 				userInfo = new UserInfo(userInfoJson);
 				userInfo.setName(changeinfo_line1_et.getText().toString());
-				
 			}
 		} catch (JSONException e) {
 			ShowLog("修改信息->个人资料获取异常");

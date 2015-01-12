@@ -5,7 +5,8 @@ import android.util.Log;
 public class GetUrl {
 
 	// private static String HOST = "http://192.168.1.124:8888/diancan/check_";
-	private static String HOST = "http://123.56.94.10:8080/";
+//	private static String HOST = "http://123.56.94.10:8080/";
+	private static String HOST = "http://www.xiao2.me:8080/";
 	// Í¼Æ¬Í·²¿
 	// public static String IMAGE_URL = "http://192.168.1.124:8888/diancan/";
 
@@ -28,7 +29,7 @@ public class GetUrl {
 	 * @param context
 	 * @return
 	 */
-	public static String getUpdateMyInfoUrl(String userid, String updatefield,
+	public static String getUpdateMyInfoUrl(String userid, int updatefield,
 			String context) {
 		return MYINFO_UPDATE + "?userid=" + userid + "&updatefield="
 				+ updatefield + "&context=" + context;
