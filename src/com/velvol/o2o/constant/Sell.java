@@ -9,10 +9,10 @@ public class Sell {
 
 	private int id;
 	private String pricetypename;
-	private String oldprice;
-	private String price;
-	private String isilike;
-	private String soldout;
+	private int oldprice;
+	private int price;
+	private int isilike;
+	private int soldout;
 	private String imgname;
 	private String storename;
 	private String dishname;
@@ -26,11 +26,11 @@ public class Sell {
 		try {
 			id = json.getInt("id");
 			pricetypename = json.getString("pricetypename");
-			oldprice = json.getString("oldprice");
-			price = json.getString("price");
-			isilike = json.getString("isilike");
-			soldout = json.getString("soldout");
-			imgname = json.getString("imgname");
+			oldprice = json.getInt("oldprice");
+			price = json.getInt("price");
+			isilike = json.getInt("isilike");
+			soldout = json.getInt("soldout");
+			imgname =GetUrl.IMAGE_SELL_URL + json.getString("imgname");
 			storename = json.getString("storename");
 			dishname = json.getString("dishname");
 			starttime = json.getString("starttime");
@@ -57,35 +57,35 @@ public class Sell {
 		this.pricetypename = pricetypename;
 	}
 
-	public String getOldprice() {
+	public int getOldprice() {
 		return oldprice;
 	}
 
-	public void setOldprice(String oldprice) {
+	public void setOldprice(int oldprice) {
 		this.oldprice = oldprice;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 
-	public String getIsilike() {
+	public int getIsilike() {
 		return isilike;
 	}
 
-	public void setIsilike(String isilike) {
+	public void setIsilike(int isilike) {
 		this.isilike = isilike;
 	}
 
-	public String getSoldout() {
+	public int getSoldout() {
 		return soldout;
 	}
 
-	public void setSoldout(String soldout) {
+	public void setSoldout(int soldout) {
 		this.soldout = soldout;
 	}
 

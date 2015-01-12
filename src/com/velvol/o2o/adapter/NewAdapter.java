@@ -1,5 +1,7 @@
 package com.velvol.o2o.adapter;
 
+import java.util.List;
+
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,13 +15,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.velvol.o2o.Data;
 import com.velvol.o2o.R;
+import com.velvol.o2o.constant.Sell;
 
 public class NewAdapter extends BaseAdapter {
-	private int[] r = { R.drawable.test1, R.drawable.test2, R.drawable.test3,
-			R.drawable.test4 };
 	private Context context;
 	private LayoutInflater mInflater;
+	private List<Sell>sell_list;
 	private int width;
 
 	public NewAdapter(Context con, int width) {
@@ -27,10 +31,17 @@ public class NewAdapter extends BaseAdapter {
 		mInflater = LayoutInflater.from(context);
 		this.width = width;
 	}
-
+	public void setList(List<Sell>sell_list) {
+		this.sell_list = sell_list;
+	}
+	public List<Sell> getList(){
+		return sell_list;
+	}
 	@Override
 	public int getCount() {
-		return 6;
+		if(sell_list!=null)
+			return sell_list.size();
+		return 0;
 	}
 
 	@Override
@@ -54,7 +65,7 @@ public class NewAdapter extends BaseAdapter {
 			holder.img = (ImageView) convertView.findViewById(R.id.icon);
 			holder.name = (TextView) convertView.findViewById(R.id.name);
 			holder.price = (TextView) convertView.findViewById(R.id.price);
-			holder.price = (TextView) convertView.findViewById(R.id.price_new);
+			holder.price_new = (TextView) convertView.findViewById(R.id.price_new);
 			holder.status = (TextView) convertView.findViewById(R.id.status);
 			holder.buy = (Button) convertView.findViewById(R.id.buy);
 			convertView.setTag(holder);
@@ -64,7 +75,12 @@ public class NewAdapter extends BaseAdapter {
 		}
 		holder.layout.setLayoutParams(new AbsListView.LayoutParams(width,
 				(int) (width * 1.4)));
-		holder.img.setImageResource(r[position % 4]);
+		ImageLoader.getInstance().displayImage(sell_list.get(position).getImgname(), holder.img,Data.getInstance().displayImageOptions);
+		holder.name.setText(sell_list.get(position).getDishname());
+		holder.price.setText("£§"+sell_list.get(position).getOldprice());
+		holder.price_new.setText("ª·‘±º€£§"+sell_list.get(position).getPrice());
+		if(sell_list.get(position).getSoldout()!=0)
+			holder.status.setBackgroundResource(R.drawable.status_on);
 		mOnclick mClick = new mOnclick(position);
 		holder.buy.setOnClickListener(mClick);
 		return convertView;

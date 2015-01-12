@@ -11,6 +11,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
+import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.velvol.o2o.tool.ConfigUtil;
 
 public class Data extends Application {
@@ -61,7 +62,7 @@ public class Data extends Application {
 				.imageScaleType(ImageScaleType.IN_SAMPLE_INT)
 				.cacheInMemory(true) // 设置下载的图片是否缓存在内存中
 				.cacheOnDisc(true) // 设置下载的图片是否缓存在SD卡中
-				.displayer(new FadeInBitmapDisplayer(500)) // 设置成圆角图片
+				.displayer(new SimpleBitmapDisplayer())
 				.bitmapConfig(Config.RGB_565).build(); // 创建配置过得DisplayImageOption对象
 	}
 }

@@ -10,6 +10,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
+import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -46,6 +47,7 @@ public abstract class BaseFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		data = (Data)getActivity().getApplication();
 	}
 
 	protected abstract void findViewById();
