@@ -1,6 +1,5 @@
 package com.velvol.o2o.ui.manager;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,7 +15,6 @@ import com.velvol.o2o.R;
 import com.velvol.o2o.constant.GetUrl;
 import com.velvol.o2o.constant.UserInfo;
 import com.velvol.o2o.tool.BaseActivity;
-import com.velvol.o2o.tool.MD5;
 
 public class MyInfoActivity extends BaseActivity {
 

@@ -1,7 +1,5 @@
 package com.velvol.o2o.constant;
 
-import android.util.Log;
-
 public class GetUrl {
 
 	// private static String HOST = "http://192.168.1.124:8888/diancan/check_";
