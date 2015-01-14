@@ -29,6 +29,7 @@ import com.velvol.o2o.SearchItemInfoActivity;
 import com.velvol.o2o.adapter.search.ClassSearchAdapter;
 import com.velvol.o2o.adapter.search.PromptAdapter;
 import com.velvol.o2o.adapter.search.RecentAdapter;
+import com.velvol.o2o.constant.GetUrl;
 import com.velvol.o2o.tool.BaseActivity;
 import com.velvol.o2o.ui.make.ParticularsActivity;
 
@@ -44,10 +45,14 @@ public class SearchClassActivity extends BaseActivity implements
 	private TextView cancle;
 	private ClassSearchAdapter adapter;
 	private String name;
-	private PopupWindow window;
+	private SearchHistory popwindow;
 	private LinearLayout ll;
-	private TextView clear;
-
+	private String key,classifyId;
+	/**
+	 * 0: name = 关键字
+	 * 1: name = 二级分类ID 
+	 */
+	private int action;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,6 +60,13 @@ public class SearchClassActivity extends BaseActivity implements
 		setContentView(R.layout.activity_search_class);
 		findViewById();
 		initView();
+		action =  getIntent().getIntExtra("action", 0);
+		if(action == 0)
+			key = getIntent().getStringExtra("name");
+		else
+			classifyId= getIntent().getStringExtra("name");
+		showProgressDialog(SearchClassActivity.this);
+		httpget(GetUrl.getSearchByNameUrl(data.User_id, key, "-1", "1", "1", "1"), 1);
 	}
 
 	@Override
@@ -73,6 +85,7 @@ public class SearchClassActivity extends BaseActivity implements
 
 	@Override
 	protected void initView() {
+		popwindow = new SearchHistory(SearchClassActivity.this);
 		name = getIntent().getStringExtra("name");
 		search.setText(name);
 		adapter = new ClassSearchAdapter(SearchClassActivity.this);
@@ -100,13 +113,10 @@ public class SearchClassActivity extends BaseActivity implements
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				if (hasFocus) {
-					back.setVisibility(View.GONE);
-					cancle.setVisibility(View.VISIBLE);
-					showwindow();
-				} else {
-					back.setVisibility(View.VISIBLE);
-					cancle.setVisibility(View.GONE);
-				}
+					if (popwindow.window == null
+							|| !popwindow.window.isShowing())
+						popwindow.showwindow(ll);
+				} 
 			}
 		});
 
@@ -130,68 +140,16 @@ public class SearchClassActivity extends BaseActivity implements
 
 	}
 
-	/**
-	 * 展示
-	 */
-	private void showwindow() {
-		search.setEnabled(true);
-		window = new PopupWindow(LayoutParams.MATCH_PARENT,
-				LayoutParams.MATCH_PARENT);
-		View view = LayoutInflater.from(SearchClassActivity.this).inflate(
-				R.layout.search_class_down, null);
-		window.setContentView(view);
-		window.setOutsideTouchable(true);
-		window.setBackgroundDrawable(new ColorDrawable());
-		window.setFocusable(false);
-		// 全屏PopupWindow 挡住软键盘
-		window.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
-		window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-		window.showAsDropDown(ll);
-		// 提示listview
-		ListView prompt = (ListView) view
-				.findViewById(R.id.lv_search_class_down_prompt);
-		// 最近搜索listview
-		ListView recent = (ListView) view
-				.findViewById(R.id.lv_search_class_down_search);
+	
 
-		// 假数据
-		ArrayList<String> list = new ArrayList<String>();
-		list.add("搜索“" + "面条" + "”菜品");
-		list.add("牛肉面");
-		list.add("酸菜面");
-		list.add("岐山臊子面");
-		list.add("金马刀削面");
-		PromptAdapter promptAdapter = new PromptAdapter(
-				SearchClassActivity.this);
-		promptAdapter.setList(list);
-		prompt.setAdapter(promptAdapter);
-
-		ArrayList<String> flist = new ArrayList<String>();
-		flist.add("面条");
-		flist.add("酸辣土豆丝");
-		flist.add("酸辣土豆丝");
-		flist.add("酸辣土豆丝");
-		flist.add("酸辣土豆丝");
-		RecentAdapter recentAdapter = new RecentAdapter(
-				SearchClassActivity.this);
-		recentAdapter.setList(flist);
-
-		recent.setAdapter(recentAdapter);
-		clear = (TextView) view.findViewById(R.id.tv_search_class_down_clear);
-		clear.setOnClickListener(SearchClassActivity.this);
-
-	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		//清空历史搜索
-		case R.id.tv_search_class_down_clear:
-			break;
 			
 		// 搜索
 		case R.id.search:
-			showwindow();
+			
 			break;
 		
 		// 全部

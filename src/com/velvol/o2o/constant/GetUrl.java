@@ -5,11 +5,12 @@ public class GetUrl {
 	// private static String HOST = "http://192.168.1.124:8888/diancan/check_";
 	private static String HOST = "http://www.xiao2.me:8080/";
 	// 图片头部
-	 public static String IMAGE_STORE_URL = HOST+"/admins/images/shopImgs/";
-	 public static String IMAGE_DISCOUNT_URL = HOST+"/admins/images/discountImgs/";
-	 public static String IMAGE_MSG_URL = HOST+"/admins/images/userImgs/";
-	 public static String IMAGE_SELL_URL = HOST+"/admins/images/dishesImgs/";
-	 public static String IMAGE_ICON_URL = HOST+"/userimg/";
+	public static String IMAGE_STORE_URL = HOST + "/admins/images/shopImgs/";
+	public static String IMAGE_DISCOUNT_URL = HOST
+			+ "/admins/images/discountImgs/";
+	public static String IMAGE_MSG_URL = HOST + "/admins/images/userImgs/";
+	public static String IMAGE_SELL_URL = HOST + "/admins/images/dishesImgs/";
+	public static String IMAGE_ICON_URL = HOST + "/userimg/";
 
 	private static String CODE = HOST + "UserApi_loadValidateCode";
 	private static String REGISTER = HOST + "UserApi_register";
@@ -21,41 +22,77 @@ public class GetUrl {
 	private static String MYINFO = HOST + "UserApi_loadMyInfo";
 	private static String MYINFO_UPDATE = HOST + "UserApi_updateUserInfo";
 	private static String MAIN_INFO = HOST + "ShopDishesApi_loadIndexInfo";
-	private static String MAIN_INFO_BYID = HOST + "ShopDishesApi_findInfoByFlag";
+	private static String MAIN_INFO_BYID = HOST
+			+ "ShopDishesApi_findInfoByFlag";
 	private static String SELL_DISHES = HOST + "ShopDishesApi_loadDishesInfo";
-	
+	private static String SEARCH_CLASSIFY = HOST
+			+ "ShopDishesApi_loadDishesType";
+	private static String SEARCH_BY_NAME = HOST
+			+ "ShopDishesApi_loadDishesForSearch";
+
+	/**
+	 * 菜品模糊搜索
+	 * @param userid
+	 * @param keywords
+	 * @param typeid
+	 * @param sortfield
+	 * @param sortrule
+	 * @param pagenum
+	 */
+	public static String getSearchByNameUrl(String userid, String keywords,
+			String typeid, String sortfield, String sortrule, String pagenum) {
+		return SEARCH_BY_NAME + "?userid=" + userid + "&keywords=" + keywords
+				+ "&typeid=" + typeid + "&sortfield=" + sortfield
+				+ "&sortrule=" + sortrule + "&pagenum=" + pagenum;
+	}
+
+	/**
+	 * 搜索分类
+	 * 
+	 * @param typeid
+	 * @return
+	 */
+	public static String getSearchClassifyUrl(String typeid) {
+		return SEARCH_CLASSIFY + "?typeid=" + typeid;
+	}
+
 	/**
 	 * 菜品详情
+	 * 
 	 * @param userid
 	 * @param dishesid
 	 * @return
 	 */
-	public static String getSellDishesUrl(String userid,int dishesid) {
-		return SELL_DISHES + "?userid=" + userid+"&dishesid=" + dishesid;
+	public static String getSellDishesUrl(String userid, int dishesid) {
+		return SELL_DISHES + "?userid=" + userid + "&dishesid=" + dishesid;
 	}
-	
+
 	/**
 	 * 首页刷新接口
+	 * 
 	 * @param userid
 	 * @param pagenum
-	 * @param flag 1 我喜欢 2最近点餐 3推荐菜品 4优惠
+	 * @param flag
+	 *            1 我喜欢 2最近点餐 3推荐菜品 4优惠
 	 * @return
 	 */
-	public static String getMainInfoByIdUrl(String userid,int pagenum,int flag) {
-		return MAIN_INFO_BYID + "?userid=" + userid+"&pagenum=" + pagenum+"&flag=" + flag;
+	public static String getMainInfoByIdUrl(String userid, int pagenum, int flag) {
+		return MAIN_INFO_BYID + "?userid=" + userid + "&pagenum=" + pagenum
+				+ "&flag=" + flag;
 	}
-	
+
 	/**
 	 * 首页数据接口
+	 * 
 	 * @param userid
 	 */
 	public static String getMainInfoUrl(String userid) {
 		return MAIN_INFO + "?userid=" + userid;
 	}
-	
+
 	/**
-	 * Title: getUpdateMyInfoUrl 
-	 * Description: 修改我的资料接口
+	 * Title: getUpdateMyInfoUrl Description: 修改我的资料接口
+	 * 
 	 * @param userid
 	 * @param updatefield
 	 * @param context

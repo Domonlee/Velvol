@@ -2,37 +2,41 @@ package com.velvol.o2o.fragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-import android.annotation.SuppressLint;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.velvol.o2o.R;
 import com.velvol.o2o.adapter.SearchAdapter;
-import com.velvol.o2o.adapter.search.PromptAdapter;
-import com.velvol.o2o.adapter.search.RecentAdapter;
 import com.velvol.o2o.adapter.search.SearchFoodAdapter;
-import com.velvol.o2o.adapter.search.SearchHotAdapter;
+import com.velvol.o2o.constant.GetUrl;
 import com.velvol.o2o.tool.BaseFragment;
+import com.velvol.o2o.tool.ConfigUtil;
 import com.velvol.o2o.ui.search.SearchClassActivity;
+import com.velvol.o2o.ui.search.SearchHistory;
 
 public class SearchFragmentActivity extends BaseFragment {
 
@@ -43,12 +47,13 @@ public class SearchFragmentActivity extends BaseFragment {
 	private SearchAdapter mAdapter;
 	private SearchFoodAdapter adapter;
 	private HashMap<Integer, Boolean> isselect;
-	private ArrayList<String> leftlist;
-	private ArrayList<String> rightlist;
-	private TextView clear;
-	private PopupWindow window;
+	private SearchHistory popwindow;
 	private LinearLayout ll1;
 	private EditText search;
+	private TextView cencel;
+	private List<HashMap<String, String>> firstlist = new ArrayList<HashMap<String, String>>();
+	private List<HashMap<String, String>> secendlist = new ArrayList<HashMap<String, String>>();
+	private int check_index = 0;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -56,6 +61,7 @@ public class SearchFragmentActivity extends BaseFragment {
 		view = inflater.inflate(R.layout.fragment_search, container, false);
 		findViewById();
 		initView();
+		httpget(GetUrl.getSearchClassifyUrl(-1 + ""), 1);
 		return view;
 	}
 
@@ -65,152 +71,153 @@ public class SearchFragmentActivity extends BaseFragment {
 		ll1 = (LinearLayout) view.findViewById(R.id.ll_ll1);
 		listView = (ListView) view.findViewById(R.id.listview);
 		gridView = (GridView) view.findViewById(R.id.search_gridView1);
+		cencel = (TextView) view.findViewById(R.id.cencel);
 	}
 
-	@SuppressLint("UseSparseArrays")
 	@Override
 	protected void initView() {
-		// 假数据
-		leftlist = new ArrayList<String>();
-		leftlist.add("面食");
-		leftlist.add("菜品");
-		leftlist.add("西式快餐");
-		leftlist.add("零食");
-		leftlist.add("饮料");
-		rightlist = new ArrayList<String>();
-		rightlist.add("面条");
-		rightlist.add("点心");
-		rightlist.add("拉条子");
-		rightlist.add("麻食");
-		rightlist.add("包子");
-		rightlist.add("饺子");
-		rightlist.add("烧饼");
-		rightlist.add("其他");
+		popwindow = new SearchHistory(getActivity());
 
 		isselect = new HashMap<Integer, Boolean>();
-
-		for (int i = 0; i < leftlist.size(); i++) {
-			isselect.put(i, false);
-		}
-		isselect.put(0, true);
 		mContext = view.getContext();
+
 		mAdapter = new SearchAdapter(mContext);
-		mAdapter.setList(leftlist);
+		mAdapter.setList(firstlist);
 		mAdapter.setIsselect(isselect);
 		listView.setAdapter(mAdapter);
-		adapter = new SearchFoodAdapter(mContext);
-		adapter.setList(rightlist);
-		gridView.setAdapter(adapter);
-		listView.setOnItemClickListener(listener);
-		gridView.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View v, int position,
-					long arg3) {
-				Intent intent = new Intent(getActivity(),
-						SearchClassActivity.class);
-				intent.putExtra("name", rightlist.get(position));
-				startActivity(intent);
-			}
-		});
+		adapter = new SearchFoodAdapter(mContext);
+		adapter.setList(secendlist);
+		gridView.setAdapter(adapter);
+
+		listView.setOnItemClickListener(listener);
+		cencel.setOnClickListener(listener2);
+		search.setOnEditorActionListener(listener3);
 
 		search.setOnFocusChangeListener(new OnFocusChangeListener() {
 
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
-				if (hasFocus) {
-					showwindow();
-				}
+				if (hasFocus)
+					if (popwindow.window == null
+							|| !popwindow.window.isShowing())
+						popwindow.showwindow(ll1);
+
 			}
 		});
-
-		search.setOnClickListener(new OnClickListener() {
+		gridView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onClick(View v) {
-				showwindow();
+			public void onItemClick(AdapterView<?> arg0, View v, int position,
+					long arg3) {
+				startActivity(new Intent(getActivity(),
+						SearchClassActivity.class).putExtra("name", secendlist
+						.get(position).get("id")).putExtra("action", 0));
 			}
 		});
+
 	}
 
+	TextView.OnEditorActionListener listener3 = new TextView.OnEditorActionListener() {
+		@Override
+		public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+			if (actionId == EditorInfo.IME_ACTION_SEARCH
+					&& search.getText().toString().length() > 0) {
+				startActivity(new Intent(getActivity(),
+						SearchClassActivity.class).putExtra("name", search
+						.getText().toString()).putExtra("action", 1));
+
+				// 保存历史记录到XML文件中
+				StringBuffer sb = new StringBuffer(data.searchHistory);
+				if (data.searchHistory.length() > 21)
+					sb.insert(18, "{\"name\":\"" + search.getText().toString()
+							+ "\"},");
+				else
+					sb.insert(18, "{\"name\":\"" + search.getText().toString()
+							+ "\"}");
+				ConfigUtil.putString("searchHistory",
+						data.searchHistory = sb.toString());
+			}
+			return false;
+		}
+	};
+
+	View.OnClickListener listener2 = new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			switch (v.getId()) {
+			case R.id.cencel:
+				popwindow.window.dismiss();
+				search.clearFocus();
+				// 收键盘
+				((InputMethodManager) getActivity().getSystemService(
+						Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(
+						search.getWindowToken(),
+						InputMethodManager.HIDE_NOT_ALWAYS);
+				break;
+			default:
+				break;
+			}
+		}
+	};
 	AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
-
-			for (int i = 0; i < leftlist.size(); i++) {
-				isselect.put(i, false);
-			}
-			isselect.put(position, true);
-			mAdapter.setIsselect(isselect);
-			mAdapter.notifyDataSetChanged();
-			ArrayList<String> leftlists = new ArrayList<String>();
-			leftlists.addAll(leftlist);
-			leftlists.remove(position);
-			adapter.setList(leftlists);
-			adapter.notifyDataSetChanged();
+			check_index = position;
+			httpget(GetUrl.getSearchClassifyUrl(firstlist.get(position).get(
+					"id")), 1);
 		}
-
 	};
 
 	@Override
 	protected void result(String result) {
-
+		try {
+			JSONObject c = new JSONObject(result);
+			if (c.getInt("mark") == 1) {
+				Json(c.optJSONArray("firstlist"), "firstlist", firstlist);
+				Json(c.optJSONArray("secendlist"), "secendlist", secendlist);
+				for (int i = 0; i < firstlist.size(); i++) {
+					isselect.put(i, false);
+				}
+				isselect.put(check_index, true);
+				mAdapter.notifyDataSetChanged();
+				adapter.notifyDataSetChanged();
+			} else
+				Toast.makeText(getActivity().getApplicationContext(), "数据出错！",
+						0).show();
+		} catch (JSONException e) {
+			e.printStackTrace();
+			Toast.makeText(getActivity().getApplicationContext(), "网络异常！", 0)
+					.show();
+		}
 	}
 
 	/**
-	 * 展示
+	 * Json数组解析
+	 * 
+	 * @param array
+	 * @throws JSONException
 	 */
-	private void showwindow() {
-
-		window = new PopupWindow(LayoutParams.MATCH_PARENT,
-				LayoutParams.MATCH_PARENT);
-		View view = LayoutInflater.from(getActivity()).inflate(
-				R.layout.search_fragment_down, null);
-		window.setContentView(view);
-		window.setOutsideTouchable(true);
-		window.setBackgroundDrawable(new ColorDrawable());
-		window.setFocusable(false);
-		// 全屏PopupWindow 挡住软键盘
-		window.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
-		window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-		window.showAsDropDown(ll1);
-		// 热门搜索
-		ListView gridView = (ListView) view
-				.findViewById(R.id.gv_search_fragment_down_listview);
-		// 最近搜索
-		ListView listView = (ListView) view
-				.findViewById(R.id.lv_search_fragment_down_listview);
-
-		// 假数据
-		ArrayList<String> list = new ArrayList<String>();
-		list.add("牛肉面");
-		list.add("酸菜面");
-		list.add("岐山臊子面");
-		list.add("金马刀削面");
-		SearchHotAdapter hotAdapter = new SearchHotAdapter(getActivity());
-		hotAdapter.setList(list);
-		gridView.setAdapter(hotAdapter);
-
-		ArrayList<String> flist = new ArrayList<String>();
-		flist.add("面条");
-		flist.add("酸辣土豆丝");
-		flist.add("酸辣土豆丝");
-		flist.add("酸辣土豆丝");
-		flist.add("酸辣土豆丝");
-		RecentAdapter recentAdapter = new RecentAdapter(getActivity());
-		recentAdapter.setList(flist);
-
-		listView.setAdapter(recentAdapter);
-		clear = (TextView) view.findViewById(R.id.tv_search_class_down_clear);
-		clear.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-
+	private void Json(JSONArray array, String action,
+			List<HashMap<String, String>> list) throws JSONException {
+		if (array == null) {
+			Log.v("Sen", action + "字段不存在");
+			return;
+		}
+		list.clear();
+		int len = array.length();
+		if (len > 0) {
+			for (int i = 0; i < len; i++) {
+				HashMap<String, String> hashMap = new HashMap<String, String>();
+				hashMap.put("name", array.getJSONObject(i).getString("name"));
+				hashMap.put("id", array.getJSONObject(i).getInt("id") + "");
+				hashMap.put("img",
+						GetUrl.IMAGE_SELL_URL
+								+ array.getJSONObject(i).getString("img"));
+				list.add(hashMap);
 			}
-		});
-
+		}
 	}
 
 }

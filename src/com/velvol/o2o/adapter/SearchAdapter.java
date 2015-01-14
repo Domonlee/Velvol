@@ -1,7 +1,7 @@
 package com.velvol.o2o.adapter;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -17,7 +17,7 @@ public class SearchAdapter extends BaseAdapter {
 
 	private Context context;
 	private LayoutInflater mInflater;
-	private ArrayList<String> list;
+	private List<HashMap<String, String>> list;
 	private HashMap<Integer, Boolean> isselect;
 
 	public void setIsselect(HashMap<Integer, Boolean> isselect) {
@@ -29,14 +29,16 @@ public class SearchAdapter extends BaseAdapter {
 		mInflater = LayoutInflater.from(context);
 	}
 
-	public void setList(ArrayList<String> list) {
+	public void setList(List<HashMap<String, String>> list) {
 
 		this.list = list;
 	}
 
 	@Override
 	public int getCount() {
-		return list.size();
+		if(list!=null)
+			return list.size();
+		return 0;
 	}
 
 	@Override
@@ -62,7 +64,7 @@ public class SearchAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		holder.name.setText(list.get(position));
+		holder.name.setText(list.get(position).get("name"));
 		if (isselect.get(position)) {
 			holder.name.setBackgroundColor(Color.rgb(255, 255, 255));
 		} else {

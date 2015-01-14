@@ -1,6 +1,7 @@
 package com.velvol.o2o.adapter.search;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import com.velvol.o2o.R;
 
@@ -15,9 +16,9 @@ import android.widget.TextView;
 public class SearchFoodAdapter extends BaseAdapter {
 	private Context context;
 	private LayoutInflater mInflater;
-	private ArrayList<String> list;
+	private List<HashMap<String, String>> list;
 
-	public void setList(ArrayList<String> list) {
+	public void setList(List<HashMap<String, String>> list) {
 	
 		this.list = list;
 	}
@@ -29,7 +30,9 @@ public class SearchFoodAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		return list.size();
+		if(list!=null)
+			return list.size();
+		return 0;
 	}
 
 	@Override
@@ -57,7 +60,7 @@ public class SearchFoodAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
-		holder.name.setText(list.get(position));
+		holder.name.setText(list.get(position).get("name"));
 		return convertView;
 	}
 

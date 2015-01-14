@@ -1,5 +1,7 @@
 package com.velvol.o2o;
 
+import java.util.List;
+
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Bitmap.Config;
@@ -19,6 +21,7 @@ public class Data extends Application {
 	private static Data mInstance = null;
 	public boolean login_flag = false;
 	public String User_id = "";
+	public String searchHistory = "";
 	public DisplayImageOptions displayImageOptions;
 	public static Data getInstance() {
 		return mInstance;
@@ -38,6 +41,7 @@ public class Data extends Application {
 	public void initData(){
 		login_flag = ConfigUtil.getBoolean("login_flag", false);
 		User_id = ConfigUtil.getString("user_id", "");
+		searchHistory = ConfigUtil.getString("searchHistory", "{\"searchHistory\":[{\"name\":\"Å£ÈâÃæ\"},{\"name\":\"³´Ã×·¹\"}]}");
 	}
 	
 	public void initImageLoader() {
