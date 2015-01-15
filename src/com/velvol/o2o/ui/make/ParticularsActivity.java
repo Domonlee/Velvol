@@ -13,8 +13,10 @@ import android.widget.TextView;
 
 import com.velvol.o2o.EvaluateActivity;
 import com.velvol.o2o.R;
+import com.velvol.o2o.Utils.Util;
 import com.velvol.o2o.adapter.make.EvaluateAdapter;
 import com.velvol.o2o.constant.GetUrl;
+import com.velvol.o2o.constant.Sell;
 import com.velvol.o2o.constant.SellDishes;
 import com.velvol.o2o.tool.BaseActivity;
 import com.velvol.o2o.tool.MyListView;
@@ -32,6 +34,7 @@ public class ParticularsActivity extends BaseActivity {
 	private SellDishes sellDishes = new SellDishes();
 	private TextView title,sell_name,shop_name,old_price,price,sub,number,add,salecount,sell_context,like,buy,replycount,leadreputably;
 	private ImageView status;
+	private int action=0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +85,9 @@ public class ParticularsActivity extends BaseActivity {
 	@Override
 	protected void initView() {
 		merchantName.setOnClickListener(listener);
+		like.setOnClickListener(listener);
 		back.setOnClickListener(listener);
+		buy.setOnClickListener(listener);
 		classify.setOnClickListener(listener);
 		adapter = new EvaluateAdapter(ParticularsActivity.this,sellDishes.getReplieslist());
 		listView.setAdapter(adapter);
@@ -110,9 +115,25 @@ public class ParticularsActivity extends BaseActivity {
 			case R.id.particulars_return:
 				finish();
 				break;
+			case R.id.buy:
+				new Util().addCat(new Sell(sellDishes.getId(), sellDishes.getPrice(), sellDishes.getImg()
+						, sellDishes.getShopname(), sellDishes.getName()));
+				break;
 			case R.id.particulars_tv_merchantName:
 				startActivity(new Intent(ParticularsActivity.this,
 						ShopDetailsActivity.class));
+				break;
+			case R.id.like:
+				if(sellDishes.getIsilike()==0){
+					like.setBackgroundResource(R.drawable.particulars_collect2);
+					sellDishes.setIsilike(1);
+				}
+				else{
+					like.setBackgroundResource(R.drawable.particulars_collect);
+					sellDishes.setIsilike(0);
+				}
+				action=1;
+				httpget(GetUrl.getLikeUrl(data.User_id, sellDishes.getId()+""), 1);
 				break;
 			default:
 				break;
@@ -123,20 +144,25 @@ public class ParticularsActivity extends BaseActivity {
 
 	@Override
 	protected void result(String result) {
-		loadingDialog.dismiss();
-
+		if(action == 0)
+			loadingDialog.dismiss();
 		try {
 			JSONObject c = new JSONObject(result);
 			if (c.getInt("mark") == 1){ 
+				if(action == 0){
 				sellDishes.setJson(c.getJSONObject("result"));
 				setData();
 				adapter.notifyDataSetChanged();
+				}
 			}
 			else
 				ShowToast("数据异常！");
 		} catch (JSONException e) {
 			e.printStackTrace();
 			ShowToast("网络不给力");
+		}
+		finally{
+			action = 0; 
 		}
 	}
 	
@@ -150,6 +176,10 @@ public class ParticularsActivity extends BaseActivity {
 		sell_context.setText(sellDishes.getDishesdesc());
 		replycount.setText("("+sellDishes.getRepliescount()+")");
 		leadreputably.setText(sellDishes.getLeadreputably());
+		if(sellDishes.getIsilike()==0)
+			like.setBackgroundResource(R.drawable.particulars_collect);
+		else
+			like.setBackgroundResource(R.drawable.particulars_collect2);
 	}
 
 }

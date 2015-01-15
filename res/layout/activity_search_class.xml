@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="#ffffff">
 
     <LinearLayout
         android:id="@+id/ll_ll"
@@ -56,7 +57,7 @@
         <RadioButton
             android:id="@+id/rb_class_all"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#00000000"
             android:button="@null"
@@ -76,7 +77,7 @@
         <RadioButton
             android:id="@+id/rb_class_sales"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
@@ -95,7 +96,7 @@
         <RadioButton
             android:id="@+id/rb_class_price"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
@@ -114,7 +115,7 @@
         <RadioButton
             android:id="@+id/rb_class_new"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
@@ -128,13 +129,22 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#e8e8e8" />
-
-    <ListView
+    
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
         android:id="@+id/lv_class_listview"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="#19000000"
         android:background="#FFFFFF"
-        android:paddingBottom="5dp" >
-    </ListView>
+        android:dividerHeight="4dp"
+        android:fadingEdge="none"
+        android:paddingBottom="5dp"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        ptr:ptrMode="both"
+        android:smoothScrollbar="true" />
 
 </LinearLayout>

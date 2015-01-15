@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -30,6 +31,7 @@ import com.velvol.o2o.adapter.NewAdapter;
 import com.velvol.o2o.constant.GetUrl;
 import com.velvol.o2o.constant.Sell;
 import com.velvol.o2o.tool.BaseFragment;
+import com.velvol.o2o.tool.ConfigUtil;
 import com.velvol.o2o.ui.make.ParticularsActivity;
 import com.velvol.o2o.ui.manager.ChangeAddressActivity;
 
@@ -49,6 +51,8 @@ public class MakeFragmentActivity extends BaseFragment {
 	private int check_id;
 	private int LOADER = 100,REFRESH=101,action=0;
 	private int[] page = {1,1,1,1};
+	private String main_result;
+	private boolean result_flag = false;
 	
 
 	public View onCreateView(LayoutInflater inflater,
@@ -56,7 +60,15 @@ public class MakeFragmentActivity extends BaseFragment {
 		view = inflater.inflate(R.layout.fragment_make, container, false);
 		findViewById();
 		initView();
-		httpget(GetUrl.getMainInfoUrl(data.User_id), 1);
+		if(action == 0){
+			main_result = ConfigUtil.getString("main_result", "");
+			if(main_result.equals("")){
+				result_flag = true;
+				httpget(GetUrl.getMainInfoUrl(data.User_id), 1);
+			}
+			else
+				result(main_result);
+		}
 		return view;
 	}
 	
@@ -146,9 +158,10 @@ public class MakeFragmentActivity extends BaseFragment {
 				Json(c.optJSONArray("ilike"), "ilike", ilike);
 				Json(c.optJSONArray("advicedishes"), "advicedishes",
 						advicedishes);
+				if(result_flag)
+					ConfigUtil.putString("main_result", result);
 				check_LoaderList(check_id);
-				if(action != 0)
-					mPullRefreshGridView.onRefreshComplete();
+					
 			} else
 				Toast.makeText(getActivity().getApplicationContext(), "数据出错！", 0).show();
 		} catch (JSONException e) {
@@ -157,7 +170,9 @@ public class MakeFragmentActivity extends BaseFragment {
 			page[check_id - (R.id.like)]--;
 		}
 		finally{
-			action = 0;
+			result_flag = false;
+			action = 1;
+			mPullRefreshGridView.onRefreshComplete();
 		}
 	}
 
@@ -172,7 +187,7 @@ public class MakeFragmentActivity extends BaseFragment {
 			Log.v("Sen", action + "字段不存在");
 			return;
 		}
-		if(this.action==REFRESH)
+		if(this.action!=LOADER)
 			list.removeAll(list);
 		int len = array.length();
 		if (len > 0) {

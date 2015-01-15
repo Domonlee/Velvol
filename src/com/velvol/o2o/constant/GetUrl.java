@@ -29,7 +29,24 @@ public class GetUrl {
 			+ "ShopDishesApi_loadDishesType";
 	private static String SEARCH_BY_NAME = HOST
 			+ "ShopDishesApi_loadDishesForSearch";
-
+	private static String LIKE = HOST
+			+ "ShopDishesApi_addOrRemoveCollection";
+	
+	public static String FIND_AD = HOST
+			+ "ShopDishesApi_gotoFoundPage";
+	
+	
+	
+	/**
+	 * 我喜欢，添加或移除
+	 * @param userid
+	 * @param dishesid
+	 * @return
+	 */
+	public static String getLikeUrl(String userid,String dishesid) {
+		return LIKE + "?userid=" + userid+ "&dishesid=" + dishesid;
+	}
+	
 	/**
 	 * 菜品模糊搜索
 	 * @param userid

@@ -9,8 +9,8 @@ public class Sell {
 
 	private int id;
 	private String pricetypename;
-	private int oldprice;
-	private int price;
+	private double oldprice;
+	private double price;
 	private int isilike;
 	private int soldout;
 	private String imgname;
@@ -18,16 +18,23 @@ public class Sell {
 	private String dishname;
 	private String starttime;
 	private String stoptime;
+	public int count = 1;
+	
 
-	public Sell() {
+	public Sell(int id,double price,String imgname,String storename,String dishname) {
+		this.id = id;
+		this.price = price;
+		this.imgname = imgname;
+		this.storename = storename;
+		this.dishname = dishname;
 	}
 	
 	public Sell(JSONObject json){
 		try {
 			id = json.getInt("id");
 			pricetypename = json.getString("pricetypename");
-			oldprice = json.getInt("oldprice");
-			price = json.getInt("price");
+			oldprice = json.getDouble("oldprice");
+			price = json.getDouble("price");
 			isilike = json.getInt("isilike");
 			soldout = json.getInt("soldout");
 			imgname =GetUrl.IMAGE_SELL_URL + json.getString("imgname");
@@ -57,19 +64,19 @@ public class Sell {
 		this.pricetypename = pricetypename;
 	}
 
-	public int getOldprice() {
+	public Double getOldprice() {
 		return oldprice;
 	}
 
-	public void setOldprice(int oldprice) {
+	public void setOldprice(Double oldprice) {
 		this.oldprice = oldprice;
 	}
 
-	public int getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 

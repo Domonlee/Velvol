@@ -17,11 +17,11 @@ public class SellDishes {
 	private int id;
 	private int shopid;
 	private String shopname;
-	private int oldprice;
+	private double oldprice;
 	private String leadreputably;
 	private int isilike;
 	private String img;
-	private int price;
+	private double price;
 	private int salecount;
 	private int issaleout;
 	private String dishesdesc;
@@ -35,11 +35,11 @@ public class SellDishes {
 			id = json.getInt("id");
 			shopid = json.getInt("shopid");
 			shopname = json.getString("shopname");
-			oldprice = json.getInt("oldprice");
+			oldprice = json.getDouble("oldprice");
 			leadreputably = json.getString("leadreputably");
 			isilike = json.getInt("isilike");
 			img =GetUrl.IMAGE_SELL_URL + json.getString("img");
-			price = json.getInt("price");
+			price = json.getDouble("price");
 			salecount = json.getInt("salecount");
 			issaleout = json.getInt("issaleout");
 			dishesdesc = json.getString("dishesdesc");
@@ -98,11 +98,11 @@ public class SellDishes {
 		this.shopname = shopname;
 	}
 
-	public int getOldprice() {
+	public double getOldprice() {
 		return oldprice;
 	}
 
-	public void setOldprice(int oldprice) {
+	public void setOldprice(double oldprice) {
 		this.oldprice = oldprice;
 	}
 
@@ -130,11 +130,11 @@ public class SellDishes {
 		this.img = img;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

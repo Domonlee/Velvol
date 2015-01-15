@@ -46,14 +46,17 @@ public class SearchFragmentActivity extends BaseFragment {
 	private Context mContext;
 	private SearchAdapter mAdapter;
 	private SearchFoodAdapter adapter;
-	private HashMap<Integer, Boolean> isselect;
+	
 	private SearchHistory popwindow;
 	private LinearLayout ll1;
 	private EditText search;
 	private TextView cencel;
+	private HashMap<Integer, Boolean> isselect = new HashMap<Integer, Boolean>();
 	private List<HashMap<String, String>> firstlist = new ArrayList<HashMap<String, String>>();
 	private List<HashMap<String, String>> secendlist = new ArrayList<HashMap<String, String>>();
 	private int check_index = 0;
+	private String search_result;
+	private boolean result_flag = false,http_init = true;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -61,7 +64,16 @@ public class SearchFragmentActivity extends BaseFragment {
 		view = inflater.inflate(R.layout.fragment_search, container, false);
 		findViewById();
 		initView();
-		httpget(GetUrl.getSearchClassifyUrl(-1 + ""), 1);
+		if(http_init){
+			search_result = ConfigUtil.getString("search_result", "");
+			if(search_result.equals("")||isNetworkConnected(getActivity())){
+				result_flag = true;
+				httpget(GetUrl.getSearchClassifyUrl(-1 + ""), 1);
+			}
+			else
+				result(search_result);
+		}
+		http_init =false;
 		return view;
 	}
 
@@ -76,16 +88,17 @@ public class SearchFragmentActivity extends BaseFragment {
 
 	@Override
 	protected void initView() {
-		popwindow = new SearchHistory(getActivity());
+		if(popwindow ==null)
+			popwindow = new SearchHistory(getActivity());
 
-		isselect = new HashMap<Integer, Boolean>();
 		mContext = view.getContext();
-
-		mAdapter = new SearchAdapter(mContext);
+		if(mAdapter ==null)
+			mAdapter = new SearchAdapter(mContext);
 		mAdapter.setList(firstlist);
 		mAdapter.setIsselect(isselect);
 		listView.setAdapter(mAdapter);
-
+		
+		if(adapter==null)
 		adapter = new SearchFoodAdapter(mContext);
 		adapter.setList(secendlist);
 		gridView.setAdapter(adapter);
@@ -111,8 +124,8 @@ public class SearchFragmentActivity extends BaseFragment {
 			public void onItemClick(AdapterView<?> arg0, View v, int position,
 					long arg3) {
 				startActivity(new Intent(getActivity(),
-						SearchClassActivity.class).putExtra("name", secendlist
-						.get(position).get("id")).putExtra("action", 0));
+						SearchClassActivity.class).putExtra("classifyId", secendlist
+						.get(position).get("id")).putExtra("key", "-1"));
 			}
 		});
 
@@ -124,8 +137,8 @@ public class SearchFragmentActivity extends BaseFragment {
 			if (actionId == EditorInfo.IME_ACTION_SEARCH
 					&& search.getText().toString().length() > 0) {
 				startActivity(new Intent(getActivity(),
-						SearchClassActivity.class).putExtra("name", search
-						.getText().toString()).putExtra("action", 1));
+						SearchClassActivity.class).putExtra("key", search
+						.getText().toString()).putExtra("classifyId", "-1"));
 
 				// 保存历史记录到XML文件中
 				StringBuffer sb = new StringBuffer(data.searchHistory);
@@ -147,7 +160,8 @@ public class SearchFragmentActivity extends BaseFragment {
 		public void onClick(View v) {
 			switch (v.getId()) {
 			case R.id.cencel:
-				popwindow.window.dismiss();
+				if(popwindow.window!=null)
+					popwindow.window.dismiss();
 				search.clearFocus();
 				// 收键盘
 				((InputMethodManager) getActivity().getSystemService(
@@ -181,6 +195,8 @@ public class SearchFragmentActivity extends BaseFragment {
 					isselect.put(i, false);
 				}
 				isselect.put(check_index, true);
+				if(result_flag)
+					ConfigUtil.putString("search_result", result);
 				mAdapter.notifyDataSetChanged();
 				adapter.notifyDataSetChanged();
 			} else
@@ -190,6 +206,9 @@ public class SearchFragmentActivity extends BaseFragment {
 			e.printStackTrace();
 			Toast.makeText(getActivity().getApplicationContext(), "网络异常！", 0)
 					.show();
+		}
+		finally{
+			result_flag = false;
 		}
 	}
 

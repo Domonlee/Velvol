@@ -1,5 +1,7 @@
 package com.velvol.o2o;
 
+
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Application;
@@ -12,8 +14,8 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
+import com.velvol.o2o.constant.Sell;
 import com.velvol.o2o.tool.ConfigUtil;
 
 public class Data extends Application {
@@ -23,6 +25,7 @@ public class Data extends Application {
 	public String User_id = "";
 	public String searchHistory = "";
 	public DisplayImageOptions displayImageOptions;
+	public List<Sell> cat_sell_list = new ArrayList<Sell>();
 	public static Data getInstance() {
 		return mInstance;
 	}
@@ -69,4 +72,5 @@ public class Data extends Application {
 				.displayer(new SimpleBitmapDisplayer())
 				.bitmapConfig(Config.RGB_565).build(); // 创建配置过得DisplayImageOption对象
 	}
+	
 }

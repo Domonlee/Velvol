@@ -1,6 +1,11 @@
 package com.velvol.o2o.Utils;
 
+import java.util.List;
+
 import android.util.Log;
+
+import com.velvol.o2o.Data;
+import com.velvol.o2o.constant.Sell;
 
 /** »ù´¡¹¤¾ß
  * @author Domon 
@@ -18,5 +23,19 @@ public class Util {
   	public static void ShowErrorLog(String msg) {
   		Log.e("Domon",msg);
   	}
-
+  	
+  	public void addCat(Sell sell){
+  		List<Sell> list = Data.getInstance().cat_sell_list;
+  		if(list.size() == 0)
+  			list.add(sell);
+  		else{
+  			for (Sell sell_item : list) {
+				if(sell.getId()==sell_item.getId()){
+					sell.count++;
+					return;
+				}
+			}
+  			list.add(sell);
+  		}
+  	}
 }

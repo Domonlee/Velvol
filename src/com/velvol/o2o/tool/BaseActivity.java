@@ -1,14 +1,7 @@
 package com.velvol.o2o.tool;
 
-import java.io.DataOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -311,4 +304,5 @@ public abstract class BaseActivity extends Activity {
 	public void ShowLog(String msg) {
 		Log.i("Domon",msg);
 	}
+	
 }

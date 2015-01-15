@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.velvol.o2o.Data;
 import com.velvol.o2o.R;
+import com.velvol.o2o.Utils.Util;
 import com.velvol.o2o.constant.Sell;
 
 public class NewAdapter extends BaseAdapter {
@@ -95,11 +96,9 @@ public class NewAdapter extends BaseAdapter {
 
 		@Override
 		public void onClick(View v) {
-			Log.v("sen", "buy");
 			switch (v.getId()) {
 			case R.id.buy:
-				// TODO 购物车操作
-				Log.v("sen", "buy");
+				new Util().addCat(sell_list.get(position));
 				Toast.makeText(context, "加入购物车成功" + position, 0).show();
 
 				break;
