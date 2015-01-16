@@ -1,6 +1,13 @@
 package com.velvol.o2o;
 
 
+import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,7 +20,11 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.velvol.o2o.adapter.RepayAdapter;
+import com.velvol.o2o.constant.GetUrl;
+import com.velvol.o2o.constant.Replies;
 import com.velvol.o2o.tool.BaseActivity;
 import com.velvol.o2o.ui.find.ReviewDetailsReplyActivity;
 import com.velvol.o2o.view.CircularImage;
@@ -31,6 +42,15 @@ public class EvaluateActivity extends BaseActivity {
 	private int s1;
 	private TextView reply;
 	private TextView replyContent;
+	private TextView name;
+	private TextView time;
+	private TextView context;
+	private Intent intent = null;
+	private String repliesid = null;
+	private int pagenum = 1;
+	
+	private ArrayList<Replies> list = new ArrayList<Replies>();
+	private Replies replies = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		this.requestWindowFeature(1);
@@ -41,6 +61,7 @@ public class EvaluateActivity extends BaseActivity {
 		width = dm.widthPixels;
 		findViewById();
 		initView();
+		httpget(GetUrl.commentDetial(repliesid, String.valueOf(pagenum)), 1);
 	}
 
 	@Override
@@ -55,6 +76,9 @@ public class EvaluateActivity extends BaseActivity {
 		praise=(TextView)findViewById(R.id.praise);
 		reply=(TextView)findViewById(R.id.reply_tv);
 		replyContent=(TextView)findViewById(R.id.reply);
+		name = (TextView) findViewById(R.id.username);
+		time = (TextView) findViewById(R.id.time);
+		context = (TextView) findViewById(R.id.context);
 	}
 
 	@Override
@@ -71,7 +95,7 @@ public class EvaluateActivity extends BaseActivity {
 		top_title.setText("评价详情");
 		user_img.setImageResource(R.drawable.userface);
 		adapter = new RepayAdapter(EvaluateActivity.this);
-		listView.setAdapter(adapter);
+//		listView.setAdapter(adapter);
 		img_layout.addView(Img(""));
 		img_layout.addView(Img(""));
 		img_layout.addView(Img(""));
@@ -79,6 +103,8 @@ public class EvaluateActivity extends BaseActivity {
 		//取出评价内容
 		Intent intent = getIntent();
 		String reply1=intent.getStringExtra("reply");
+		//XXX
+		repliesid = intent.getIntExtra("repliesid", 0)+"";
 		replyContent.setText(reply1);
 	}
 	View.OnClickListener listener = new View.OnClickListener() {
@@ -94,7 +120,7 @@ public class EvaluateActivity extends BaseActivity {
 				praise.setTextColor(Color.parseColor("#D9210D"));
 				break;
 			case R.id.reply_tv:
-				startActivity(new Intent(EvaluateActivity.this, ReviewDetailsReplyActivity.class));
+				startActivity(new Intent(EvaluateActivity.this, ReviewDetailsReplyActivity.class).putExtra("repliesid", repliesid));
 				finish();
 				break;
 			}
@@ -113,7 +139,44 @@ public class EvaluateActivity extends BaseActivity {
 	}
 	@Override
 	protected void result(String result) {
-		// TODO Auto-generated method stub
+		try {
+			JSONObject object = new JSONObject(result);
+			if (object.getInt("mark") == 1) {
+				JSONObject ro = object.getJSONObject("result");
+				JSONArray array = ro.getJSONArray("replys");
+				if (array != null) {
+					for (int i = 0; i < array.length(); i++) {
+						replies = new Replies(array.getJSONObject(i));
+						list.add(replies);
+					}
+				}
+
+				JSONObject o = ro.getJSONObject("repliesbean");
+				if (o != null) {
+					name.setText(o.getString("username"));
+					time.setText(o.getString("createdate"));
+					lv.setProgress(o.getInt("starcount"));
+					praise.setText(o.getString("(" + "zambiacount" + ")"));
+					replyContent.setText(o.getString("(" + "replycount" + ")"));
+					context.setText(o.getString("context"));
+					imageLoader.displayImage(o.getString("userheadimg"),
+							user_img, data.displayImageOptions);
+					if (o.getJSONArray("imgs") != null) {
+						for (int j = 0; j < o.getJSONArray("imgs").length(); j++) {
+							Img(o.getJSONArray("imgs").getString(j));
+						}
+					}
+				}
+				adapter.notifyDataSetChanged();
+
+			} else {
+				Toast.makeText(EvaluateActivity.this, "数据出错！", 0).show();
+			}
+
+		} catch (JSONException e) {
+			e.printStackTrace();
+			Toast.makeText(EvaluateActivity.this, "网络异常！", 0).show();
+		}
 
 	}
 

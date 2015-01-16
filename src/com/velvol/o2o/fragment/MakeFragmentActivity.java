@@ -62,7 +62,7 @@ public class MakeFragmentActivity extends BaseFragment {
 		initView();
 		if(action == 0){
 			main_result = ConfigUtil.getString("main_result", "");
-			if(main_result.equals("")){
+			if(main_result.equals("")||isNetworkConnected(getActivity())){
 				result_flag = true;
 				httpget(GetUrl.getMainInfoUrl(data.User_id), 1);
 			}

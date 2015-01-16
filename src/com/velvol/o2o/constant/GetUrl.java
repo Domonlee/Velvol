@@ -29,26 +29,85 @@ public class GetUrl {
 			+ "ShopDishesApi_loadDishesType";
 	private static String SEARCH_BY_NAME = HOST
 			+ "ShopDishesApi_loadDishesForSearch";
-	private static String LIKE = HOST
-			+ "ShopDishesApi_addOrRemoveCollection";
-	
-	public static String FIND_AD = HOST
-			+ "ShopDishesApi_gotoFoundPage";
-	
-	
-	
+	private static String LIKE = HOST + "ShopDishesApi_addOrRemoveCollection";
+
+	public static String FIND_AD = HOST + "ShopDishesApi_gotoFoundPage";
+
+	// 发表评论
+	private static String REPORT_COMMENT = HOST
+			+ "RepliesAndMessageApi_submitReply";
+	// 加载菜品所有评论
+	private static String ALL_COMMENT = HOST
+			+ "RepliesAndMessageApi_listReplies";
+	// 加载评论详情
+	private static String COMMENT_DETIAL = HOST
+			+ "RepliesAndMessageApi_loadRepliesInfo";
+
+	// 获取有优惠券的店铺
+	private static String GET_COUPON = HOST
+			+ "ShopDishesApi_listCouponShopByCoupon";
+
+	// 获取店铺的优惠券
+	private static String GET_SHOP_COUPON = HOST
+			+ "ShopDishesApi_findAllCouponByCshopid";
+	// 神点评
+	public static String GOD_COMMENT = HOST + "ShopDishesApi_bestreplies";
+
+	/**
+	 * 发表评论接口
+	 */
+	public static String reportComment(String userid, String repliesid,
+			String replies) {
+		return REPORT_COMMENT + "?userid=" + userid + "&repliesid=" + repliesid
+				+ "&replies=" + replies;
+	}
+
+	/**
+	 * 得到所有评论接口
+	 */
+	public static String allComment(String dishesid, String repliestype,
+			String pagenum) {
+		return ALL_COMMENT + "?dishesid=" + dishesid + "&repliestype="
+				+ repliestype + "&pagenum=" + pagenum;
+	}
+
+	/**
+	 * 得到详细评论接口
+	 */
+
+	public static String commentDetial(String repliesid, String pagenum) {
+		return COMMENT_DETIAL + "?repliesid=" + repliesid + "&pagenum="
+				+ pagenum;
+	}
+
+	/**
+	 * 得到有优惠券的店铺
+	 */
+	public static String getCoupon(String pagenum) {
+		return GET_COUPON + "?pagenum=" + pagenum;
+	}
+
+	/**
+	 * 获取店铺的优惠券
+	 */
+	public static String getShopCoupon(String cshopid) {
+		return GET_SHOP_COUPON + "?cshopid=" + cshopid;
+	}
+
 	/**
 	 * 我喜欢，添加或移除
+	 * 
 	 * @param userid
 	 * @param dishesid
 	 * @return
 	 */
-	public static String getLikeUrl(String userid,String dishesid) {
-		return LIKE + "?userid=" + userid+ "&dishesid=" + dishesid;
+	public static String getLikeUrl(String userid, String dishesid) {
+		return LIKE + "?userid=" + userid + "&dishesid=" + dishesid;
 	}
-	
+
 	/**
 	 * 菜品模糊搜索
+	 * 
 	 * @param userid
 	 * @param keywords
 	 * @param typeid
